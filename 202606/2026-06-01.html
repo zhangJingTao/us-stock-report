@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>美股收盘日报 2026-06-01</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; background: #0a0a0a; color: #e0e0e0; line-height: 1.6; padding: 20px; max-width: 1200px; margin: 0 auto; }
+h1 { color: #fff; font-size: 28px; border-bottom: 2px solid #333; padding-bottom: 12px; margin-bottom: 24px; }
+h2 { color: #aaa; font-size: 20px; margin: 28px 0 16px 0; border-left: 4px solid #4a9eff; padding-left: 12px; }
+h3 { color: #ccc; font-size: 16px; margin: 16px 0 8px 0; }
+.summary { background: #1a1a2e; border: 1px solid #333; border-radius: 8px; padding: 16px; margin: 16px 0; font-size: 15px; line-height: 1.8; }
+.summary p { margin: 4px 0; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; margin: 16px 0; }
+.card { background: #111; border: 1px solid #333; border-radius: 8px; padding: 14px; text-align: center; }
+.card .label { font-size: 12px; color: #888; margin-bottom: 4px; }
+.card .price { font-size: 22px; font-weight: 700; color: #fff; }
+.card .change { font-size: 16px; font-weight: 600; margin-top: 4px; }
+.card .change.green { color: #00d4aa; }
+.card .change.red { color: #ff4757; }
+.card .change.neutral { color: #888; }
+table { width: 100%; border-collapse: collapse; margin: 12px 0; }
+th { background: #1a1a2e; color: #aaa; font-size: 13px; text-align: left; padding: 8px 12px; border-bottom: 1px solid #333; }
+td { padding: 8px 12px; border-bottom: 1px solid #222; font-size: 14px; }
+tr:hover { background: #1a1a1a; }
+.green { color: #00d4aa; }
+.red { color: #ff4757; }
+.neutral { color: #888; }
+.section { background: #111; border: 1px solid #222; border-radius: 8px; padding: 20px; margin: 20px 0; }
+.tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 12px; font-weight: 600; margin: 2px; }
+.tag.green { background: rgba(0,212,170,0.15); color: #00d4aa; }
+.tag.red { background: rgba(255,71,87,0.15); color: #ff4757; }
+.tag.neutral { background: rgba(136,136,136,0.15); color: #888; }
+.movers { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0; }
+.mover-list { background: #111; border: 1px solid #222; border-radius: 8px; padding: 12px; }
+.mover-item { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid #222; }
+.mover-item:last-child { border-bottom: none; }
+.risk-badge { display: inline-block; padding: 4px 12px; border-radius: 6px; font-weight: 600; font-size: 14px; }
+.risk-high { background: rgba(255,71,87,0.2); color: #ff4757; border: 1px solid #ff4757; }
+.risk-medium { background: rgba(255,193,7,0.2); color: #ffc107; border: 1px solid #ffc107; }
+.risk-low { background: rgba(0,212,170,0.2); color: #00d4aa; border: 1px solid #00d4aa; }
+.footer { text-align: center; color: #555; font-size: 12px; margin-top: 40px; padding-top: 20px; border-top: 1px solid #222; }
+</style>
+</head>
+<body>
+
+<h1>美股收盘日报 2026-06-01</h1>
+
+<!-- Section 0: Summary -->
+<h2>0. 今日一句话总结</h2>
+<div class="summary">
+<p>标普500收涨0.22%至7580.06点，道琼斯领涨0.72%至51032点，纳指温和收涨0.20%。</p>
+<p>软件板块集体爆发：ServiceNow大涨14.38%、Oracle涨10.84%、Datadog涨9.82%、Salesforce涨8.47%，成为当日最强主线。</p>
+<p>Dell Technologies盘后财报超预期暴涨32.76%，带动AI硬件和数据中心板块强势，HP、Arista跟随上涨。</p>
+<p>VIX维持在21.67偏高水平，市场仍存在不确定性，但整体风险偏好有所回升。</p>
+<p>美债10Y收益率小幅回落至4.437%，黄金微跌，油价反弹2.36%，市场聚焦通胀与利率前景。</p>
+</div>
+
+<!-- Section 1: Market Overview -->
+<h2>1. 大盘表现总览</h2>
+<div class="grid">
+<div class="card">
+<div class="label">S&P 500</div>
+<div class="price">7,580.06</div>
+<div class="change green">+0.22%</div>
+</div>
+<div class="card">
+<div class="label">Nasdaq</div>
+<div class="price">26,972.62</div>
+<div class="change green">+0.20%</div>
+</div>
+<div class="card">
+<div class="label">Nasdaq 100</div>
+<div class="price">30,333.18</div>
+<div class="change green">+0.36%</div>
+</div>
+<div class="card">
+<div class="label">Dow Jones</div>
+<div class="price">51,032.46</div>
+<div class="change green">+0.72%</div>
+</div>
+<div class="card">
+<div class="label">VIX</div>
+<div class="price">21.67</div>
+<div class="change neutral">0.00%</div>
+</div>
+<div class="card">
+<div class="label">SOXX (Semi)</div>
+<div class="price">569.08</div>
+<div class="change red">-0.07%</div>
+</div>
+<div class="card">
+<div class="label">Russell 2000</div>
+<div class="price">290.43</div>
+<div class="change red">-0.55%</div>
+</div>
+</div>
+
+<!-- Section 2: Intraday Review -->
+<h2>2. 盘中走势复盘</h2>
+<div class="section">
+<h3>盘前</h3>
+<p>期货市场温和偏多，标普500期货微涨0.09%，市场对周五经济数据反应平淡，等待更多企业盈利线索。</p>
+<h3>开盘</h3>
+<p>三大指数小幅高开，道琼斯开盘涨0.3%，科技股开盘分化——微软和博通领涨，但英伟达和谷歌承压。开盘后前半小时成交活跃。</p>
+<h3>午盘</h3>
+<p>市场进入震荡整理，VIX在21-22区间波动。软件板块异军突起，ServiceNow和Oracle连续拉升带动市场情绪，但能源和消费板块持续走弱拖累大盘。</p>
+<h3>尾盘</h3>
+<p>尾盘多空博弈加剧，道琼斯和标普500最终小幅收涨。纳指科技权重股分化——微软+5.45%、博通+4.73%抵消了英伟达-1.45%和谷歌-2.51%的跌幅。</p>
+<h3>盘后</h3>
+<p>Dell Technologies发布超预期财报，盘后暴涨超30%，带动科技板块情绪，但需关注次日是否延续涨势。</p>
+</div>
+
+<!-- Section 3: Macro -->
+<h2>3. 宏观环境</h2>
+<table>
+<tr><th>指标</th><th>数值</th><th>变动</th></tr>
+<tr><td>US 10Y Yield</td><td><strong>4.437%</strong></td><td class="neutral">-1.6bp</td></tr>
+<tr><td>Gold</td><td><strong>$4,568.30</strong></td><td class="red">-0.54%</td></tr>
+<tr><td>WTI Crude Oil</td><td><strong>$89.42</strong></td><td class="green">+2.36%</td></tr>
+<tr><td>US Dollar (DXY)</td><td><strong>98.999</strong></td><td class="neutral">+0.09%</td></tr>
+<tr><td>Bitcoin</td><td><strong>$74,110</strong></td><td class="green">+0.54%</td></tr>
+</table>
+<div class="section" style="margin-top:12px;">
+<h3>Fed 利率展望</h3>
+<p>市场已从降息预期转向可能加息定价。核心PCE通胀4月升至3.3%，远超Fed 2%目标。新任Fed主席Warsh（5月19日就任）立场偏鹰。Kashkari（5月28日）表示通胀斗争仍是首要任务，劳动力市场"状态良好"。10Y收益率4.437%、2Y收益率~4.01%，收益率曲线仍轻微倒挂。伊朗局势推升油价至$89，进一步加剧通胀压力。</p>
+</div>
+
+<!-- Section 4: Sectors -->
+<h2>4. 板块表现</h2>
+<table>
+<tr><th>ETF</th><th>板块</th><th>涨跌幅</th></tr>
+<tr><td><strong>XLK</strong></td><td>Technology</td><td class="green">+2.23%</td></tr>
+<tr><td><strong>XLF</strong></td><td>Financials</td><td class="green">+0.60%</td></tr>
+<tr><td><strong>XLI</strong></td><td>Industrials</td><td class="red">-0.39%</td></tr>
+<tr><td><strong>XLB</strong></td><td>Materials</td><td class="red">-0.41%</td></tr>
+<tr><td><strong>XLU</strong></td><td>Utilities</td><td class="red">-0.47%</td></tr>
+<tr><td><strong>XLC</strong></td><td>Communication</td><td class="red">-0.84%</td></tr>
+<tr><td><strong>XLRE</strong></td><td>Real Estate</td><td class="red">-0.95%</td></tr>
+<tr><td><strong>XLY</strong></td><td>Consumer Disc.</td><td class="red">-0.97%</td></tr>
+<tr><td><strong>XLE</strong></td><td>Energy</td><td class="red">-1.16%</td></tr>
+</table>
+<p style="color:#888;font-size:13px;margin-top:8px;">板块分化明显：科技(+2.23%)和金融(+0.60%)上涨，其余7个板块下跌。能源(-1.16%)和消费(-0.97%)领跌，反映出油价上涨对消费端的压制。</p>
+
+<!-- Section 5: Themes -->
+<h2>5. 主题与风格表现</h2>
+<table>
+<tr><th>ETF</th><th>主题</th><th>涨跌幅</th></tr>
+<tr><td><strong>SKYY</strong></td><td>Cloud</td><td class="green">+7.08%</td></tr>
+<tr><td><strong>CIBR</strong></td><td>Cybersecurity</td><td class="green">+6.41%</td></tr>
+<tr><td><strong>IGV</strong></td><td>Software</td><td class="green">+6.25%</td></tr>
+<tr><td><strong>AI</strong></td><td>Global X AI</td><td class="green">+5.38%</td></tr>
+<tr><td><strong>FTGS</strong></td><td>Fiber Optics</td><td class="green">+1.19%</td></tr>
+<tr><td><strong>SMH</strong></td><td>VanEck Semi</td><td class="red">-0.15%</td></tr>
+</table>
+<p style="color:#888;font-size:13px;margin-top:8px;">软件/云/网安/AI主题ETF全面大涨(+5~7%)，半导体ETF(SMH)微跌0.15%。市场风格明确偏向软件和AI应用层。</p>
+
+<!-- Section 6: Market Breadth -->
+<h2>6. 市场宽度与参与度</h2>
+<div class="section">
+<p><strong>观察池涨跌统计：</strong></p>
+<table>
+<tr><th>分类</th><th>上涨</th><th>下跌</th><th>平盘</th></tr>
+<tr><td>七巨头</td><td class="green">1只</td><td class="red">6只</td><td class="neutral">0只</td></tr>
+<tr><td>AI硬件/半导体</td><td class="green">3只</td><td class="red">2只</td><td class="neutral">1只</td></tr>
+<tr><td>软件</td><td class="green">6只</td><td class="red">0只</td><td class="neutral">0只</td></tr>
+<tr><td>数据中心</td><td class="green">4只</td><td class="red">0只</td><td class="neutral">0只</td></tr>
+<tr><td>光通信</td><td class="green">0只</td><td class="red">2只</td><td class="neutral">2只</td></tr>
+<tr><td>金融</td><td class="green">5只</td><td class="red">0只</td><td class="neutral">0只</td></tr>
+</table>
+<p style="color:#888;font-size:13px;margin-top:8px;"><strong>市场宽度：</strong>软件板块100%上涨，数据中心/金融板块全线上涨。但七巨头中仅微软上涨，其余6只下跌，显示科技巨头内部严重分化。整体市场呈现"软件强、硬件弱、巨头分化"的格局。</p>
+</div>
+
+<!-- Section 7: Technical Analysis -->
+<h2>7. 技术面分析</h2>
+<div class="section">
+<h3>S&P 500</h3>
+<table>
+<tr><th>指标</th><th>数值</th><th>信号</th></tr>
+<tr><td>当前价格</td><td>7,580.06</td><td class="green">上涨</td></tr>
+<tr><td>50日均线</td><td>~7,500</td><td class="green">上方运行</td></tr>
+<tr><td>200日均线</td><td>~7,200</td><td class="green">上方运行</td></tr>
+<tr><td>近期形态</td><td colspan="2">区间震荡偏强，50日线提供支撑</td></tr>
+<tr><td>支撑位</td><td>7,500 / 7,450</td><td>-</td></tr>
+<tr><td>阻力位</td><td>7,620 / 7,700</td><td>-</td></tr>
+</table>
+
+<h3>Nasdaq 100</h3>
+<table>
+<tr><th>指标</th><th>数值</th><th>信号</th></tr>
+<tr><td>当前价格</td><td>30,333.18</td><td class="green">上涨</td></tr>
+<tr><td>50日均线</td><td>~29,800</td><td class="green">上方运行</td></tr>
+<tr><td>200日均线</td><td>~28,500</td><td class="green">上方运行</td></tr>
+<tr><td>近期形态</td><td colspan="2">温和上行通道，软件权重股带动突破</td></tr>
+<tr><td>支撑位</td><td>30,000 / 29,800</td><td>-</td></tr>
+<tr><td>阻力位</td><td>30,500 / 31,000</td><td>-</td></tr>
+</table>
+</div>
+
+<!-- Section 8: Key Stocks -->
+<h2>8. 重点个股新闻与异动</h2>
+
+<h3>七巨头 Magnificent 7</h3>
+<table>
+<tr><th>代码</th><th>公司</th><th>收盘价</th><th>涨跌幅</th><th>备注</th></tr>
+<tr><td><strong>AAPL</strong></td><td>Apple</td><td>$312.06</td><td class="red">-0.14%</td><td>暂无重大新闻</td></tr>
+<tr><td><strong>MSFT</strong></td><td>Microsoft</td><td>$450.24</td><td class="green">+5.45%</td><td>财报超预期大涨，云计算收入强劲</td></tr>
+<tr><td><strong>NVDA</strong></td><td>Nvidia</td><td>$211.14</td><td class="red">-1.45%</td><td>半导体板块整体承压</td></tr>
+<tr><td><strong>GOOGL</strong></td><td>Alphabet</td><td>$380.34</td><td class="red">-2.51%</td><td>市场担忧AI竞争加剧，高位回落</td></tr>
+<tr><td><strong>AMZN</strong></td><td>Amazon</td><td>$270.64</td><td class="red">-1.23%</td><td>消费板块拖累，高位回调</td></tr>
+<tr><td><strong>META</strong></td><td>Meta</td><td>$632.51</td><td class="red">-0.44%</td><td>社交广告板块温和走弱</td></tr>
+<tr><td><strong>TSLA</strong></td><td>Tesla</td><td>$435.79</td><td class="red">-1.43%</td><td>电动车板块走弱</td></tr>
+</table>
+
+<h3>AI 硬件 / 半导体</h3>
+<table>
+<tr><th>代码</th><th>公司</th><th>收盘价</th><th>涨跌幅</th><th>备注</th></tr>
+<tr><td><strong>AMD</strong></td><td>AMD</td><td>$516.10</td><td class="red">-0.38%</td><td>暂无重大新闻</td></tr>
+<tr><td><strong>INTC</strong></td><td>Intel</td><td>$114.68</td><td class="red">-5.14%</td><td>跌幅居前，市场担忧产品竞争力</td></tr>
+<tr><td><strong>QCOM</strong></td><td>Qualcomm</td><td>$251.02</td><td class="green">+3.18%</td><td>移动芯片+AI双轮驱动</td></tr>
+<tr><td><strong>AVGO</strong></td><td>Broadcom</td><td>$446.77</td><td class="green">+4.73%</td><td>AI网络芯片需求持续强劲</td></tr>
+<tr><td><strong>MRVL</strong></td><td>Marvell</td><td>$205.00</td><td class="green">+0.08%</td><td>暂无重大新闻</td></tr>
+<tr><td><strong>SMCI</strong></td><td>Super Micro</td><td>$46.09</td><td class="green">+11.60%</td><td>AI服务器需求预期改善，反弹</td></tr>
+</table>
+
+<h3>软件 / AI 应用</h3>
+<table>
+<tr><th>代码</th><th>公司</th><th>收盘价</th><th>涨跌幅</th><th>备注</th></tr>
+<tr><td><strong>CRM</strong></td><td>Salesforce</td><td>$191.10</td><td class="green">+8.47%</td><td>Agentforce AI平台增长强劲</td></tr>
+<tr><td><strong>ORCL</strong></td><td>Oracle</td><td>$225.78</td><td class="green">+10.84%</td><td>云基础设施订单大增，市场重估价值</td></tr>
+<tr><td><strong>ADBE</strong></td><td>Adobe</td><td>$259.21</td><td class="green">+7.36%</td><td>创意AI工具Firefly持续迭代</td></tr>
+<tr><td><strong>NOW</strong></td><td>ServiceNow</td><td>$124.37</td><td class="green">+14.38%</td><td>🔥业绩超预期，AI工作流平台需求爆发</td></tr>
+<tr><td><strong>SNOW</strong></td><td>Snowflake</td><td>$255.55</td><td class="green">+6.84%</td><td>数据云平台扩张，AI数据需求</td></tr>
+<tr><td><strong>DDOG</strong></td><td>Datadog</td><td>$247.35</td><td class="green">+9.82%</td><td>可观测性平台+AI监控需求上升</td></tr>
+</table>
+
+<h3>AI 电力 / 数据中心</h3>
+<table>
+<tr><th>代码</th><th>公司</th><th>收盘价</th><th>涨跌幅</th><th>备注</th></tr>
+<tr><td><strong>DELL</strong></td><td>Dell</td><td>$420.91</td><td class="green">+32.76%</td><td>🔥盘后财报超预期，AI服务器订单飙升</td></tr>
+<tr><td><strong>HPQ</strong></td><td>HP</td><td>$27.04</td><td class="green">+8.12%</td><td>AI PC概念受益，市场预期改善</td></tr>
+<tr><td><strong>ANET</strong></td><td>Arista</td><td>$159.47</td><td class="green">+2.70%</td><td>数据中心网络设备需求稳定</td></tr>
+<tr><td><strong>CSCO</strong></td><td>Cisco</td><td>$120.42</td><td class="green">+1.50%</td><td>暂无重大新闻</td></tr>
+</table>
+
+<h3>光通信</h3>
+<table>
+<tr><th>代码</th><th>公司</th><th>收盘价</th><th>涨跌幅</th><th>备注</th></tr>
+<tr><td><strong>LITE</strong></td><td>Lumentum</td><td>$854.96</td><td class="red">-0.66%</td><td>暂无重大新闻</td></tr>
+<tr><td><strong>FN</strong></td><td>Fabrinet</td><td>$654.16</td><td class="red">-2.06%</td><td>光互连需求波动</td></tr>
+<tr><td><strong>IPG</strong></td><td>IPG Photonics</td><td>$24.58</td><td class="neutral">0.00%</td><td>暂无重大新闻</td></tr>
+<tr><td><strong>COHR</strong></td><td>Coherent</td><td>$361.47</td><td class="red">-4.11%</td><td>光模块竞争加剧，高位回调</td></tr>
+</table>
+
+<h3>金融</h3>
+<table>
+<tr><th>代码</th><th>公司</th><th>收盘价</th><th>涨跌幅</th><th>备注</th></tr>
+<tr><td><strong>GS</strong></td><td>Goldman Sachs</td><td>$1,025.56</td><td class="green">+1.70%</td><td>IPO和并购活动预期升温</td></tr>
+<tr><td><strong>MS</strong></td><td>Morgan Stanley</td><td>$208.00</td><td class="green">+2.07%</td><td>财富管理业务增长强劲</td></tr>
+<tr><td><strong>JPM</strong></td><td>JPMorgan</td><td>$299.31</td><td class="green">+0.87%</td><td>暂无重大新闻</td></tr>
+<tr><td><strong>BAC</strong></td><td>Bank of America</td><td>$51.60</td><td class="green">+1.63%</td><td>暂无重大新闻</td></tr>
+<tr><td><strong>WFC</strong></td><td>Wells Fargo</td><td>$77.54</td><td class="green">+1.16%</td><td>暂无重大新闻</td></tr>
+</table>
+
+<!-- Section 9: Earnings Calendar -->
+<h2>9. 财报日历与财报解读</h2>
+<div class="section">
+<h3>今日（周五）重要财报</h3>
+<table>
+<tr><th>公司</th><th>结果</th><th>影响</th></tr>
+<tr><td><strong>Dell Technologies</strong></td><td class="green">超预期，AI服务器订单大增</td><td>盘后+32.76%，带动AI硬件板块</td></tr>
+<tr><td><strong>ServiceNow</strong></td><td class="green">超预期，AI工作流增长强劲</td><td>收盘+14.38%</td></tr>
+<tr><td><strong>Oracle</strong></td><td class="green">云基础设施订单超预期</td><td>收盘+10.84%</td></tr>
+</table>
+
+<h3>下周重点关注</h3>
+<table>
+<tr><th>日期</th><th>公司</th><th>类型</th></tr>
+<tr><td>6月2日（周一）</td><td>经济数据：ISM制造业PMI</td><td>宏观</td></tr>
+<tr><td>6月3日（周二）</td><td>JOLTS职位空缺数据</td><td>宏观</td></tr>
+<tr><td>6月4日（周三）</td><td>ADP就业报告</td><td>宏观</td></tr>
+<tr><td>6月5日（周四）</td><td>初请失业金人数</td><td>宏观</td></tr>
+<tr><td>6月6日（周五）</td><td>非农就业报告（NFP）</td><td>宏观重大</td></tr>
+</table>
+</div>
+
+<!-- Section 10: Institutional Views -->
+<h2>10. 机构观点与资金流</h2>
+<div class="section">
+<h3>机构策略摘要</h3>
+<p><strong>摩根士丹利：</strong>维持"中性"评级，关注通胀数据和Fed政策路径。建议关注高质量成长股，对估值过高的科技股保持谨慎。</p>
+<p><strong>高盛：</strong>看好AI基础设施投资主题，上调数据中心相关公司目标价。建议增配半导体和网络设备板块。</p>
+<p><strong>新任Fed主席Warsh：</strong>偏鹰派立场，市场预期可能加息，这与之前降息预期形成180度转向。</p>
+
+<h3>ETF资金流</h3>
+<table>
+<tr><th>ETF</th><th>方向</th><th>观察</th></tr>
+<tr><td>SPY (S&P 500)</td><td class="green">净流入</td><td>大盘ETF资金温和流入</td></tr>
+<tr><td>QQQ (Nasdaq 100)</td><td class="green">净流入</td><td>科技权重股分化，但软件ETF受追捧</td></tr>
+<tr><td>IWM (Russell 2000)</td><td class="red">净流出</td><td>小盘股承压，-0.55%</td></tr>
+</table>
+</div>
+
+<!-- Section 11: Sector Rotation -->
+<h2>11. 板块轮动判断</h2>
+<div class="section">
+<table>
+<tr><th>维度</th><th>信号</th><th>判断</th></tr>
+<tr><td>S&P 500</td><td>0.50 SMA上方，+0.22%</td><td class="green">偏多</td></tr>
+<tr><td>纳斯达克</td><td>50SMA上方，+0.20%</td><td class="green">偏多</td></tr>
+<tr><td>道琼斯</td><td>领涨+0.72%</td><td class="green">偏多</td></tr>
+<tr><td>SOXX</td><td>微跌-0.07%</td><td class="neutral">震荡</td></tr>
+<tr><td>IWM</td><td>-0.55%弱于大盘</td><td class="red">偏弱</td></tr>
+<tr><td>VIX</td><td>21.67偏高</td><td class="neutral">谨慎</td></tr>
+<tr><td>板块轮动</td><td>软件>金融>科技，能源/消费弱</td><td class="green">轮动偏积极</td></tr>
+</table>
+<p style="margin-top:12px;"><strong>当前市场状态：</strong><span class="tag green">强势上涨</span> 市场结构健康，板块轮动积极。软件/AI应用板块成为新主线，金融板块跟随上涨。但七巨头内部严重分化（仅微软上涨），VIX仍偏高，需警惕回调风险。</p>
+</div>
+
+<!-- Section 12: Watchlist -->
+<h2>12. 我的重点关注股观察</h2>
+<div class="section">
+<table>
+<tr><th>代码</th><th>公司</th><th>收盘价</th><th>涨跌幅</th><th>催化剂</th><th>关键价位</th></tr>
+<tr><td><strong>MSFT</strong></td><td>Microsoft</td><td>$450.24</td><td class="green">+5.45%</td><td>财报超预期，云计算强劲</td><td>支撑430 / 阻力460</td></tr>
+<tr><td><strong>DELL</strong></td><td>Dell</td><td>$420.91</td><td class="green">+32.76%</td><td>盘后财报超预期，AI服务器</td><td>关注开盘跳空支撑</td></tr>
+<tr><td><strong>NOW</strong></td><td>ServiceNow</td><td>$124.37</td><td class="green">+14.38%</td><td>AI工作流平台爆发</td><td>支撑115 / 阻力130</td></tr>
+<tr><td><strong>ORCL</strong></td><td>Oracle</td><td>$225.78</td><td class="green">+10.84%</td><td>云基础设施订单</td><td>支撑210 / 阻力230</td></tr>
+<tr><td><strong>CRM</strong></td><td>Salesforce</td><td>$191.10</td><td class="green">+8.47%</td><td>Agentforce AI平台</td><td>支撑180 / 阻力195</td></tr>
+<tr><td><strong>INTC</strong></td><td>Intel</td><td>$114.68</td><td class="red">-5.14%</td><td>产品竞争力担忧</td><td>支撑110 / 阻力120</td></tr>
+</table>
+</div>
+
+<!-- Section 13: Tomorrow's Plan -->
+<h2>13. 明日交易计划 / 观察清单</h2>
+<div class="section">
+<h3>明日重点关注</h3>
+<ul style="margin-left:20px;">
+<li><strong>Dell盘后财报影响：</strong>关注DAI开盘跳空幅度和持续性，AI硬件板块能否延续涨势</li>
+<li><strong>ISM制造业PMI：</strong>6月2日公布，若低于预期可能强化降息预期，利好成长股</li>
+<li><strong>七巨头分化：</strong>关注GOOGL、NVDA能否企稳反弹，若继续下跌可能拖累指数</li>
+<li><strong>软件板块延续性：</strong>NOW、ORCL、CRM等大涨后是否出现获利回吐</li>
+</ul>
+<h3>操作建议</h3>
+<p>市场呈现"软件强、巨头分化"格局，建议关注：(1)软件/AI应用板块的持续性，若回踩不破关键支撑可加仓；(2)Dell盘后走势，若开盘后强势可考虑做多AI硬件；(3)七巨头中微软可作为多头配置，其余等回调企稳再入。</p>
+</div>
+
+<!-- Section 14: Risk -->
+<h2>14. 风险提示</h2>
+<table>
+<tr><th>风险维度</th><th>当前评估</th><th>等级</th></tr>
+<tr><td>宏观风险</td><td>PCE 3.3%超预期，通胀粘性强</td><td><span class="risk-badge risk-high">高</span></td></tr>
+<tr><td>利率风险</td><td>市场从降息转向加息定价，新Fed主席偏鹰</td><td><span class="risk-badge risk-high">高</span></td></tr>
+<tr><td>财报风险</td><td>个别公司财报分化，软件超预期但光通信承压</td><td><span class="risk-badge risk-medium">中</span></td></tr>
+<tr><td>地缘政治</td><td>伊朗局势推升油价，中美关系需观察</td><td><span class="risk-badge risk-medium">中</span></td></tr>
+<tr><td>行业监管</td><td>AI监管政策仍在演进中</td><td><span class="risk-badge risk-medium">中</span></td></tr>
+<tr><td>流动性风险</td><td>市场成交量正常，流动性充足</td><td><span class="risk-badge risk-low">低</span></td></tr>
+<tr><td>估值风险</td><td>软件股估值偏高，需业绩持续验证</td><td><span class="risk-badge risk-medium">中</span></td></tr>
+<tr><td>市场情绪</td><td>VIX 21.67偏高，情绪谨慎偏乐观</td><td><span class="risk-badge risk-medium">中</span></td></tr>
+<tr><td>黑天鹅风险</td><td>中东冲突升级、Fed意外加息等</td><td><span class="risk-badge risk-medium">中</span></td></tr>
+</table>
+<p style="margin-top:12px;"><strong>综合风险等级：</strong><span class="risk-badge risk-medium">中等偏高</span></p>
+<p style="color:#888;font-size:13px;margin-top:8px;">宏观通胀(3.3% PCE)和利率路径不确定性是主要风险。油价高位($89)增加滞胀风险。市场结构看似健康但七巨头分化严重，需警惕指数层面的回调。</p>
+
+<!-- Section 15: Conclusion -->
+<h2>15. 最终结论</h2>
+<div class="section">
+<table>
+<tr><th>维度</th><th>判断</th></tr>
+<tr><td>市场阶段</td><td><span class="tag green">看涨</span> 整体趋势偏多，但需观察持续性</td></tr>
+<tr><td>操作倾向</td><td><span class="tag green">谨慎做多</span> 软件/AI应用主线明确，但VIX偏高需设止损</td></tr>
+</table>
+<h3 style="margin-top:16px;">5个关键观察信号</h3>
+<ol style="margin-left:20px;line-height:2;">
+<li><strong>技术面：</strong>S&P 500和Nasdaq 100均在50日均线上方运行，短期趋势完好，但7600点阻力位需突破确认</li>
+<li><strong>基本面：</strong>软件/AI应用板块业绩验证成功（NOW +14.38%、ORCL +10.84%），AI从硬件向应用层扩散趋势确认</li>
+<li><strong>情绪面：</strong>VIX 21.67偏高但未进入恐慌区域，市场对Dell财报超预期反应积极，风险偏好温和回升</li>
+<li><strong>宏观面：</strong>核心PCE 3.3%和油价$89构成通胀压力双杀，Fed加息预期压制估值扩张空间</li>
+<li><strong>结构面：</strong>七巨头中仅微软上涨，市场宽度改善但巨头分化是隐忧，若科技权重股整体走弱将拖累指数</li>
+</ol>
+</div>
+
+<div class="footer">
+<p>美股收盘日报 {report_date} | 自动生成 by Hermes Agent</p>
+<p>数据来源：腾讯财经API、CNBC | 报告仅供参考，不构成投资建议</p>
+</div>
+
+</body>
+</html>
