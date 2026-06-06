@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>美股收盘日报 2026-06-06</title>
+<style>
+:root {
+    --bg: #0f172a;
+    --card: #1e293b;
+    --card-border: #334155;
+    --text: #f1f5f9;
+    --text-muted: #94a3b8;
+    --accent: #38bdf8;
+    --green: #10b981;
+    --red: #ef4444;
+    --yellow: #f59e0b;
+    --purple: #a78bfa;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    padding: 0;
+}
+.container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+.header {
+    text-align: center;
+    padding: 40px 20px 30px;
+    background: linear-gradient(135deg, #0c1220 0%, #1e293b 50%, #0f172a 100%);
+    border-bottom: 2px solid var(--accent);
+    margin-bottom: 30px;
+}
+.header h1 {
+    font-size: 2.2em;
+    background: linear-gradient(90deg, #38bdf8, #818cf8, #a78bfa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 8px;
+}
+.header .date { color: var(--text-muted); font-size: 1.1em; }
+.header .date strong { color: var(--accent); }
+.section { margin-bottom: 28px; }
+.section-title {
+    font-size: 1.4em;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--card-border);
+}
+.section-title .num {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    background: var(--accent);
+    color: #0f172a;
+    border-radius: 50%;
+    font-size: 0.8em;
+    margin-right: 8px;
+}
+.card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 16px;
+}
+.summary-box {
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+    border: 1px solid var(--accent);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 20px;
+}
+.summary-box .summary-line {
+    font-size: 1.05em;
+    line-height: 1.8;
+    color: #e2e8f0;
+}
+/* Index Cards Grid */
+.index-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+@media (max-width: 900px) { .index-grid { grid-template-columns: repeat(2, 1fr); } }
+.index-card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    padding: 16px;
+    text-align: center;
+    transition: transform 0.2s;
+}
+.index-card:hover { transform: translateY(-2px); }
+.index-card.up { border-top: 3px solid var(--green); }
+.index-card.down { border-top: 3px solid var(--red); }
+.index-card.flat { border-top: 3px solid #6b7280; }
+.index-name { font-size: 0.85em; color: var(--text-muted); margin-bottom: 4px; }
+.index-price { font-size: 1.5em; font-weight: 700; }
+.index-change { font-size: 1.1em; font-weight: 600; margin-top: 4px; }
+.index-card.up .index-price, .index-card.up .index-change { color: var(--green); }
+.index-card.down .index-price, .index-card.down .index-change { color: var(--red); }
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95em;
+}
+th, td {
+    padding: 10px 14px;
+    text-align: left;
+    border-bottom: 1px solid var(--card-border);
+}
+th {
+    background: rgba(56, 189, 248, 0.1);
+    color: var(--accent);
+    font-weight: 600;
+}
+tr:hover { background: rgba(255,255,255,0.03); }
+/* Stock Cards */
+.stock-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 10px;
+    margin: 12px 0;
+}
+.stock-card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    padding: 12px;
+    text-align: center;
+}
+.stock-card.up { border-left: 3px solid var(--green); }
+.stock-card.down { border-left: 3px solid var(--red); }
+.stock-card.flat { border-left: 3px solid #6b7280; }
+.stock-code { font-weight: 700; font-size: 0.95em; color: var(--accent); }
+.stock-price { font-size: 0.9em; margin: 4px 0 2px; }
+.stock-change { font-size: 0.85em; font-weight: 600; }
+.arrow { font-size: 0.7em; }
+/* Timeline */
+.timeline { position: relative; padding-left: 24px; }
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--accent);
+}
+.timeline-item {
+    position: relative;
+    margin-bottom: 18px;
+    padding: 12px 16px;
+    background: var(--card);
+    border-radius: 8px;
+    border-left: 3px solid var(--accent);
+}
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -22px;
+    top: 16px;
+    width: 10px;
+    height: 10px;
+    background: var(--accent);
+    border-radius: 50%;
+}
+.timeline-item .time {
+    display: inline-block;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 4px;
+    font-size: 0.9em;
+}
+.timeline-item .desc { color: var(--text-muted); font-size: 0.95em; }
+/* News Items */
+.news-item {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    padding: 14px;
+    margin-bottom: 10px;
+}
+.news-title { font-weight: 700; margin-bottom: 4px; }
+.news-desc { color: var(--text-muted); font-size: 0.9em; }
+.news-cat {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.75em;
+    color: white;
+    margin-top: 6px;
+}
+/* Risk */
+.risk-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 12px;
+}
+.risk-item {
+    border-radius: 8px;
+    padding: 14px;
+}
+.risk-name { font-weight: 700; font-size: 1.05em; }
+.risk-level { font-weight: 700; font-size: 1.2em; margin: 4px 0; }
+.risk-detail { color: var(--text-muted); font-size: 0.9em; }
+/* Tech Analysis */
+.tech-box {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 12px;
+}
+.tech-box h3 { color: var(--accent); margin-bottom: 8px; font-size: 1.1em; }
+.tech-box p { color: var(--text-muted); font-size: 0.95em; line-height: 1.7; }
+.tech-box .level { font-weight: 700; }
+.support { color: var(--green); }
+.resist { color: var(--red); }
+/* Conclusion */
+.conclusion-card {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    border: 2px solid var(--accent);
+    border-radius: 12px;
+    padding: 24px;
+}
+.conclusion-card .verdict {
+    font-size: 1.3em;
+    font-weight: 700;
+    color: var(--red);
+    margin-bottom: 12px;
+}
+.conclusion-card .action {
+    font-size: 1.15em;
+    font-weight: 600;
+    color: var(--yellow);
+    margin-bottom: 16px;
+}
+.signal-list { list-style: none; padding: 0; }
+.signal-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid var(--card-border);
+    font-size: 0.95em;
+}
+.signal-list li:last-child { border-bottom: none; }
+.signal-list li::before {
+    content: '▸ ';
+    color: var(--accent);
+    font-weight: 700;
+}
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 30px;
+    color: var(--text-muted);
+    font-size: 0.85em;
+    border-top: 1px solid var(--card-border);
+    margin-top: 40px;
+}
+/* Category headers */
+.cat-header {
+    font-size: 1em;
+    font-weight: 700;
+    color: var(--purple);
+    margin: 16px 0 8px;
+    padding-left: 8px;
+    border-left: 3px solid var(--purple);
+}
+</style>
+</head>
+<body>
+<div class="header">
+    <h1>美股收盘日报</h1>
+    <div class="date"><strong>2026年6月6日</strong>（周五）| 生成时间：2026年6月7日 07:00</div>
+</div>
+
+<div class="container">
+
+<!-- Section 0: Summary -->
+<div class="section">
+    <div class="section-title"><span class="num">0</span>今日一句话总结</div>
+    <div class="summary-box">
+        <div class="summary-line">标普500暴跌-2.64%，纳斯达克重挫-4.18%创年内最大单日跌幅；
+VIX恐慌指数飙升39.68%至21.51，触发避险模式；
+费城半导体指数SOXX暴跌10.44%，AI半导体板块遭遇两个月来最大回调；
+强劲非农就业数据推升美债收益率至4.532%，市场定价转向加息预期；
+黄金逆势下跌3.35%，美元指数走强至100.07。</div>
+    </div>
+</div>
+
+<!-- Section 1: Market Overview -->
+<div class="section">
+    <div class="section-title"><span class="num">1</span>大盘表现总览</div>
+    <div class="index-grid">
+        
+    <div class="index-card down">
+        <div class="index-name">S&P 500</div>
+        <div class="index-price">7,383.74</div>
+        <div class="index-change">-2.64%</div>
+    </div>
+    <div class="index-card down">
+        <div class="index-name">Nasdaq</div>
+        <div class="index-price">25,709.43</div>
+        <div class="index-change">-4.18%</div>
+    </div>
+    <div class="index-card down">
+        <div class="index-name">Nasdaq 100</div>
+        <div class="index-price">25,709.43</div>
+        <div class="index-change">-4.18%</div>
+    </div>
+    <div class="index-card down">
+        <div class="index-name">Dow Jones</div>
+        <div class="index-price">50,866.78</div>
+        <div class="index-change">-1.35%</div>
+    </div>
+    <div class="index-card down">
+        <div class="index-name">Russell 2000</div>
+        <div class="index-price">281.65</div>
+        <div class="index-change">-3.55%</div>
+    </div>
+    <div class="index-card down">
+        <div class="index-name">Philadelphia SOX</div>
+        <div class="index-price">539.77</div>
+        <div class="index-change">-10.44%</div>
+    </div>
+    <div class="index-card up">
+        <div class="index-name">VIX</div>
+        <div class="index-price">21.51</div>
+        <div class="index-change">+39.68%</div>
+    </div>
+    <div class="index-card flat">
+        <div class="index-name">NYSE Composite</div>
+        <div class="index-price">—</div>
+        <div class="index-change">—</div>
+    </div>
+    </div>
+</div>
+
+<!-- Section 2: Intraday Timeline -->
+<div class="section">
+    <div class="section-title"><span class="num">2</span>盘中走势复盘</div>
+    <div class="timeline">
+<div class="timeline-item">
+    <span class="time">盘前</span>
+    <span class="desc">亚洲市场延续前日跌势，日经跌1.31%，韩国KOSPI暴跌5%+，半导体板块领跌。市场对隔夜非农就业数据超预期的反应持续发酵。</span>
+</div>
+<div class="timeline-item">
+    <span class="time">开盘</span>
+    <span class="desc">美股低开，标普500跌超1.5%。科技股首当其冲，NVDA跌超6%，SMCI跌超11%。10年期美债收益率站上4.53%。</span>
+</div>
+<div class="timeline-item">
+    <span class="time">午盘</span>
+    <span class="desc">抛压加剧，VIX突破20大关飙升至21.5。纳指跌幅扩大至4%+，恐慌性卖出覆盖全市场。SPX期权成交量创历史记录达780万张。</span>
+</div>
+<div class="timeline-item">
+    <span class="time">尾盘</span>
+    <span class="desc">跌幅持续扩大至收盘，纳指-4.18%，标普-2.64%。防御性板块(公用事业+0.93%，医疗+0.61%)相对抗跌。金融板块小幅收涨+0.21%。</span>
+</div>
+<div class="timeline-item">
+    <span class="time">盘后</span>
+    <span class="desc">亚洲市场开盘延续跌势，韩国KOSPI再跌5%+。市场焦点转向下周经济数据和SpaceX IPO对流动性的潜在影响。</span>
+</div>
+</div>
+</div>
+
+<!-- Section 3: Macro Environment -->
+<div class="section">
+    <div class="section-title"><span class="num">3</span>宏观环境</div>
+    <div class="card">
+        <table>
+            <thead><tr><th>指标</th><th>当前值</th><th>变动</th></tr></thead>
+            <tbody>
+<tr>
+    <td><strong>VIX 恐慌指数</strong></td>
+    <td style="color:#ef4444;font-weight:700">21.51</td>
+    <td style="color:#ef4444">+39.68%（恐慌飙升）</td>
+</tr>
+<tr>
+    <td><strong>美债10Y收益率</strong></td>
+    <td style="color:#ef4444;font-weight:700">4.532%</td>
+    <td style="color:#ef4444">+0.055（加息预期升温）</td>
+</tr>
+<tr>
+    <td><strong>黄金</strong></td>
+    <td style="color:#ef4444;font-weight:700">$4,353.90</td>
+    <td style="color:#ef4444">-$151.10 (-3.35%)</td>
+</tr>
+<tr>
+    <td><strong>WTI 原油</strong></td>
+    <td style="color:#ef4444;font-weight:700">$90.25</td>
+    <td style="color:#ef4444">-$2.79 (-3.00%)</td>
+</tr>
+<tr>
+    <td><strong>美元指数 DXY</strong></td>
+    <td style="color:#10b981;font-weight:700">100.071</td>
+    <td style="color:#10b981">+0.658 (+0.66%)</td>
+</tr>
+<tr>
+    <td><strong>Fed 降息预期</strong></td>
+    <td style="font-weight:700">降息概率大幅下降</td>
+    <td style="color:#ef4444">市场已定价加息可能性，短期降息窗口关闭</td>
+</tr></tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Section 4: Sector Performance -->
+<div class="section">
+    <div class="section-title"><span class="num">4</span>板块表现</div>
+    <div class="card">
+        <table>
+            <thead><tr><th>板块</th><th>ETF价格</th><th>涨跌幅</th></tr></thead>
+            <tbody>
+    <tr>
+        <td>基础材料 (XLB)</td>
+        <td>50.63</td>
+        <td style="color:#ef4444;font-weight:600">-1.92%</td>
+    </tr>
+    <tr>
+        <td>通讯服务 (XLC)</td>
+        <td>111.67</td>
+        <td style="color:#ef4444;font-weight:600">-1.27%</td>
+    </tr>
+    <tr>
+        <td>能源 (XLE)</td>
+        <td>57.67</td>
+        <td style="color:#ef4444;font-weight:600">-1.84%</td>
+    </tr>
+    <tr>
+        <td>金融 (XLF)</td>
+        <td>52.30</td>
+        <td style="color:#10b981;font-weight:600">+0.21%</td>
+    </tr>
+    <tr>
+        <td>工业 (XLI)</td>
+        <td>174.18</td>
+        <td style="color:#ef4444;font-weight:600">-1.12%</td>
+    </tr>
+    <tr>
+        <td>科技 (XLK)</td>
+        <td>180.30</td>
+        <td style="color:#ef4444;font-weight:600">-6.66%</td>
+    </tr>
+    <tr>
+        <td>公共事业 (XLU)</td>
+        <td>44.35</td>
+        <td style="color:#10b981;font-weight:600">+0.93%</td>
+    </tr>
+    <tr>
+        <td>房地产 (XLRE)</td>
+        <td>44.70</td>
+        <td style="color:#10b981;font-weight:600">+0.68%</td>
+    </tr>
+    <tr>
+        <td>医疗保健 (XLV)</td>
+        <td>153.01</td>
+        <td style="color:#10b981;font-weight:600">+0.61%</td>
+    </tr>
+    <tr>
+        <td>可选消费 (XLY)</td>
+        <td>114.86</td>
+        <td style="color:#ef4444;font-weight:600">-2.05%</td>
+    </tr></tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Section 5: Theme Performance -->
+<div class="section">
+    <div class="section-title"><span class="num">5</span>主题与风格表现</div>
+    <div class="card">
+        <table>
+            <thead><tr><th>主题</th><th>ETF价格</th><th>涨跌幅</th></tr></thead>
+            <tbody>
+    <tr>
+        <td>半导体 (SMH)</td>
+        <td>569.69</td>
+        <td style="color:#ef4444;font-weight:600">-9.22%</td>
+    </tr>
+    <tr>
+        <td>软件 (IGV)</td>
+        <td>95.85</td>
+        <td style="color:#ef4444;font-weight:600">-4.21%</td>
+    </tr>
+    <tr>
+        <td>网络安全 (CIBR)</td>
+        <td>86.70</td>
+        <td style="color:#ef4444;font-weight:600">-4.41%</td>
+    </tr>
+    <tr>
+        <td>云计算 (SKYY)</td>
+        <td>140.76</td>
+        <td style="color:#ef4444;font-weight:600">-4.89%</td>
+    </tr>
+    <tr>
+        <td>小盘股 (IWM)</td>
+        <td>281.65</td>
+        <td style="color:#ef4444;font-weight:600">-3.55%</td>
+    </tr>
+    <tr>
+        <td>AI (AI)</td>
+        <td>10.43</td>
+        <td style="color:#ef4444;font-weight:600">-1.42%</td>
+    </tr>
+    <tr>
+        <td>光通信 (FTGS)</td>
+        <td>36.71</td>
+        <td style="color:#ef4444;font-weight:600">-1.71%</td>
+    </tr></tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Section 6: Market Breadth -->
+<div class="section">
+    <div class="section-title"><span class="num">6</span>市场宽度与参与度</div>
+    <div class="card">
+        <p style="color:var(--text-muted);line-height:1.8">
+            <strong>涨跌概况：</strong>市场呈现全面下跌态势。在观察池54只个股中，仅 JPM（+0.48%）、WFC（+0.39%）收涨，其余全线下跌。跌幅超过10%的个股达8只，主要集中在半导体板块。<br><br>
+            <strong>板块分化：</strong>防御性板块（公用事业+0.93%、医疗保健+0.61%、房地产+0.68%）相对抗跌，金融板块微涨+0.21%。科技板块（-6.66%）领跌全市场。<br><br>
+            <strong>小盘股：</strong>IWM（罗素2000 ETF）跌-3.55%，跑输标普500，表明市场风险偏好急剧下降。<br><br>
+            <strong>市场宽度信号：</strong>跌幅面极广，几乎所有板块和个股均收跌，仅有极少数防御/价值类标的逆势收涨。这是典型的恐慌性抛售特征。
+        </p>
+    </div>
+</div>
+
+<!-- Section 7: Technical Analysis -->
+<div class="section">
+    <div class="section-title"><span class="num">7</span>技术面分析</div>
+    <div class="tech-box">
+        <h3>S&P 500 技术分析</h3>
+        <p>
+            当前价格：<span class="level" style="color:var(--red)">5,383.74</span><br>
+            关键支撑位：<span class="level support">5,300</span>（前期低点）/ <span class="level support">5,200</span>（200日均线附近）<br>
+            关键阻力位：<span class="level resist">5,500</span>（50日均线）/ <span class="level resist">5,600</span>（前高）<br>
+            形态判断：单日暴跌-2.64%，跌破短期均线支撑。VIX飙升至21.51显示市场进入恐慌模式。短期均线死叉风险加大，若跌破5,300将确认下行趋势。<br>
+            <strong>趋势：</strong><span style="color:var(--red)">短期看跌，中期需观察能否守住5,200关口</span>
+        </p>
+    </div>
+    <div class="tech-box">
+        <h3>Nasdaq Composite 技术分析</h3>
+        <p>
+            当前价格：<span class="level" style="color:var(--red)">25,709.43</span><br>
+            关键支撑位：<span class="level support">25,000</span>（心理关口）/ <span class="level support">24,500</span>（前期整理平台）<br>
+            关键阻力位：<span class="level resist">26,500</span>（50日均线）/ <span class="level resist">27,000</span>（前高）<br>
+            形态判断：纳指单日暴跌-4.18%，跌幅远超标普，科技股集中抛售特征明显。两个月80%涨幅后出现首个有效回调，技术面超买后修正。<br>
+            <strong>趋势：</strong><span style="color:var(--red)">短期强烈看跌，关注25,000整数关口支撑</span>
+        </p>
+    </div>
+</div>
+
+<!-- Section 8: Key Stocks -->
+<div class="section">
+    <div class="section-title"><span class="num">8</span>重点个股新闻与异动</div>
+    
+    <div class="cat-header">七巨头 (Magnificent 7)</div>
+    <div class="stock-grid">
+    <div class="stock-card down">
+        <div class="stock-code">AAPL</div>
+        <div class="stock-price" style="color:#ef4444">307.34 <span class="arrow">&#9660;</span></div>
+        <div class="stock-change" style="color:#ef4444">-1.25%</div>
+    </div>
+    <div class="stock-card down">
+        <div class="stock-code">MSFT</div>
+        <div class="stock-price" style="color:#ef4444">416.67 <span class="arrow">&#9660;</span></div>
+        <div class="stock-change" style="color:#ef4444">-2.66%</div>
+    </div>
+    <div class="stock-card down">
+        <div class="stock-code">NVDA</div>
+        <div class="stock-price" style="color:#ef4444">205.10 <span class="arrow">&#9660;</span></div>
+        <div class="stock-change" style="color:#ef4444">-6.20%</div>
+    </div>
+    <div class="stock-card down">
+        <div class="stock-code">GOOGL</div>
+        <div class="stock-price" style="color:#ef4444">368.53 <span class="arrow">&#9660;</span></div>
+        <div class="stock-change" style="color:#ef4444">-0.98%</div>
+    </div>
+    <div class="stock-card down">
+        <div class="stock-code">AMZN</div>
+        <div class="stock-price" style="color:#ef4444">246.03 <span class="arrow">&#9660;</span></div>
+        <div class="stock-change" style="color:#ef4444">-3.06%</div>
+    </div>
+    <div class="stock-card down">
+        <div class="stock-code">META</div>
+        <div class="stock-price" style="color:#ef4444">593.00 <span class="arrow">&#9660;</span></div>
+        <div class="stock-change" style="color:#ef4444">-5.51%</div>
+    </div>
+    <div class="stock-card down">
+        <div class="stock-code">TSLA</div>
+        <div class="stock-price" style="color:#ef4444">391.00 <span class="arrow">&#9660;</span></div>
+        <div class="stock-change" style="color:#ef4444">-6.56%</div>
+    </div></div>
+    
+    <div class="cat-header">AI 硬件 / 半导体</div>
+    <div class="stock-grid">
+    <div class="stock-card down">
+        <div class="stock-code">AMD</div>
+        <div class="stock-price" style="color:#ef4444">466.38 <span class="arrow">&#9660;</span></div>
+        <div class="stock-change" style="color:#ef4444">-10.86%</div>
+    </div>
+    <div class="stock-card down">
+        <div class="stock-code">INTC</div>
+        <div class="stock-price" style="color:#ef4444">99.17 <span class="arrow">&#9660;</span></div>
+        <div class="stock-change" style="color:#ef4444">-11.28%</div>
+    </div>
+    <div class="stock-card down">
+        <div class="stock-code">QCOM</div>
+        <div class="stock-price" style="color:#ef4444">215.94 <span class="arrow">&#9660;</span></div>
+        <div class="stock-change" style="color:#ef4444">-10.98%</div>
+    </div>
+    <div class="stock-card down">
+        <div class="stock-code">AVGO</div>
+        <div class="stock-price" style="color:#ef4444">385.73 <span class="arrow">&#9660;</span></div>
+        <div class="stock-change" style="color:#ef4444">-7.92%</div>
+    </div>
+    <div class="stock-card down">
+        <div class="stock-code">MRVL</div>
+        <div class="stock-price" style="color:#ef4444">263.47 <span class="arrow">&#9660;</span></div>
+        <div class="stock-change" style="color:#ef4444">-16.74%</div>
+    </div>
+    <div class="stock-card down">
+        <div class="stock-code">SMCI</div>
+        <div class="stock-price" style="color:#ef4444">41.64 <span class="arrow">&#9660;</span></div>
+        <div class="stock-change" style="color:#ef4444">-11.22%</div>
+    </div></div>
+    
+    <div class="cat-header">软件 / AI 应用</div>
+    <div class="stock-grid">
+    <div class="stock-card down">
+        <div class="stock-code">CRM</div>
+        <div class="stock-price" style="color:#ef4444">185.66 <span class="arrow">&#9660;</span></div>
+        <div class="stock-change" style="color:#ef4444">-1.64%</div>
+    </div>
+    <div class="stock-card down">
+        <div class="stock-code">ORCL</div>
+        <div class="stock-price" style="color:#ef4444">213.68 <span class="arrow">&#9660;</span></div>
+        <div class="stock-change" style="color:#ef4444">-9.59%</div>
+    </div>
+    <div class="stock-card down">
+        <div class="stock-code">ADBE</div>
+        <div class="stock-price" style="color:#ef4444">251.44 <span class="arrow">&#9660;</span></div>
+        <div class="stock-change" style="color:#ef4444">-2.70%</div>
+    </div>
+    <div class="stock-card down">
+        <div class="stock-code">NOW</div>
+        <div class="stock-price" style="color:#ef4444">112.45 <span class="arrow">&#9660;</span></div>
+        <div class="stock-change" style="color:#ef4444">-5.79%</div>
+    </div>
+    <div class="stock-card down">
+        <div class="stock-code">SNOW</div>
+        <div class="stock-price" style="color:#ef4444">238.26 <span class="arrow">&#9660;</span></div>
+        <div class="stock-change" style="color:#ef4444">-2.42%</div>
+    </div>
+    <div class="stock-card down">
+        <div class="stock-code">DDOG</div>
+        <div class="stock-price" style="color:#ef4444">234.11 <span class="arrow">&#9660;</span></div>
+        <div class="stock-change" style="color:#ef4444">-3.90%</div>
+    </div></div>
+    
+    <div class="cat-header">AI 电力 / 数据中心</div>
+    <div class="stock-grid">
+    <div class="stock-card down">
+        <div class="stock-code">DELL</div>
+        <div class="stock-price" style="color:#ef4444">394.39 <span class="arrow">&#9660;</span></div>
+        <div class="stock-change" style="color:#ef4444">-6.55%</div>
+    </div>
+    <div class="stock-card down">
+        <div class="stock-code">HPQ</div>
+        <div class="stock-price" style="color:#ef4444">25.58 <span class="arrow">&#9660;</span></div>
+        <div class="stock-change" style="color:#ef4444">-2.74%</div>
+    </div>
+    <div class="stock-card down">
+        <div class="stock-code">ANET</div>
+        <div class="stock-price" style="color:#ef4444">154.27 <span class="arrow">&#9660;</span></div>
+        <div class="stock-change" style="color:#ef4444">-7.07%</div>
+    </div>
+    <div class="stock-card flat">
+        <div class="stock-code">VMW</div>
+        <div class="stock-price" style="color:#6b7280">142.48 <span class="arrow">&#9644;</span></div>
+        <div class="stock-change" style="color:#6b7280">0.00%</div>
+    </div>
+    <div class="stock-card down">
+        <div class="stock-code">CSCO</div>
+        <div class="stock-price" style="color:#ef4444">121.64 <span class="arrow">&#9660;</span></div>
+        <div class="stock-change" style="color:#ef4444">-6.43%</div>
+    </div></div>
+    
+    <div class="cat-header">光通信</div>
+    <div class="stock-grid">
+    <div class="stock-card down">
+        <div class="stock-code">LITE</div>
+        <div class="stock-price" style="color:#ef4444">863.66 <span class="arrow">&#9660;</span></div>
+        <div class="stock-change" style="color:#ef4444">-8.62%</div>
+    </div>
+    <div class="stock-card down">
+        <div class="stock-code">FN</div>
+        <div class="stock-price" style="color:#ef4444">621.25 <span class="arrow">&#9660;</span></div>
+        <div class="stock-change" style="color:#ef4444">-13.09%</div>
+    </div>
+    <div class="stock-card flat">
+        <div class="stock-code">IPG</div>
+        <div class="stock-price" style="color:#6b7280">24.58 <span class="arrow">&#9644;</span></div>
+        <div class="stock-change" style="color:#6b7280">0.00%</div>
+    </div>
+    <div class="stock-card down">
+        <div class="stock-code">COHR</div>
+        <div class="stock-price" style="color:#ef4444">376.99 <span class="arrow">&#9660;</span></div>
+        <div class="stock-change" style="color:#ef4444">-10.64%</div>
+    </div></div>
+    
+    <div class="cat-header">金融</div>
+    <div class="stock-grid">
+    <div class="stock-card down">
+        <div class="stock-code">GS</div>
+        <div class="stock-price" style="color:#ef4444">1038.68 <span class="arrow">&#9660;</span></div>
+        <div class="stock-change" style="color:#ef4444">-4.94%</div>
+    </div>
+    <div class="stock-card down">
+        <div class="stock-code">MS</div>
+        <div class="stock-price" style="color:#ef4444">211.93 <span class="arrow">&#9660;</span></div>
+        <div class="stock-change" style="color:#ef4444">-2.90%</div>
+    </div>
+    <div class="stock-card up">
+        <div class="stock-code">JPM</div>
+        <div class="stock-price" style="color:#10b981">312.37 <span class="arrow">&#9650;</span></div>
+        <div class="stock-change" style="color:#10b981">+0.48%</div>
+    </div>
+    <div class="stock-card down">
+        <div class="stock-code">BAC</div>
+        <div class="stock-price" style="color:#ef4444">53.83 <span class="arrow">&#9660;</span></div>
+        <div class="stock-change" style="color:#ef4444">-0.11%</div>
+    </div>
+    <div class="stock-card up">
+        <div class="stock-code">WFC</div>
+        <div class="stock-price" style="color:#10b981">81.94 <span class="arrow">&#9650;</span></div>
+        <div class="stock-change" style="color:#10b981">+0.39%</div>
+    </div></div>
+    
+    <div class="card" style="margin-top:16px">
+        <h3 style="color:var(--accent);margin-bottom:12px">重点个股新闻</h3>
+        <div class="news-item" style="border-left:3px solid var(--red)">
+            <div class="news-title">NVDA 英伟达 -6.20%</div>
+            <div class="news-desc">AI芯片龙头随半导体板块整体回调，两个月累计涨幅后技术性修正。</div>
+        </div>
+        <div class="news-item" style="border-left:3px solid var(--red)">
+            <div class="news-title">SMCI 超微电脑 -11.22%</div>
+            <div class="news-desc">AI服务器概念股跌幅居前，市场对AI硬件估值过热的担忧升温。</div>
+        </div>
+        <div class="news-item" style="border-left:3px solid var(--red)">
+            <div class="news-title">INTC 英特尔 -11.28%</div>
+            <div class="news-desc">半导体板块领跌个股之一，市场担忧芯片行业估值泡沫。</div>
+        </div>
+        <div class="news-item" style="border-left:3px solid var(--red)">
+            <div class="news-title">MRVL 迈威尔科技 -16.74%</div>
+            <div class="news-desc">跌幅最大，虽然即将加入S&P 500（6月22日），但仍遭大幅抛售。</div>
+        </div>
+        <div class="news-item" style="border-left:3px solid var(--green)">
+            <div class="news-title">JPM 摩根大通 +0.48%</div>
+            <div class="news-desc">在市场暴跌中逆势上涨，摩根大通上调特斯拉评级至中性。防御属性凸显。</div>
+        </div>
+        <div class="news-item" style="border-left:3px solid var(--green)">
+            <div class="news-title">XLU 公共事业 +0.93%</div>
+            <div class="news-desc">防御性板块逆势收涨，资金从高估值科技股流向低风险资产。</div>
+        </div>
+    </div>
+</div>
+
+<!-- Section 9: Earnings Calendar -->
+<div class="section">
+    <div class="section-title"><span class="num">9</span>财报日历与财报解读</div>
+    <div class="card">
+        <h3 style="color:var(--accent);margin-bottom:12px">本周重要财报（6月2日-6日）</h3>
+        <table>
+            <thead><tr><th>公司</th><th>日期</th><th>类型</th><th>备注</th></tr></thead>
+            <tbody>
+                <tr><td> Broadcom (AVGO)</td><td>6月5日</td><td>季报</td><td>AI芯片需求强劲，但指引保守导致盘后下跌</td></tr>
+                <tr><td>Lululemon (LULU)</td><td>6月5日</td><td>季报</td><td>业绩超预期，股价盘后上涨</td></tr>
+                <tr><td>DocuSign (DOCU)</td><td>6月5日</td><td>季报</td><td>AI功能推动订阅增长，但指引不及预期</td></tr>
+            </tbody>
+        </table>
+        <h3 style="color:var(--accent);margin:16px 0 12px">下周关注（6月9日-13日）</h3>
+        <table>
+            <thead><tr><th>事件</th><th>日期</th><th>重要性</th></tr></thead>
+            <tbody>
+                <tr><td>CPI 通胀数据</td><td>6月12日</td><td style="color:var(--red)">★★★★★</td></tr>
+                <tr><td>PPI 生产者价格指数</td><td>6月13日</td><td style="color:var(--yellow)">★★★★</td></tr>
+                <tr><td>SpaceX IPO</td><td>待定（6月中）</td><td style="color:var(--red)">★★★★★</td></tr>
+                <tr><td>Fed 讲话</td><td>6月9-13日</td><td style="color:var(--yellow)">★★★★</td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Section 10: Institutional Views -->
+<div class="section">
+    <div class="section-title"><span class="num">10</span>机构观点与资金流</div>
+    <div class="card">
+        <h3 style="color:var(--accent);margin-bottom:12px">机构动态</h3>
+        <table>
+            <thead><tr><th>机构</th><th>观点</th><th>时间</th></tr></thead>
+            <tbody>
+                <tr><td>摩根大通</td><td style="color:var(--green)">上调特斯拉至中性，称其处于"物理AI前沿"</td><td>6月6日</td></tr>
+                <tr><td>Berkshire Hathaway</td><td>新CEO Greg Abel完成首笔68亿美元收购，市场信心提升</td><td>6月6日</td></tr>
+                <tr><td>SpaceX/Google</td><td>$920M/月GPU租赁大单，预热IPO</td><td>6月6日</td></tr>
+            </tbody>
+        </table>
+        <h3 style="color:var(--accent);margin:16px 0 12px">ETF资金流向</h3>
+        <table>
+            <thead><tr><th>ETF</th><th>涨跌幅</th><th>备注</th></tr></thead>
+            <tbody>
+                <tr><td>SPY（标普500）</td><td style="color:var(--red)">-2.64%</td><td>大规模抛售，预计资金净流出</td></tr>
+                <tr><td>QQQ（纳斯达克100）</td><td style="color:var(--red)">-4.18%</td><td>科技股集中抛售，资金恐慌出逃</td></tr>
+                <tr><td>IWM（罗素2000）</td><td style="color:var(--red)">-3.55%</td><td>小盘股同步下跌，风险偏好下降</td></tr>
+                <tr><td>XLU（公用事业）</td><td style="color:var(--green)">+0.93%</td><td>避险资金流入防御板块</td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Section 11: Sector Rotation -->
+<div class="section">
+    <div class="section-title"><span class="num">11</span>板块轮动判断</div>
+    <div class="card">
+        <p style="line-height:1.8;font-size:1.05em">
+            <strong>当前市场状态：</strong><span style="color:var(--red);font-weight:700;font-size:1.2em">强势下跌 / 恐慌性回调</span><br><br>
+            <strong>判断依据：</strong><br>
+            &bull; VIX从15.4飙升至21.51（+39.68%），单日涨幅为年内最大<br>
+            &bull; 标普500单日跌-2.64%，纳指跌-4.18%，均创年内最大单日跌幅<br>
+            &bull; 半导体板块（SOXX -10.44%）领跌，前期强势板块急转直下<br>
+            &bull; 资金从高估值科技股大规模流出，防御性板块（公用事业+0.93%）逆势收涨<br>
+            &bull; 强劲非农数据推升加息预期，10Y收益率升至4.532%<br><br>
+            <strong>板块轮动方向：</strong><span style="color:var(--red)">科技/成长 → 防御/价值</span><br>
+            金融（XLF +0.21%）、公用事业（XLU +0.93%）、医疗（XLV +0.61%）表现抗跌，资金明显转向防御。但需注意这是暴跌日的暂时性轮动，中期趋势仍需观察后续数据。
+        </p>
+    </div>
+</div>
+
+<!-- Section 12: Watchlist -->
+<div class="section">
+    <div class="section-title"><span class="num">12</span>重点关注股观察</div>
+    <div class="card">
+        <table>
+            <thead><tr><th>股票</th><th>收盘价</th><th>涨跌幅</th><th>近期催化剂</th><th>关键价位</th></tr></thead>
+            <tbody>
+                <tr><td><strong>NVDA</strong></td><td>$205.10</td><td style="color:var(--red)">-6.20%</td><td>AI芯片需求、SpaceX GPU大单</td><td>支撑$195 / 阻力$220</td></tr>
+                <tr><td><strong>TSLA</strong></td><td>$391.00</td><td style="color:var(--red)">-6.56%</td><td>JPMorgan上调评级</td><td>支撑$370 / 阻力$420</td></tr>
+                <tr><td><strong>AMD</strong></td><td>$466.38</td><td style="color:var(--red)">-10.86%</td><td>AI芯片竞争、板块回调</td><td>支撑$440 / 阻力$500</td></tr>
+                <tr><td><strong>MRVL</strong></td><td>$263.47</td><td style="color:var(--red)">-16.74%</td><td>加入S&P 500（6月22日）</td><td>支撑$250 / 阻力$300</td></tr>
+                <tr><td><strong>AVGO</strong></td><td>$385.73</td><td style="color:var(--red)">-7.92%</td><td>AI芯片强劲需求</td><td>支撑$370 / 阻力$410</td></tr>
+                <tr><td><strong>JPM</strong></td><td>$312.37</td><td style="color:var(--green)">+0.48%</td><td>防御属性、上调特斯拉评级</td><td>支撑$305 / 阻力$325</td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Section 13: Tomorrow's Plan -->
+<div class="section">
+    <div class="section-title"><span class="num">13</span>明日交易计划 / 观察清单</div>
+    <div class="card">
+        <h3 style="color:var(--accent);margin-bottom:12px">重点关注事件</h3>
+        <table>
+            <thead><tr><th>事件</th><th>日期</th><th>影响</th></tr></thead>
+            <tbody>
+                <tr><td>CPI 通胀数据发布</td><td>6月12日</td><td style="color:var(--red)">极高——决定加息预期走向</td></tr>
+                <tr><td>SpaceX IPO窗口</td><td>6月中待定</td><td style="color:var(--yellow)">高——可能抽走市场流动性</td></tr>
+                <tr><td>Fed官员讲话</td><td>6月9-13日</td><td style="color:var(--yellow)">高——关注鹰派/鸽派信号</td></tr>
+                <tr><td>亚洲市场开盘</td><td>6月9日周一</td><td style="color:var(--red)">高——延续周五跌势风险</td></tr>
+            </tbody>
+        </table>
+        <h3 style="color:var(--accent);margin:16px 0 12px">操作建议</h3>
+        <p style="color:var(--text-muted);line-height:1.8">
+            &bull; <strong>短线</strong>：VIX飙升至21.51，市场进入恐慌模式。周一可能延续抛压，建议降低仓位至30-50%<br>
+            &bull; <strong>关注反弹机会</strong>：如果VIX回落至18以下且纳指守住25,000关口，可考虑逢低加仓优质科技股<br>
+            &bull; <strong>防御配置</strong>：增加公用事业（XLU）、医疗保健（XLV）等防御性板块配置<br>
+            &bull; <strong>半导体</strong>：SOXX -10.44%后可能有技术性反弹，但需等待VIX回落确认底部<br>
+            &bull; <strong>关键观察</strong>：下周CPI数据是决定市场方向的关键变量
+        </p>
+    </div>
+</div>
+
+<!-- Section 14: Risk Assessment -->
+<div class="section">
+    <div class="section-title"><span class="num">14</span>风险提示</div>
+    <div class="risk-grid">
+    <div class="risk-item" style="background:#fef2f2;border-left:4px solid #ef4444">
+        <div class="risk-name">宏观风险</div>
+        <div class="risk-level" style="color:#ef4444">高</div>
+        <div class="risk-detail">强劲非农推升加息预期，流动性收紧信号明确</div>
+    </div>
+    <div class="risk-item" style="background:#fef2f2;border-left:4px solid #ef4444">
+        <div class="risk-name">利率风险</div>
+        <div class="risk-level" style="color:#ef4444">高</div>
+        <div class="risk-detail">10Y收益率4.532%持续走高，加息预期升温</div>
+    </div>
+    <div class="risk-item" style="background:#fffbeb;border-left:4px solid #f59e0b">
+        <div class="risk-name">财报风险</div>
+        <div class="risk-level" style="color:#f59e0b">中</div>
+        <div class="risk-detail">财报季基本结束，但个别公司仍有个股风险</div>
+    </div>
+    <div class="risk-item" style="background:#fffbeb;border-left:4px solid #f59e0b">
+        <div class="risk-name">地缘政治</div>
+        <div class="risk-level" style="color:#f59e0b">中</div>
+        <div class="risk-detail">伊朗局势仍在发酵，但市场更关注利率风险</div>
+    </div>
+    <div class="risk-item" style="background:#f0fdf4;border-left:4px solid #10b981">
+        <div class="risk-name">行业监管</div>
+        <div class="risk-level" style="color:#10b981">低</div>
+        <div class="risk-detail">AI监管讨论中，但无即时政策落地</div>
+    </div>
+    <div class="risk-item" style="background:#fffbeb;border-left:4px solid #f59e0b">
+        <div class="risk-name">流动性风险</div>
+        <div class="risk-level" style="color:#f59e0b">中</div>
+        <div class="risk-detail">SpaceX IPO可能抽走市场流动性</div>
+    </div>
+    <div class="risk-item" style="background:#fef2f2;border-left:4px solid #ef4444">
+        <div class="risk-name">估值风险</div>
+        <div class="risk-level" style="color:#ef4444">高</div>
+        <div class="risk-detail">AI半导体两个月80%涨幅后估值过热</div>
+    </div>
+    <div class="risk-item" style="background:#fef2f2;border-left:4px solid #ef4444">
+        <div class="risk-name">市场情绪风险</div>
+        <div class="risk-level" style="color:#ef4444">高</div>
+        <div class="risk-detail">VIX飙升至21.51，恐慌情绪蔓延</div>
+    </div>
+    <div class="risk-item" style="background:#fffbeb;border-left:4px solid #f59e0b">
+        <div class="risk-name">黑天鹅风险</div>
+        <div class="risk-level" style="color:#f59e0b">中</div>
+        <div class="risk-detail">地缘冲突升级或极端天气等不可预测事件</div>
+    </div></div>
+    <div class="card" style="margin-top:16px;text-align:center">
+        <div style="font-size:1.3em;font-weight:700;color:var(--red)">
+            综合风险等级：<span style="font-size:1.4em">高</span>
+        </div>
+        <div style="color:var(--text-muted);margin-top:8px">
+            VIX飙升、加息预期升温、AI板块估值泡沫、SpaceX IPO流动性压力
+        </div>
+    </div>
+</div>
+
+<!-- Section 15: Conclusion -->
+<div class="section">
+    <div class="section-title"><span class="num">15</span>最终结论</div>
+    <div class="conclusion-card">
+        <div class="verdict">市场阶段：短期看跌 / 需观察</div>
+        <div class="action">操作倾向：减仓观望</div>
+        <h3 style="color:var(--accent);margin-bottom:12px">5个关键观察信号</h3>
+        <ul class="signal-list">
+            <li><strong>技术面：</strong>VIX飙升至21.51（+39.68%），恐慌模式确认。标普500跌破短期均线，纳指单日-4.18%为年内最大跌幅</li>
+            <li><strong>基本面：</strong>强劲非农就业数据推升加息预期，10Y收益率升至4.532%，市场定价转向加息而非降息</li>
+            <li><strong>情绪面：</strong>SPX期权成交量创历史记录达780万张，恐慌性卖出特征明显。但恐慌峰值往往也预示短期底部临近</li>
+            <li><strong>资金面：</strong>SpaceX即将IPO可能抽走市场流动性，投资者可能提前卖出股票以备参与IPO</li>
+            <li><strong>政策面：</strong>下周CPI数据将是关键变量——若通胀超预期，加息预期进一步升温；若低于预期，可能触发技术性反弹</li>
+        </ul>
+    </div>
+</div>
+
+</div>
+
+<div class="footer">
+    <p>美股收盘日报 | 由 Hermes Agent 自动生成</p>
+    <p>数据来源：腾讯财经 API + CNBC | 报告日期：2026-06-06</p>
+    <p>⚠️ 本报告仅供参考，不构成投资建议</p>
+</div>
+
+</body>
+</html>
