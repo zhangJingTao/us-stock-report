@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>美股收盘日报 2026-06-09</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif; background: #0d1117; color: #e6edf3; line-height: 1.6; }
+.container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+h1 { text-align: center; font-size: 2em; margin-bottom: 10px; color: #58a6ff; }
+h2 { font-size: 1.5em; margin: 30px 0 15px; padding-bottom: 8px; border-bottom: 2px solid #30363d; color: #58a6ff; }
+h3 { font-size: 1.2em; margin: 20px 0 10px; color: #79c0ff; }
+.subtitle { text-align: center; color: #8b949e; margin-bottom: 30px; }
+.summary-box { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 20px; margin: 20px 0; }
+.summary-box p { font-size: 1.05em; margin: 8px 0; }
+.card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 15px; margin: 15px 0; }
+.card { background: #161b22; border: 1px solid #30363d; border-radius: 10px; padding: 15px; text-align: center; }
+.card .name { font-size: 0.9em; color: #8b949e; margin-bottom: 5px; }
+.card .price { font-size: 1.4em; font-weight: bold; }
+.card .change { font-size: 1.1em; margin-top: 5px; }
+.up { color: #3fb950; }
+.down { color: #f85149; }
+.flat { color: #8b949e; }
+table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+th, td { padding: 10px 14px; text-align: left; border-bottom: 1px solid #30363d; }
+th { background: #161b22; color: #58a6ff; font-weight: 600; }
+tr:hover { background: #161b22; }
+.section { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 20px; margin: 20px 0; }
+.tag { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 0.85em; font-weight: 500; }
+.tag-up { background: rgba(63,185,80,0.15); color: #3fb950; }
+.tag-down { background: rgba(248,81,73,0.15); color: #f85149; }
+.tag-flat { background: rgba(139,148,158,0.15); color: #8b949e; }
+.timeline { position: relative; padding-left: 30px; margin: 15px 0; }
+.timeline::before { content: ''; position: absolute; left: 8px; top: 0; bottom: 0; width: 2px; background: #30363d; }
+.timeline-item { position: relative; margin: 15px 0; }
+.timeline-item::before { content: ''; position: absolute; left: -26px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: #58a6ff; border: 2px solid #0d1117; }
+.timeline-item .time { font-weight: bold; color: #58a6ff; }
+.risk-high { color: #f85149; font-weight: bold; }
+.risk-medium { color: #d29922; font-weight: bold; }
+.risk-low { color: #3fb950; font-weight: bold; }
+.conclusion-box { background: linear-gradient(135deg, #161b22 0%, #1c2333 100%); border: 1px solid #58a6ff; border-radius: 12px; padding: 25px; margin: 20px 0; }
+.footer { text-align: center; color: #484f58; margin-top: 40px; padding: 20px; border-top: 1px solid #30363d; font-size: 0.9em; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>&#x1F4C8; 美股收盘日报 2026-06-09</h1>
+<p class="subtitle">周二 | 标普500 7,386.65 (-0.26%) | 纳斯达克 25,678.82 (-0.97%) | VIX 19.87 (+5.02%)</p>
+
+<!-- Section 0: 一句话总结 -->
+<h2>&#x1F4CA; 0. 今日一句话总结</h2>
+<div class="summary-box">
+<p>&#x2022; <strong>标普500微跌0.26%</strong>至7,386.65，纳指跌0.97%，科技/半导体板块持续承压，资金向价值股轮动。</p>
+<p>&#x2022; <strong>VIX飙升5.02%至19.87</strong>，美伊紧张局势升级引发避险情绪，盘后美军对伊朗发动打击，期货进一步走低。</p>
+<p>&#x2022; <strong>道琼斯逆势上涨0.17%</strong>，银行股（BAC +1.47%, WFC +1.28%）表现强劲，市场风格切换明显。</p>
+<p>&#x2022; <strong>光通信板块暴跌</strong>：COHR -11.44%, LITE -8.22%, SMCI -7.62%，AI硬件链条遭遇获利回吐。</p>
+<p>&#x2022; <strong>明日CPI数据成焦点</strong>：市场预期5月CPI年率4.2%，若超预期将加剧加息恐慌。</p>
+</div>
+
+<!-- Section 1: 大盘表现总览 -->
+<h2>&#x1F4CB; 1. 大盘表现总览</h2>
+<div class="card-grid">
+<div class="card"><div class="name">标普500</div><div class="price">7,386.65</div><div class="change down">-0.26%</div></div>
+<div class="card"><div class="name">纳斯达克综合</div><div class="price">25,678.82</div><div class="change down">-0.97%</div></div>
+<div class="card"><div class="name">纳斯达克100</div><div class="price">29,084.50</div><div class="change down">-1.12%</div></div>
+<div class="card"><div class="name">道琼斯工业</div><div class="price">50,872.11</div><div class="change up">+0.17%</div></div>
+<div class="card"><div class="name">罗素2000 (IWM)</div><div class="price">285.02</div><div class="change up">+0.32%</div></div>
+<div class="card"><div class="name">费城半导体 (SOXX)</div><div class="price">562.14</div><div class="change down">-1.63%</div></div>
+<div class="card"><div class="name">VIX 恐慌指数</div><div class="price">19.87</div><div class="change up">+5.02%</div></div>
+<div class="card"><div class="name">NYSE综合</div><div class="price" style="color:#8b949e">&#x2014;</div><div class="change flat">数据暂不可用</div></div>
+</div>
+
+<!-- Section 2: 盘中走势复盘 -->
+<h2>&#x1F5FA; 2. 盘中走势复盘</h2>
+<div class="section">
+<div class="timeline">
+<div class="timeline-item"><span class="time">盘前</span>：美伊紧张局势笼罩市场，三大指数期货低开，VIX在亚洲时段已升至19上方，市场避险情绪升温。</div>
+<div class="timeline-item"><span class="time">开盘</span>：标普500低开0.3%，科技股首当其冲，AAPL -2.1%、TSLA -1.8%领跌，资金涌向防御板块。</div>
+<div class="timeline-item"><span class="time">午盘</span>：半导体抛售加剧，SMCI、MRVL跌幅扩大至6%以上，银行股逆市走强，BAC突破54美元。道琼斯翻红。</div>
+<div class="timeline-item"><span class="time">尾盘</span>：跌幅收窄但未完全修复，标普收跌0.26%，纳指跌0.97%。光通信板块尾盘加速下跌，COHR收跌超11%。</div>
+<div class="timeline-item"><span class="time">盘后</span>：美军宣布对伊朗发动自卫打击，标普500期货再跌0.3%，道指期货跌148点，VIX盘后可能进一步攀升。</div>
+</div>
+</div>
+
+<!-- Section 3: 宏观环境 -->
+<h2>&#x1F30D; 3. 宏观环境</h2>
+<table>
+<tr><th>指标</th><th>当前值</th><th>涨跌幅</th><th>说明</th></tr>
+<tr><td>VIX 恐慌指数</td><td><strong>19.87</strong></td><td class="up">+5.02%</td><td>突破19关口，恐慌情绪显著升温</td></tr>
+<tr><td>美债10Y收益率</td><td><strong>4.52%</strong></td><td class="down">-0.008</td><td>小幅回落，避险资金涌入债市</td></tr>
+<tr><td>黄金 (Aug)</td><td><strong>$4,259.30</strong></td><td class="down">-0.63%</td><td>获利回吐，未能跟随VIX上涨</td></tr>
+<tr><td>WTI原油 (Jul)</td><td><strong>$89.14</strong></td><td class="up">+1.07%</td><td>美伊紧张局势推高油价</td></tr>
+<tr><td>美元指数 (DXY)</td><td><strong>99.909</strong></td><td class="flat">持平</td><td>美元持平，未明显避险买入</td></tr>
+<tr><td>比特币 (Jun)</td><td><strong>$61,845</strong></td><td class="down">-0.52%</td><td>温和回调，风险偏好下降</td></tr>
+</table>
+
+<!-- Section 4: 板块ETF -->
+<h2>&#x1F4E6; 4. 板块ETF表现</h2>
+<table>
+<tr><th>ETF</th><th>说明</th><th>收盘价</th><th>涨跌幅</th></tr>
+<tr><td><strong>SPY</strong></td><td>标普500 ETF</td><td>737.05</td><td class="down">-0.29%</td></tr>
+<tr><td><strong>QQQ</strong></td><td>纳斯达克100 ETF</td><td>707.83</td><td class="down">-1.15%</td></tr>
+<tr><td><strong>IWM</strong></td><td>罗素2000 ETF</td><td>285.02</td><td class="up">+0.32%</td></tr>
+<tr><td><strong>SMH</strong></td><td>VanEck半导体</td><td>591.01</td><td class="down">-1.20%</td></tr>
+<tr><td><strong>IGV</strong></td><td>软件ETF</td><td>92.95</td><td class="down">-2.82%</td></tr>
+<tr><td><strong>CIBR</strong></td><td>网络安全ETF</td><td>84.34</td><td class="down">-2.08%</td></tr>
+<tr><td><strong>SKYY</strong></td><td>云计算ETF</td><td>136.30</td><td class="down">-2.61%</td></tr>
+<tr><td><strong>AI</strong></td><td>Global X AI</td><td>10.79</td><td class="up">+1.79%</td></tr>
+<tr><td><strong>FTGS</strong></td><td>光通信ETF</td><td>36.90</td><td class="up">+0.29%</td></tr>
+</table>
+
+<!-- Section 5: 主题与风格表现 -->
+<h2>&#x1F3AF; 5. 主题与风格表现</h2>
+<table>
+<tr><th>主题</th><th>代表ETF</th><th>涨跌幅</th><th>判断</th></tr>
+<tr><td>半导体</td><td>SMH</td><td class="down">-1.20%</td><td><span class="tag tag-down">承压回调</span></td></tr>
+<tr><td>AI/数据中心</td><td>AI</td><td class="up">+1.79%</td><td><span class="tag tag-up">逆市走强</span></td></tr>
+<tr><td>软件</td><td>IGV</td><td class="down">-2.82%</td><td><span class="tag tag-down">大幅下跌</span></td></tr>
+<tr><td>网络安全</td><td>CIBR</td><td class="down">-2.08%</td><td><span class="tag tag-down">承压</span></td></tr>
+<tr><td>云计算</td><td>SKYY</td><td class="down">-2.61%</td><td><span class="tag tag-down">大幅下跌</span></td></tr>
+<tr><td>光通信</td><td>FTGS</td><td class="up">+0.29%</td><td><span class="tag tag-flat">持平</span></td></tr>
+<tr><td>小盘价值</td><td>IWM</td><td class="up">+0.32%</td><td><span class="tag tag-up">小幅走强</span></td></tr>
+</table>
+
+<!-- Section 6: 市场宽度 -->
+<h2>&#x1F4CA; 6. 市场宽度与参与度</h2>
+<div class="section">
+<p><strong>涨跌家数估算</strong>（基于观察池45只核心标的）：</p>
+<table>
+<tr><th>类别</th><th>数量</th><th>占比</th></tr>
+<tr><td>上涨</td><td class="up"><strong>12</strong></td><td>26.7%</td></tr>
+<tr><td>下跌</td><td class="down"><strong>31</strong></td><td>68.9%</td></tr>
+<tr><td>持平</td><td class="flat"><strong>2</strong></td><td>4.4%</td></tr>
+</table>
+<p style="margin-top:15px"><strong>市场宽度分析</strong>：下跌家数占比接近70%，市场宽度明显收窄。涨幅集中在金融（BAC +1.47%, WFC +1.28%）和防御性标的，而科技/半导体/软件全面承压。这种"大盘微跌、个股普跌"的格局说明市场内部结构恶化，标普500的跌幅被少数权重股掩盖。</p>
+<p><strong>52周新高/新低</strong>：受地缘政治风险和科技股回调影响，52周新高数量预计减少，新低可能增加。</p>
+</div>
+
+<!-- Section 7: 技术面分析 -->
+<h2>&#x1F4D1; 7. 技术面分析</h2>
+<div class="section">
+<h3>标普500 (S&amp;P 500)</h3>
+<table>
+<tr><th>指标</th><th>数值</th><th>状态</th></tr>
+<tr><td>当前价</td><td>7,386.65</td><td>&#x2014;</td></tr>
+<tr><td>50日均线 (SMA50)</td><td>~7,280</td><td class="up">仍在上方 (+1.5%)</td></tr>
+<tr><td>200日均线 (SMA200)</td><td>~7,050</td><td class="up">仍在上方 (+4.8%)</td></tr>
+<tr><td>近期形态</td><td colspan="2">高位震荡整理，自前期高点回调后在7,300-7,500区间运行</td></tr>
+<tr><td>关键支撑</td><td colspan="2">7,300（前期低点）/ 7,200（SMA50）</td></tr>
+<tr><td>关键阻力</td><td colspan="2">7,500（前高）/ 7,600（心理关口）</td></tr>
+</table>
+
+<h3>纳斯达克100 (NDX)</h3>
+<table>
+<tr><th>指标</th><th>数值</th><th>状态</th></tr>
+<tr><td>当前价</td><td>29,084.50</td><td>&#x2014;</td></tr>
+<tr><td>50日均线 (SMA50)</td><td>~28,800</td><td class="up">仍在上方 (+1.0%)</td></tr>
+<tr><td>200日均线 (SMA200)</td><td>~27,500</td><td class="up">仍在上方 (+5.8%)</td></tr>
+<tr><td>近期形态</td><td colspan="2">跌破短期上升趋势线，回调压力加大，科技股领跌</td></tr>
+<tr><td>关键支撑</td><td colspan="2">28,800（SMA50）/ 28,000（心理关口）</td></tr>
+<tr><td>关键阻力</td><td colspan="2">29,500（前高）/ 30,000（心理关口）</td></tr>
+</table>
+<p><strong>技术面总结</strong>：两大指数仍在主要均线上方，但短期趋势转弱。NDX跌破上升趋势线是警示信号，若SMA50失守将确认中期调整开始。明日CPI数据可能成为技术面突破的催化剂。</p>
+</div>
+
+<!-- Section 8: 重点个股 -->
+<h2>&#x1F4C9; 8. 重点个股新闻与异动</h2>
+
+<h3>&#x1F451; 七巨头 (Magnificent 7)</h3>
+<table>
+<tr><th>代码</th><th>名称</th><th>收盘价</th><th>涨跌幅</th><th>当日要点</th></tr>
+<tr><td><strong>AAPL</strong></td><td>苹果</td><td>290.55</td><td class="down">-3.64%</td><td>跌超3%，受科技股整体抛售压力，分析师担忧iPhone出货量</td></tr>
+<tr><td><strong>MSFT</strong></td><td>微软</td><td>403.41</td><td class="down">-2.02%</td><td>同步下跌，云业务增长预期被下调</td></tr>
+<tr><td><strong>NVDA</strong></td><td>英伟达</td><td>208.19</td><td class="down">-0.22%</td><td>相对抗跌，Cramer看好"主权AI"驱动力</td></tr>
+<tr><td><strong>GOOGL</strong></td><td>谷歌</td><td>364.26</td><td class="up">+0.26%</td><td>微幅收涨，广告业务韧性支撑</td></tr>
+<tr><td><strong>AMZN</strong></td><td>亚马逊</td><td>244.19</td><td class="down">-0.42%</td><td>小幅下跌，AWS增速预期稳定</td></tr>
+<tr><td><strong>META</strong></td><td>Meta</td><td>584.59</td><td class="down">-0.14%</td><td>Truist分析师称Meta已找到下一个200亿美元业务</td></tr>
+<tr><td><strong>TSLA</strong></td><td>特斯拉</td><td>396.68</td><td class="down">-3.00%</td><td>跌3%，高估值板块承压，电动车竞争加剧</td></tr>
+</table>
+
+<h3>&#x1F4E1; AI硬件/半导体</h3>
+<table>
+<tr><th>代码</th><th>名称</th><th>收盘价</th><th>涨跌幅</th><th>当日要点</th></tr>
+<tr><td><strong>AMD</strong></td><td>AMD</td><td>475.51</td><td class="down">-3.02%</td><td>跟随半导体板块下跌，AI芯片竞争加剧</td></tr>
+<tr><td><strong>INTC</strong></td><td>英特尔</td><td>107.92</td><td class="down">-2.13%</td><td>持续承压，代工业务前景不确定</td></tr>
+<tr><td><strong>QCOM</strong></td><td>高通</td><td>205.42</td><td class="down">-5.67%</td><td>跌超5%，手机芯片需求担忧</td></tr>
+<tr><td><strong>AVGO</strong></td><td>博通</td><td>392.16</td><td class="down">-1.12%</td><td>相对抗跌，AI网络芯片需求稳健</td></tr>
+<tr><td><strong>MRVL</strong></td><td>Marvell</td><td>266.88</td><td class="down">-7.61%</td><td>暴跌7.6%，数据中心芯片预期下调</td></tr>
+<tr><td><strong>SMCI</strong></td><td>超微电脑</td><td>40.64</td><td class="down">-7.62%</td><td>宣布70亿美元融资计划，股价反而大跌7.6%</td></tr>
+</table>
+
+<h3>&#x1F4BB; 软件/AI应用</h3>
+<table>
+<tr><th>代码</th><th>名称</th><th>收盘价</th><th>涨跌幅</th><th>当日要点</th></tr>
+<tr><td><strong>CRM</strong></td><td>Salesforce</td><td>175.35</td><td class="down">-3.94%</td><td>跌近4%，SaaS板块整体承压</td></tr>
+<tr><td><strong>ORCL</strong></td><td>甲骨文</td><td>205.81</td><td class="down">-2.84%</td><td>云业务竞争加剧</td></tr>
+<tr><td><strong>ADBE</strong></td><td>Adobe</td><td>237.88</td><td class="down">-2.90%</td><td>AI创意工具竞争压力加大</td></tr>
+<tr><td><strong>NOW</strong></td><td>ServiceNow</td><td>106.97</td><td class="down">-6.32%</td><td>暴跌6.3%，企业IT支出预期下调</td></tr>
+<tr><td><strong>SNOW</strong></td><td>Snowflake</td><td>239.66</td><td class="down">-0.33%</td><td>相对抗跌，数据云需求韧性</td></tr>
+<tr><td><strong>DDOG</strong></td><td>Datadog</td><td>227.34</td><td class="down">-1.87%</td><td>监控/可观测性市场承压</td></tr>
+</table>
+
+<h3>&#x26A1; AI电力/数据中心</h3>
+<table>
+<tr><th>代码</th><th>名称</th><th>收盘价</th><th>涨跌幅</th><th>当日要点</th></tr>
+<tr><td><strong>DELL</strong></td><td>戴尔</td><td>381.78</td><td class="down">-4.74%</td><td>跌近5%，AI服务器订单增速放缓预期</td></tr>
+<tr><td><strong>HPQ</strong></td><td>惠普</td><td>24.94</td><td class="down">-1.73%</td><td>PC市场复苏预期减弱</td></tr>
+<tr><td><strong>ANET</strong></td><td>Arista</td><td>152.16</td><td class="down">-2.71%</td><td>网络设备承压，AI基建投资放缓担忧</td></tr>
+<tr><td><strong>CSCO</strong></td><td>思科</td><td>120.36</td><td class="down">-3.05%</td><td>跌超3%，企业网络支出预期下调</td></tr>
+</table>
+
+<h3>&#x1F4E1; 光通信</h3>
+<table>
+<tr><th>代码</th><th>名称</th><th>收盘价</th><th>涨跌幅</th><th>当日要点</th></tr>
+<tr><td><strong>LITE</strong></td><td>Lumentum</td><td>821.76</td><td class="down">-8.22%</td><td>暴跌8.2%，光模块需求预期大幅下调</td></tr>
+<tr><td><strong>FN</strong></td><td>Fabrinet</td><td>586.00</td><td class="down">-6.05%</td><td>跌超6%，跟随光通信板块暴跌</td></tr>
+<tr><td><strong>IPG</strong></td><td>II-VI</td><td>24.58</td><td class="flat">0.00%</td><td>持平，相对抗跌</td></tr>
+<tr><td><strong>COHR</strong></td><td>Coherent</td><td>355.94</td><td class="down">-11.44%</td><td>暴跌11.4%，领跌光通信板块</td></tr>
+</table>
+
+<h3>&#x1F3E6; 金融（大型投行）</h3>
+<table>
+<tr><th>代码</th><th>名称</th><th>收盘价</th><th>涨跌幅</th><th>当日要点</th></tr>
+<tr><td><strong>GS</strong></td><td>高盛</td><td>1,032.01</td><td class="down">-1.24%</td><td>跌1.2%，投行收入预期稳定但市场波动加大</td></tr>
+<tr><td><strong>MS</strong></td><td>摩根士丹利</td><td>210.25</td><td class="down">-0.94%</td><td>财富管理业务韧性支撑</td></tr>
+<tr><td><strong>JPM</strong></td><td>摩根大通</td><td>312.70</td><td class="up">+0.51%</td><td>逆势微涨，银行股防御属性显现</td></tr>
+<tr><td><strong>BAC</strong></td><td>美国银行</td><td>54.42</td><td class="up">+1.47%</td><td>涨1.5%，利率预期支撑净息差</td></tr>
+<tr><td><strong>WFC</strong></td><td>富国银行</td><td>82.00</td><td class="up">+1.28%</td><td>涨1.3%，零售银行业务改善</td></tr>
+</table>
+
+<!-- Section 9: 财报日历 -->
+<h2>&#x1F4C5; 9. 财报日历与财报解读</h2>
+<div class="section">
+<h3>今日（6月9日）已公布财报</h3>
+<p>今日无重大财报公布，市场主要受地缘政治和宏观数据预期驱动。</p>
+
+<h3>未来1-3天重要财报</h3>
+<table>
+<tr><th>日期</th><th>公司</th><th>板块</th><th>关注度</th></tr>
+<tr><td>6月10日（周三）开盘前</td><td><strong>Chewy (CHWY)</strong></td><td>电商/宠物</td><td><span class="tag tag-up">高</span></td></tr>
+<tr><td>6月10日（周三）</td><td><strong>5月CPI数据</strong></td><td>宏观经济</td><td><span class="tag tag-down">极高</span></td></tr>
+</table>
+<p style="margin-top:10px"><strong>重点关注</strong>：明日5月CPI数据是本周最重要事件。市场预期年通胀率4.2%，若超预期将加剧加息恐慌，对科技股和成长股形成更大压力。CPI自2023年5月以来首次突破4%的可能性将重新点燃通胀担忧。</p>
+</div>
+
+<!-- Section 10: 机构观点 -->
+<h2>&#x1F3DB; 10. 机构观点与资金流</h2>
+<div class="section">
+<h3>主要机构观点</h3>
+<table>
+<tr><th>机构/分析师</th><th>观点</th></tr>
+<tr><td><strong>Empower Investments</strong><br>Marta Norton, 首席策略师</td><td>"过去几周市场上涨主要集中在存储和半导体领域，涨势过快，感觉已经见顶。"看好基本面但提示短期回调风险。</td></tr>
+<tr><td><strong>BTIG</strong></td><td>科技股"仍然破位"，建议关注周五低点是否会被击穿。倾向于等待更低入场点。</td></tr>
+<tr><td><strong>Jim Cramer</strong></td><td>科技股正在失去引领本轮反弹的特质，但看好Nvidia的"主权AI"增长驱动力。</td></tr>
+<tr><td><strong>Morgan Stanley</strong></td><td>质疑黄金在投资组合中的角色，但看好另一种金属（铜）的超额表现。</td></tr>
+<tr><td><strong>高盛</strong></td><td>预计印度央行将于10月开始加息周期；维持美股战术性看多。</td></tr>
+<tr><td><strong>Renaissance Macro</strong></td><td>市场对信贷利差和利率高度敏感，建议关注宏观风险指标。</td></tr>
+<tr><td><strong>Truist</strong></td><td>Meta已找到下一个200亿美元业务（AI广告），上调目标价。</td></tr>
+</table>
+
+<h3>ETF资金流</h3>
+<p>受地缘政治风险和科技股回调影响，预计：</p>
+<ul style="margin-left:20px">
+<li><strong>SPY/QQQ</strong>：净流出为主，投资者获利了结</li>
+<li><strong>IWM</strong>：小幅净流入，价值轮动支撑小盘股</li>
+<li><strong>SMH</strong>：半导体ETF承压，获利回吐明显</li>
+</ul>
+</div>
+
+<!-- Section 11: 板块轮动 -->
+<h2>&#x1F504; 11. 板块轮动判断</h2>
+<div class="section">
+<h3>当前市场状态：<span class="risk-medium">弱势下跌 + 风格切换</span></h3>
+<table>
+<tr><th>维度</th><th>状态</th><th>依据</th></tr>
+<tr><td>趋势方向</td><td class="down"><strong>短期下跌</strong></td><td>标普500 -0.26%，纳指 -0.97%，NDX -1.12%</td></tr>
+<tr><td>下跌强度</td><td class="risk-medium"><strong>中等偏强</strong></td><td>半导体/软件/光通信跌幅超3%，但大盘跌幅温和</td></tr>
+<tr><td>板块轮动</td><td><strong>科技 &#x2192; 价值</strong></td><td>银行股逆市上涨（BAC +1.47%），科技股全面下跌</td></tr>
+<tr><td>市场宽度</td><td class="down"><strong>收窄</strong></td><td>下跌家数占比69%，市场内部结构恶化</td></tr>
+<tr><td>恐慌程度</td><td class="risk-medium"><strong>中等偏高</strong></td><td>VIX 19.87 (+5.02%)，接近20关口</td></tr>
+</table>
+<p style="margin-top:15px"><strong>轮动信号</strong>：典型的"弱势下跌"格局，伴随明显的科技&#x2192;价值轮动。半导体和软件板块领跌，银行和防御性板块相对抗跌。这种轮动通常出现在：(1) 利率预期上升期；(2) 科技股估值修复期；(3) 避险情绪升温期。当前三种因素同时存在。</p>
+<p><strong>12种市场状态框架</strong>：<span class="tag tag-down">弱势下跌 + 防御轮动</span>。市场尚未进入恐慌性抛售（VIX &lt; 25），但结构性恶化明显。若VIX突破20并站稳，可能升级为"强势下跌"。</p>
+</div>
+
+<!-- Section 12: 重点关注股 -->
+<h2>&#x1F50D; 12. 我的重点关注股观察</h2>
+<div class="section">
+<table>
+<tr><th>代码</th><th>当前价</th><th>涨跌幅</th><th>近期催化剂</th><th>关键价位</th></tr>
+<tr><td><strong>NVDA</strong></td><td>208.19</td><td class="down">-0.22%</td><td>主权AI需求、数据中心扩建</td><td>支撑 200 / 阻力 220</td></tr>
+<tr><td><strong>AVGO</strong></td><td>392.16</td><td class="down">-1.12%</td><td>AI网络芯片订单、VMware整合</td><td>支撑 380 / 阻力 410</td></tr>
+<tr><td><strong>BAC</strong></td><td>54.42</td><td class="up">+1.47%</td><td>利率预期上升、净息差改善</td><td>支撑 53 / 阻力 56</td></tr>
+<tr><td><strong>JPM</strong></td><td>312.70</td><td class="up">+0.51%</td><td>银行股防御属性、CPI数据前避险</td><td>支撑 305 / 阻力 320</td></tr>
+<tr><td><strong>META</strong></td><td>584.59</td><td class="down">-0.14%</td><td>AI广告业务、Truist上调目标价</td><td>支撑 570 / 阻力 600</td></tr>
+<tr><td><strong>SMCI</strong></td><td>40.64</td><td class="down">-7.62%</td><td>70亿美元融资计划，关注资金用途</td><td>支撑 38 / 阻力 45</td></tr>
+</table>
+<p style="margin-top:10px"><strong>观察重点</strong>：NVDA和AVGO相对抗跌（跌幅&lt;1.5%），显示AI核心硬件需求韧性。BAC和JPM逆市上涨，银行股在利率预期上升期具有防御价值。SMCI的大跌值得关注&#x2014;&#x2014;70亿美元融资可能被市场解读为资金链紧张信号。</p>
+</div>
+
+<!-- Section 13: 明日交易计划 -->
+<h2>&#x1F4DD; 13. 明日交易计划/观察清单</h2>
+<div class="section">
+<h3>明日重点关注事件</h3>
+<table>
+<tr><th>时间 (ET)</th><th>事件</th><th>预期影响</th></tr>
+<tr><td>08:30</td><td><strong>5月CPI数据公布</strong></td><td><span class="tag tag-down">极高</span> 预期年率4.2%，超预期将引发加息恐慌</td></tr>
+<tr><td>盘前</td><td><strong>Chewy (CHWY) 财报</strong></td><td><span class="tag tag-up">中等</span> 电商/宠物消费趋势指标</td></tr>
+<tr><td>全天</td><td><strong>美伊局势后续</strong></td><td><span class="tag tag-down">高</span> 盘后美军打击行动的市场反应</td></tr>
+</table>
+
+<h3>开盘前操作计划</h3>
+<ul style="margin-left:20px">
+<li><strong>观望为主</strong>：CPI数据前不宜大幅建仓，等待数据明朗</li>
+<li><strong>银行股观察</strong>：若CPI超预期，BAC/JPM可能继续走强，可考虑小幅加仓</li>
+<li><strong>科技股谨慎</strong>：NDX跌破趋势线后，不宜抄底，等待SMA50支撑确认</li>
+<li><strong>止损关注</strong>：SMCI若跌破38美元，可能触发进一步抛售</li>
+<li><strong>避险配置</strong>：VIX 19.87接近20，若突破20可考虑VIX相关对冲</li>
+</ul>
+</div>
+
+<!-- Section 14: 风险提示 -->
+<h2>&#x26A0; 14. 风险提示</h2>
+<table>
+<tr><th>风险维度</th><th>等级</th><th>说明</th></tr>
+<tr><td>宏观风险</td><td class="risk-high">高</td><td>5月CPI数据可能超预期，通胀重新升温将严重影响货币政策预期</td></tr>
+<tr><td>利率风险</td><td class="risk-medium">中</td><td>10Y收益率4.52%小幅回落，但若CPI超预期可能快速上行</td></tr>
+<tr><td>财报风险</td><td class="risk-low">低</td><td>财报季基本结束，下一波财报在7月中旬</td></tr>
+<tr><td>地缘政治</td><td class="risk-high">高</td><td>美伊紧张局势升级，美军对伊朗发动打击，霍尔木兹海峡航运风险</td></tr>
+<tr><td>行业监管</td><td class="risk-medium">中</td><td>AI行业监管政策不确定性持续</td></tr>
+<tr><td>流动性风险</td><td class="risk-low">低</td><td>市场流动性充裕，但VIX上升可能引发去杠杆</td></tr>
+<tr><td>估值风险</td><td class="risk-high">高</td><td>科技股估值仍处高位，AI相关标的估值溢价面临修正</td></tr>
+<tr><td>市场情绪</td><td class="risk-medium">中</td><td>VIX 19.87 (+5.02%)，恐慌情绪升温但未达极端</td></tr>
+<tr><td>黑天鹅风险</td><td class="risk-medium">中</td><td>美伊冲突升级为全面战争的可能性虽低但不可忽视</td></tr>
+</table>
+<p style="margin-top:15px"><strong>综合风险等级：<span class="risk-high">偏高</span></strong></p>
+<p>地缘政治风险（美伊冲突）+ 宏观数据风险（CPI）+ 估值修正风险三重叠加，市场短期面临较大不确定性。建议降低仓位，等待CPI数据明朗后再做决策。</p>
+</div>
+
+<!-- Section 15: 最终结论 -->
+<h2>&#x1F3AF; 15. 最终结论</h2>
+<div class="conclusion-box">
+<h3>市场阶段：<span class="risk-medium">震荡偏弱</span></h3>
+<p>标普500在7,300-7,500区间震荡，纳指跌破短期趋势线，市场进入调整期。地缘政治和CPI数据是短期最大变量。</p>
+
+<h3>操作倾向：<span class="risk-medium">谨慎做多 / 观望</span></h3>
+<p>当前不适合大幅加仓。科技股调整未结束，银行股虽有防御价值但空间有限。建议：</p>
+<ul style="margin-left:20px; margin-top:10px">
+<li><strong>持仓者</strong>：维持现有仓位，不追高科技股，关注SMA50支撑</li>
+<li><strong>空仓者</strong>：等待CPI数据后再决定，若CPI低于预期可考虑分批建仓</li>
+<li><strong>对冲者</strong>：VIX接近20，可考虑保护性看跌期权</li>
+</ul>
+
+<h3>5个关键观察信号</h3>
+<table>
+<tr><th>#</th><th>信号</th><th>类型</th><th>当前状态</th></tr>
+<tr><td>1</td><td>VIX是否突破20并站稳</td><td>情绪面</td><td>19.87，接近但未突破</td></tr>
+<tr><td>2</td><td>5月CPI数据是否超预期</td><td>基本面</td><td>明日公布，预期4.2%</td></tr>
+<tr><td>3</td><td>NDX是否守住SMA50 (~28,800)</td><td>技术面</td><td>当前29,084，距支撑1%</td></tr>
+<tr><td>4</td><td>美伊局势是否进一步升级</td><td>基本面</td><td>盘后美军打击，需观察伊朗反应</td></tr>
+<tr><td>5</td><td>银行股能否持续走强</td><td>情绪面</td><td>BAC +1.47%, WFC +1.28%，轮动信号</td></tr>
+</table>
+</div>
+
+<div class="footer">
+<p>&#x1F4C8; 美股收盘日报 | 数据来源：腾讯财经API + CNBC | 报告生成时间：2026-06-10 07:00 CST</p>
+<p>本报告仅供参考，不构成投资建议。投资有风险，入市需谨慎。</p>
+<p><a href="https://zhangjingtao.github.io/us-stock-report/202606/2026-06-09.html" style="color:#58a6ff;">查看在线版本</a></p>
+</div>
+
+</div>
+</body>
+</html>
