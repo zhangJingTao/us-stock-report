@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>美股收盘日报 2026-06-11</title>
+<style>
+:root { --bg: #0f1117; --card: #1a1d29; --border: #2a2d3a; --text: #e1e4ea; --muted: #8b8fa3; --green: #00c853; --red: #ff1744; --blue: #448aff; --yellow: #ffd600; --orange: #ff9100; --purple: #bb86fc; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; padding: 20px; max-width: 1400px; margin: 0 auto; }
+h1 { font-size: 28px; margin-bottom: 8px; background: linear-gradient(135deg, #448aff, #bb86fc); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+h2 { font-size: 20px; margin: 28px 0 14px; padding-bottom: 8px; border-bottom: 2px solid var(--blue); color: #fff; }
+h3 { font-size: 16px; margin: 16px 0 10px; color: var(--blue); }
+.subtitle { color: var(--muted); margin-bottom: 20px; font-size: 14px; }
+.summary-box { background: linear-gradient(135deg, #1a237e22, #4a148c22); border: 1px solid var(--blue); border-radius: 12px; padding: 20px; margin-bottom: 24px; }
+.summary-box p { margin-bottom: 8px; font-size: 15px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 14px; margin-bottom: 20px; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 16px; text-align: center; }
+.card .name { font-size: 13px; color: var(--muted); margin-bottom: 4px; }
+.card .price { font-size: 22px; font-weight: 700; }
+.card .change { font-size: 15px; margin-top: 4px; }
+.up { color: var(--green); }
+.down { color: var(--red); }
+.flat { color: var(--muted); }
+table { width: 100%; border-collapse: collapse; margin-bottom: 20px; background: var(--card); border-radius: 10px; overflow: hidden; }
+th, td { padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--border); font-size: 14px; }
+th { background: #1e2130; color: var(--muted); font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+tr:hover { background: #1e2130; }
+.ticker { font-weight: 700; color: var(--blue); }
+.timeline { position: relative; padding-left: 24px; margin-bottom: 20px; }
+.timeline::before { content: ''; position: absolute; left: 8px; top: 0; bottom: 0; width: 2px; background: var(--border); }
+.timeline-item { position: relative; margin-bottom: 14px; }
+.timeline-item::before { content: ''; position: absolute; left: -20px; top: 6px; width: 10px; height: 10px; border-radius: 50%; background: var(--blue); }
+.timeline-item .time { font-weight: 700; color: var(--blue); font-size: 13px; }
+.timeline-item .desc { color: var(--text); font-size: 14px; margin-top: 2px; }
+.stock-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; margin-bottom: 20px; }
+.stock-item { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 14px; display: flex; justify-content: space-between; align-items: center; }
+.stock-item .left { display: flex; flex-direction: column; }
+.stock-item .symbol { font-weight: 700; font-size: 15px; }
+.stock-item .price-line { font-size: 13px; color: var(--muted); }
+.stock-item .right { text-align: right; }
+.stock-item .pct { font-size: 18px; font-weight: 700; }
+.risk-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; }
+.risk-item { background: var(--card); border-radius: 8px; padding: 14px; border-left: 4px solid; }
+.risk-item.high { border-left-color: var(--red); }
+.risk-item.medium { border-left-color: var(--yellow); }
+.risk-item.low { border-left-color: var(--green); }
+.risk-item .risk-name { font-weight: 700; font-size: 14px; margin-bottom: 4px; }
+.risk-item .risk-level { font-size: 12px; font-weight: 600; padding: 2px 8px; border-radius: 4px; display: inline-block; }
+.risk-item.high .risk-level { background: #ff174433; color: var(--red); }
+.risk-item.medium .risk-level { background: #ffd60033; color: var(--yellow); }
+.risk-item.low .risk-level { background: #00c85333; color: var(--green); }
+.risk-item .risk-desc { font-size: 13px; color: var(--muted); margin-top: 6px; }
+.conclusion-box { background: linear-gradient(135deg, #1a237e33, #0d47a133); border: 2px solid var(--blue); border-radius: 12px; padding: 24px; margin-top: 20px; }
+.conclusion-box h3 { color: #fff; margin-bottom: 12px; }
+.conclusion-item { margin-bottom: 10px; font-size: 14px; }
+.section-header { display: flex; align-items: center; gap: 8px; }
+.badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; }
+.badge-red { background: #ff174433; color: var(--red); }
+.badge-green { background: #00c85333; color: var(--green); }
+.badge-yellow { background: #ffd60033; color: var(--yellow); }
+.category-label { font-size: 13px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin: 16px 0 8px; padding-left: 4px; }
+@media (max-width: 768px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+  .stock-grid { grid-template-columns: 1fr; }
+  .risk-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<h1>📈 美股收盘日报 2026-06-11</h1>
+<p class="subtitle">报告日期：2026-06-12（北京时间 07:00）| 数据来源：腾讯财经 + CNBC</p>
+
+<!-- Section 0: 今日一句话总结 -->
+<div class="summary-box">
+<p><strong>🔥 核心要点：</strong></p>
+<p>▸ 标普500涨1.75%至7,394点，纳斯达克100飙涨3.29%，道琼斯涨1.86%至50,848点，三大指数全线强势收涨。</p>
+<p>▸ 特朗普宣布美伊和平协议"即将签署"、取消对伊朗的空袭计划，VIX恐慌指数暴跌12.51%至19.44，市场风险偏好大幅回升。</p>
+<p>▸ 半导体板块集体大反弹：MRVL+11.13%、INTC+9.27%、SMCI+9.22%、AMD+7.97%，SOXX（费城半导体ETF）飙涨8.39%。</p>
+<p>▸ 软件板块逆势承压：ORCL-8.53%（宣布再融资200亿美元引发抛售）、ADBE-6.25%（盘后财报业绩达标但利润率不及预期+CFO离任）。</p>
+<p>▸ SpaceX将于明日（6/12）在纳斯达克上市（SPCX），IPO定价135美元/股，募资750亿美元创史上最大IPO纪录。</p>
+</div>
+
+<!-- Section 1: 大盘表现总览 -->
+<h2>一、大盘表现总览</h2>
+<div class="grid">
+  <div class="card">
+    <div class="name">标普500 S&P 500</div>
+    <div class="price">7,394.30</div>
+    <div class="change up">+127.31 (+1.75%)</div>
+  </div>
+  <div class="card">
+    <div class="name">纳斯达克综合 Nasdaq</div>
+    <div class="price">25,809.66</div>
+    <div class="change up">+640.16 (+2.54%)</div>
+  </div>
+  <div class="card">
+    <div class="name">纳斯达克100 Nasdaq 100</div>
+    <div class="price">29,446.18</div>
+    <div class="change up">+3.29%</div>
+  </div>
+  <div class="card">
+    <div class="name">道琼斯工业 Dow Jones</div>
+    <div class="price">50,848.75</div>
+    <div class="change up">+929.97 (+1.86%)</div>
+  </div>
+  <div class="card">
+    <div class="name">罗素2000 Russell 2000</div>
+    <div class="price">290.41 (IWM)</div>
+    <div class="change up">+2.96%</div>
+  </div>
+  <div class="card">
+    <div class="name">费城半导体 SOX (SOXX)</div>
+    <div class="price">586.93</div>
+    <div class="change up">+8.39%</div>
+  </div>
+  <div class="card">
+    <div class="name">恐慌指数 VIX</div>
+    <div class="price" style="color:var(--green)">19.44</div>
+    <div class="change down">-12.51%</div>
+  </div>
+  <div class="card">
+    <div class="name">NYSE 综合</div>
+    <div class="price flat">—</div>
+    <div class="change flat">—</div>
+  </div>
+</div>
+
+<!-- Section 2: 盘中走势复盘 -->
+<h2>二、盘中走势复盘</h2>
+<div class="timeline">
+  <div class="timeline-item">
+    <div class="time">盘前（04:00-09:30 ET）</div>
+    <div class="desc">VIX期货大幅回落，美油期货急跌超2%，特朗普宣布取消对伊空袭后市场情绪显著改善。三大指数期货全线上涨。</div>
+  </div>
+  <div class="timeline-item">
+    <div class="time">开盘（09:30-11:00 ET）</div>
+    <div class="desc">三大指数高开，道琼斯跳涨超400点。半导体板块领涨，AMD、INTC、MRVL开盘即大幅走高。风险资产全面反弹。</div>
+  </div>
+  <div class="timeline-item">
+    <div class="time">午盘（11:00-14:00 ET）</div>
+    <div class="desc">涨幅进一步扩大，纳斯达克100一度涨超3.5%。特朗普进一步表态"美伊和平协议即将签署"，市场信心持续强化。</div>
+  </div>
+  <div class="timeline-item">
+    <div class="time">尾盘（14:00-16:00 ET）</div>
+    <div class="desc">买盘持续涌入，三大指数均以日内高位附近收盘。道琼斯最终站上50,800点，标普500收于7,394点。PPI数据（+1.1%）虽超预期但被地缘利好完全消化。</div>
+  </div>
+  <div class="timeline-item">
+    <div class="time">盘后（16:00-20:00 ET）</div>
+    <div class="desc">Adobe盘后公布财报，营收/利润达标但运营利润率不及预期，CFO宣布离任，股价跌约6%。RH盘后跌1%。市场关注明日SpaceX IPO。</div>
+  </div>
+</div>
+
+<!-- Section 3: 宏观环境 -->
+<h2>三、宏观环境</h2>
+<table>
+  <thead>
+    <tr><th>指标</th><th>数值</th><th>变动</th><th>解读</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>VIX 恐慌指数</td>
+      <td><strong>19.44</strong></td>
+      <td class="down">-12.51%</td>
+      <td>恐慌急剧消退，市场风险偏好大幅回升</td>
+    </tr>
+    <tr>
+      <td>美债10年期收益率</td>
+      <td><strong>4.459%</strong></td>
+      <td class="down">-0.006</td>
+      <td>小幅回落，伊朗局势缓解压低避险需求</td>
+    </tr>
+    <tr>
+      <td>黄金 (COMEX)</td>
+      <td><strong>$4,248.50</strong></td>
+      <td class="up">+3.27%</td>
+      <td>强劲上涨，通胀对冲+地缘不确定性双重支撑</td>
+    </tr>
+    <tr>
+      <td>WTI 原油</td>
+      <td><strong>$85.92</strong></td>
+      <td class="down">-2.04%</td>
+      <td>伊朗和平协议预期压低油价</td>
+    </tr>
+    <tr>
+      <td>美元指数 DXY</td>
+      <td><strong>99.858</strong></td>
+      <td class="flat">持平</td>
+      <td>窄幅震荡，市场消化地缘变化</td>
+    </tr>
+    <tr>
+      <td>比特币 (BTC)</td>
+      <td><strong>$63,580</strong></td>
+      <td class="down">-0.15%</td>
+      <td>小幅回落，风险偏好回升未显著提振加密</td>
+    </tr>
+    <tr>
+      <td>Fed 降息预期</td>
+      <td colspan="3">CPI +4.2%（3年高位）、PPI +1.1% MoM 均超预期，降息路径不确定性加大；ECB 6年来首次加息</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Section 4: 板块表现 -->
+<h2>四、板块表现</h2>
+<table>
+  <thead>
+    <tr><th>板块 ETF</th><th>代码</th><th>收盘价</th><th>涨跌幅</th><th>方向</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>科技精选 XLK</td><td class="ticker">XLK</td><td>$183.21</td><td class="up">+3.73%</td><td><span class="badge badge-green">强势</span></td></tr>
+    <tr><td>材料 XLB</td><td class="ticker">XLB</td><td>$51.22</td><td class="up">+3.27%</td><td><span class="badge badge-green">强势</span></td></tr>
+    <tr><td>工业 XLI</td><td class="ticker">XLI</td><td>$175.15</td><td class="up">+3.24%</td><td><span class="badge badge-green">强势</span></td></tr>
+    <tr><td>可选消费 XLY</td><td class="ticker">XLY</td><td>$116.30</td><td class="up">+2.48%</td><td><span class="badge badge-green">偏强</span></td></tr>
+    <tr><td>通信 XLC</td><td class="ticker">XLC</td><td>$112.12</td><td class="up">+1.00%</td><td><span class="badge badge-yellow">中性偏强</span></td></tr>
+    <tr><td>大盘成长 XLG</td><td class="ticker">XLG</td><td>$61.26</td><td class="up">+0.96%</td><td><span class="badge badge-yellow">中性偏强</span></td></tr>
+    <tr><td>金融 XLF</td><td class="ticker">XLF</td><td>$52.62</td><td class="up">+0.75%</td><td><span class="badge badge-yellow">中性偏强</span></td></tr>
+    <tr><td>公用事业 XLU</td><td class="ticker">XLU</td><td>$44.05</td><td class="up">+0.11%</td><td><span class="badge badge-yellow">中性</span></td></tr>
+    <tr><td>房地产 XLRE</td><td class="ticker">XLRE</td><td>$44.92</td><td class="down">-0.16%</td><td><span class="badge badge-yellow">中性</span></td></tr>
+    <tr><td>能源 XLE</td><td class="ticker">XLE</td><td>$57.12</td><td class="down">-1.94%</td><td><span class="badge badge-red">弱势</span></td></tr>
+  </tbody>
+</table>
+<p style="color:var(--muted);font-size:13px;">注：医疗保健(XLV)数据缺失。10个板块中9涨1跌，科技+材料+工业领涨，能源板块因油价下跌承压。</p>
+
+<!-- Section 5: 主题与风格表现 -->
+<h2>五、主题与风格表现</h2>
+<table>
+  <thead>
+    <tr><th>主题</th><th>ETF</th><th>收盘价</th><th>涨跌幅</th><th>信号</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>半导体</td><td class="ticker">SMH</td><td>$609.45</td><td class="up">+6.75%</td><td><span class="badge badge-green">强势</span></td></tr>
+    <tr><td>网络安全</td><td class="ticker">CIBR</td><td>$85.47</td><td class="up">+2.67%</td><td><span class="badge badge-green">偏强</span></td></tr>
+    <tr><td>小盘价值</td><td class="ticker">IWM</td><td>$290.41</td><td class="up">+2.96%</td><td><span class="badge badge-green">偏强</span></td></tr>
+    <tr><td>光通信</td><td class="ticker">FTGS</td><td>$36.86</td><td class="up">+1.36%</td><td><span class="badge badge-yellow">中性偏强</span></td></tr>
+    <tr><td>云服务</td><td class="ticker">SKYY</td><td>$133.78</td><td class="up">+0.11%</td><td><span class="badge badge-yellow">中性</span></td></tr>
+    <tr><td>软件</td><td class="ticker">IGV</td><td>$90.92</td><td class="down">-0.72%</td><td><span class="badge badge-red">偏弱</span></td></tr>
+  </tbody>
+</table>
+<p style="color:var(--muted);font-size:13px;">半导体一骑绝尘（SMH+6.75%），市场风格明显从软件向硬件/芯片切换。软件板块在Oracle和Adobe利空下承压。</p>
+
+<!-- Section 6: 市场宽度与参与度 -->
+<h2>六、市场宽度与参与度</h2>
+<table>
+  <thead>
+    <tr><th>指标</th><th>数据</th><th>解读</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Watchlist 涨跌家数</td>
+      <td><strong>38 涨 / 9 跌 / 1 平</strong></td>
+      <td>涨跌比约 4.2:1，市场广度健康</td>
+    </tr>
+    <tr>
+      <td>七巨头表现</td>
+      <td><strong>5涨2跌</strong>（TSLA+4.60%领涨，MSFT-1.77%和META-0.45%小跌）</td>
+      <td>多数巨头参与反弹，TSLA领涨</td>
+    </tr>
+    <tr>
+      <td>半导体参与度</td>
+      <td><strong>6/6 全线上涨</strong>，平均涨幅 +7.69%</td>
+      <td>板块全面爆发，无一例外</td>
+    </tr>
+    <tr>
+      <td>板块轮动</td>
+      <td><strong>科技+材料+工业领涨，能源+公用事业落后</strong></td>
+      <td>典型风险偏好驱动的轮动模式</td>
+    </tr>
+  </tbody>
+</table>
+<p style="color:var(--muted);font-size:13px;">注：精确的ADV/DEC数据（纽约证券交易所全市场）需付费数据源。以上基于监控池估算。</p>
+
+<!-- Section 7: 技术面分析 -->
+<h2>七、技术面分析</h2>
+<table>
+  <thead>
+    <tr><th>指数</th><th>当前价</th><th>关键位</th><th>形态判断</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>S&P 500</strong></td>
+      <td>7,394</td>
+      <td>50日均线 ≈ 7,200 | 200日均线 ≈ 6,800</td>
+      <td>站稳50日线上方，向7,450前高发起冲击。伊朗和平利好+半导体反弹构成双重催化。</td>
+    </tr>
+    <tr>
+      <td><strong>Nasdaq 100</strong></td>
+      <td>29,446</td>
+      <td>50日均线 ≈ 28,500 | 200日均线 ≈ 26,800</td>
+      <td>强势突破50日线，半导体暴涨带动。支撑位28,500，阻力位30,000关口。</td>
+    </tr>
+    <tr>
+      <td><strong>Dow Jones</strong></td>
+      <td>50,848</td>
+      <td>50日均线 ≈ 49,500 | 200日均线 ≈ 47,200</td>
+      <td>突破50,800阻力位，站上5万点大关后加速上行。</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Section 8: 重点个股新闻与异动 -->
+<h2>八、重点个股新闻与异动</h2>
+
+<div class="category-label">🟢 七巨头 Magnificent 7</div>
+<div class="stock-grid">
+  <div class="stock-item">
+    <div class="left"><span class="symbol">AAPL</span><span class="price-line">$295.63</span></div>
+    <div class="right"><span class="pct up">+1.39%</span></div>
+  </div>
+  <div class="stock-item">
+    <div class="left"><span class="symbol">MSFT</span><span class="price-line">$390.34</span></div>
+    <div class="right"><span class="pct down">-1.77%</span></div>
+  </div>
+  <div class="stock-item">
+    <div class="left"><span class="symbol">NVDA</span><span class="price-line">$204.87</span></div>
+    <div class="right"><span class="pct up">+2.22%</span></div>
+  </div>
+  <div class="stock-item">
+    <div class="left"><span class="symbol">GOOGL</span><span class="price-line">$357.77</span></div>
+    <div class="right"><span class="pct up">+0.39%</span></div>
+  </div>
+  <div class="stock-item">
+    <div class="left"><span class="symbol">AMZN</span><span class="price-line">$241.51</span></div>
+    <div class="right"><span class="pct up">+1.47%</span></div>
+  </div>
+  <div class="stock-item">
+    <div class="left"><span class="symbol">META</span><span class="price-line">$568.43</span></div>
+    <div class="right"><span class="pct down">-0.45%</span></div>
+  </div>
+  <div class="stock-item">
+    <div class="left"><span class="symbol">TSLA</span><span class="price-line">$399.15</span></div>
+    <div class="right"><span class="pct up">+4.60%</span></div>
+  </div>
+</div>
+
+<div class="category-label">🚀 AI 硬件 / 半导体</div>
+<div class="stock-grid">
+  <div class="stock-item">
+    <div class="left"><span class="symbol">AMD</span><span class="price-line">$488.45</span></div>
+    <div class="right"><span class="pct up">+7.97%</span></div>
+  </div>
+  <div class="stock-item">
+    <div class="left"><span class="symbol">INTC</span><span class="price-line">$116.96</span></div>
+    <div class="right"><span class="pct up">+9.27%</span></div>
+  </div>
+  <div class="stock-item">
+    <div class="left"><span class="symbol">QCOM</span><span class="price-line">$202.96</span></div>
+    <div class="right"><span class="pct up">+6.15%</span></div>
+  </div>
+  <div class="stock-item">
+    <div class="left"><span class="symbol">AVGO</span><span class="price-line">$385.57</span></div>
+    <div class="right"><span class="pct up">+3.62%</span></div>
+  </div>
+  <div class="stock-item">
+    <div class="left"><span class="symbol">MRVL</span><span class="price-line">$280.71</span></div>
+    <div class="right"><span class="pct up">+11.13%</span></div>
+  </div>
+  <div class="stock-item">
+    <div class="left"><span class="symbol">SMCI</span><span class="price-line">$31.97</span></div>
+    <div class="right"><span class="pct up">+9.22%</span></div>
+  </div>
+</div>
+
+<div class="category-label">💻 软件 / AI 应用</div>
+<div class="stock-grid">
+  <div class="stock-item">
+    <div class="left"><span class="symbol">CRM</span><span class="price-line">$166.45</span></div>
+    <div class="right"><span class="pct down">-2.36%</span></div>
+  </div>
+  <div class="stock-item">
+    <div class="left"><span class="symbol">ORCL</span><span class="price-line">$184.10</span></div>
+    <div class="right"><span class="pct down">-8.53%</span></div>
+  </div>
+  <div class="stock-item">
+    <div class="left"><span class="symbol">ADBE</span><span class="price-line">$218.80</span></div>
+    <div class="right"><span class="pct down">-6.25%</span></div>
+  </div>
+  <div class="stock-item">
+    <div class="left"><span class="symbol">NOW</span><span class="price-line">$103.08</span></div>
+    <div class="right"><span class="pct down">-2.81%</span></div>
+  </div>
+  <div class="stock-item">
+    <div class="left"><span class="symbol">SNOW</span><span class="price-line">$240.39</span></div>
+    <div class="right"><span class="pct up">+0.20%</span></div>
+  </div>
+  <div class="stock-item">
+    <div class="left"><span class="symbol">DDOG</span><span class="price-line">$234.24</span></div>
+    <div class="right"><span class="pct up">+2.90%</span></div>
+  </div>
+</div>
+
+<div class="category-label">⚡ AI 电力 / 数据中心</div>
+<div class="stock-grid">
+  <div class="stock-item">
+    <div class="left"><span class="symbol">DELL</span><span class="price-line">$391.45</span></div>
+    <div class="right"><span class="pct up">+5.85%</span></div>
+  </div>
+  <div class="stock-item">
+    <div class="left"><span class="symbol">HPQ</span><span class="price-line">$24.68</span></div>
+    <div class="right"><span class="pct down">-0.04%</span></div>
+  </div>
+  <div class="stock-item">
+    <div class="left"><span class="symbol">ANET</span><span class="price-line">$156.40</span></div>
+    <div class="right"><span class="pct up">+3.06%</span></div>
+  </div>
+  <div class="stock-item">
+    <div class="left"><span class="symbol">CSCO</span><span class="price-line">$121.83</span></div>
+    <div class="right"><span class="pct up">+2.55%</span></div>
+  </div>
+</div>
+
+<div class="category-label">📡 光通信</div>
+<div class="stock-grid">
+  <div class="stock-item">
+    <div class="left"><span class="symbol">LITE</span><span class="price-line">$889.59</span></div>
+    <div class="right"><span class="pct up">+4.26%</span></div>
+  </div>
+  <div class="stock-item">
+    <div class="left"><span class="symbol">FN</span><span class="price-line">$582.24</span></div>
+    <div class="right"><span class="pct up">+0.34%</span></div>
+  </div>
+  <div class="stock-item">
+    <div class="left"><span class="symbol">IPG</span><span class="price-line">$24.57</span></div>
+    <div class="right"><span class="pct flat">0.00%</span></div>
+  </div>
+  <div class="stock-item">
+    <div class="left"><span class="symbol">COHR</span><span class="price-line">$363.58</span></div>
+    <div class="right"><span class="pct up">+2.48%</span></div>
+  </div>
+</div>
+
+<div class="category-label">🏦 金融（大型投行）</div>
+<div class="stock-grid">
+  <div class="stock-item">
+    <div class="left"><span class="symbol">GS</span><span class="price-line">$1,035.64</span></div>
+    <div class="right"><span class="pct up">+3.43%</span></div>
+  </div>
+  <div class="stock-item">
+    <div class="left"><span class="symbol">MS</span><span class="price-line">$212.66</span></div>
+    <div class="right"><span class="pct up">+2.90%</span></div>
+  </div>
+  <div class="stock-item">
+    <div class="left"><span class="symbol">JPM</span><span class="price-line">$313.49</span></div>
+    <div class="right"><span class="pct up">+1.41%</span></div>
+  </div>
+  <div class="stock-item">
+    <div class="left"><span class="symbol">BAC</span><span class="price-line">$55.16</span></div>
+    <div class="right"><span class="pct up">+1.14%</span></div>
+  </div>
+  <div class="stock-item">
+    <div class="left"><span class="symbol">WFC</span><span class="price-line">$82.40</span></div>
+    <div class="right"><span class="pct up">+0.52%</span></div>
+  </div>
+</div>
+
+<h3>个股重大新闻</h3>
+<table>
+  <thead><tr><th>个股</th><th>新闻</th><th>影响</th></tr></thead>
+  <tbody>
+    <tr><td class="ticker">ORCL</td><td>财报超预期但宣布将再融资200亿美元资本，CFO Dan Dunn将于6/15离任</td><td class="down">-8.53% 抛售</td></tr>
+    <tr><td class="ticker">ADBE</td><td>盘后公布Q2财报：营收利润达标，但运营利润率不及预期，CFO宣布离任</td><td class="down">盘后 -6%</td></tr>
+    <tr><td class="ticker">TSLA</td><td>受益于伊朗局势缓和，风险偏好回升推动反弹</td><td class="up">+4.60%</td></tr>
+    <tr><td class="ticker">MRVL</td><td>半导体板块集体反弹领涨股，AI基础设施需求持续强劲</td><td class="up">+11.13%</td></tr>
+    <tr><td class="ticker">INTC</td><td>连续反弹，前期超跌后的技术性修复</td><td class="up">+9.27%</td></tr>
+    <tr><td class="ticker">GS</td><td>高盛股价突破1000美元大关，受益于市场回暖和IPO预期（SpaceX明日上市）</td><td class="up">+3.43%</td></tr>
+  </tbody>
+</table>
+
+<!-- Section 9: 财报日历 -->
+<h2>九、财报日历与财报解读</h2>
+<table>
+  <thead><tr><th>公司</th><th>日期</th><th>结果</th><th>股价反应</th></tr></thead>
+  <tbody>
+    <tr>
+      <td class="ticker">ORCL</td>
+      <td>6/10（盘后）</td>
+      <td>营收/利润超预期，但宣布$20B融资计划</td>
+      <td class="down">-8.53%</td>
+    </tr>
+    <tr>
+      <td class="ticker">ADBE</td>
+      <td>6/11（盘后）</td>
+      <td>营收利润达标，利润率不及预期+CFO离任</td>
+      <td class="down">盘后 -6%</td>
+    </tr>
+    <tr>
+      <td class="ticker">RH</td>
+      <td>6/11（盘后）</td>
+      <td>亏损收窄，营收超预期，但指引疲软</td>
+      <td class="down">盘后 -1%</td>
+    </tr>
+    <tr>
+      <td class="ticker">LEN</td>
+      <td>6/11（盘后）</td>
+      <td>营收不及预期，交付量低于预期</td>
+      <td class="down">盘后 -2%</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Section 10: 机构观点与资金流 -->
+<h2>十、机构观点与资金流</h2>
+<table>
+  <thead><tr><th>机构/来源</th><th>观点</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Wells Fargo</strong></td><td>警告"不要追高此轮上涨"，指出IT板块自4月以来已涨37%（vs S&P 17%）。但承认新增股票供给（SpaceX IPO）可能引发"消化不良"。</td></tr>
+    <tr><td><strong>市场共识</strong></td><td>伊朗和平协议是最大催化剂——油价下跌→通胀预期降温→降息预期升温→风险偏好回升。但CPI 4.2%和PPI 1.1%的热数据仍构成通胀压力。</td></tr>
+    <tr><td><strong>ETF资金流</strong></td><td>SMH（半导体ETF）单日涨6.75%，资金显著流入半导体板块；IGV（软件）逆势微跌0.72%，显示资金从软件向硬件轮动。</td></tr>
+  </tbody>
+</table>
+
+<!-- Section 11: 板块轮动判断 -->
+<h2>十一、板块轮动判断</h2>
+<table>
+  <thead><tr><th>维度</th><th>当前状态</th><th>依据</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><strong>市场阶段</strong></td>
+      <td><span class="badge badge-green">强势上涨</span></td>
+      <td>S&P +1.75%，纳指 +2.54%，VIX -12.5%至19.44，三大指数全线收涨</td>
+    </tr>
+    <tr>
+      <td><strong>板块轮动</strong></td>
+      <td><span class="badge badge-green">科技硬件领涨</span></td>
+      <td>XLK +3.73% > XLI +3.24% > XLB +3.27%（周期+科技），XLE -1.94%落后</td>
+    </tr>
+    <tr>
+      <td><strong>风格倾向</strong></td>
+      <td><span class="badge badge-green">成长 > 价值</span></td>
+      <td>纳指100 +3.29% vs IWM +2.96%（小盘价值），半导体暴拉带动成长风格占优</td>
+    </tr>
+    <tr>
+      <td><strong>广度信号</strong></td>
+      <td><span class="badge badge-yellow">中性偏强</span></td>
+      <td>软件板块（IGV -0.72%）逆势下跌，半导体板块一枝独秀，分化明显</td>
+    </tr>
+  </tbody>
+</table>
+<p style="color:var(--muted);font-size:13px;">综合判断：市场处于<strong>「强势上涨 + 板块分化」</strong>阶段。伊朗和平协议+半导体反弹构成双重催化，但软件板块的分化和CPI 4.2%的热通胀数据提示上行并非一帆风顺。</p>
+
+<!-- Section 12: 重点关注股 -->
+<h2>十二、我的重点关注股观察</h2>
+<table>
+  <thead><tr><th>个股</th><th>收盘价</th><th>涨跌幅</th><th>关注要点</th></tr></thead>
+  <tbody>
+    <tr><td class="ticker">NVDA</td><td>$204.87</td><td class="up">+2.22%</td><td>AI算力核心标的，半导体反弹中涨幅温和，关注能否突破$210阻力位</td></tr>
+    <tr><td class="ticker">AMD</td><td>$488.45</td><td class="up">+7.97%</td><td>AI芯片二号位，强劲反弹，关注$500心理关口</td></tr>
+    <tr><td class="ticker">MRVL</td><td>$280.71</td><td class="up">+11.13%</td><td>数据中心网络芯片，今日涨幅最大，关注$300关口</td></tr>
+    <tr><td class="ticker">AVGO</td><td>$385.57</td><td class="up">+3.62%</td><td>AI基础设施龙头+光通信，盘后关注Adobe财报对软件板块情绪影响</td></tr>
+    <tr><td class="ticker">DELL</td><td>$391.45</td><td class="up">+5.85%</td><td>AI服务器出货量强劲，此前已大涨32%+，注意高位波动</td></tr>
+    <tr><td class="ticker">GS</td><td>$1,035.64</td><td class="up">+3.43%</td><td>站上$1,000大关，SpaceX明日IPO将为投行带来巨额承销收入</td></tr>
+  </tbody>
+</table>
+
+<!-- Section 13: 明日交易计划 -->
+<h2>十三、明日交易计划 / 观察清单</h2>
+<table>
+  <thead><tr><th>事件</th><th>时间</th><th>重要性</th><th>影响方向</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><strong>🚀 SpaceX IPO (SPCX)</strong></td>
+      <td>6/12 开盘</td>
+      <td><span class="badge badge-red">极高</span></td>
+      <td>史上最大IPO（$75B），关注首日表现对科技股资金面的影响</td>
+    </tr>
+    <tr>
+      <td><strong>密歇根消费者信心指数</strong></td>
+      <td>6/12 10:00 ET</td>
+      <td><span class="badge badge-yellow">中等</span></td>
+      <td>消费者对通胀和经济前景的信心变化</td>
+    </tr>
+    <tr>
+      <td><strong>伊朗和平协议后续</strong></td>
+      <td>持续</td>
+      <td><span class="badge badge-red">极高</span></td>
+      <td>关注伊朗方面回应，任何变数都可能逆转油价和市场情绪</td>
+    </tr>
+    <tr>
+      <td><strong>Adobe盘后跌幅延续</strong></td>
+      <td>6/12 开盘</td>
+      <td><span class="badge badge-yellow">中等</span></td>
+      <td>盘后-6%可能影响开盘，关注是否拖累软件板块整体情绪</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Section 14: 风险提示 -->
+<h2>十四、风险提示</h2>
+<div class="risk-grid">
+  <div class="risk-item medium">
+    <div class="risk-name">宏观风险</div>
+    <span class="risk-level">中等</span>
+    <div class="risk-desc">CPI 4.2%创3年新高，PPI +1.1%超预期，通胀压力仍大。伊朗局势缓和虽降温油价，但若和平协议反复将再次推升能源成本。</div>
+  </div>
+  <div class="risk-item medium">
+    <div class="risk-name">利率风险</div>
+    <span class="risk-level">中等</span>
+    <div class="risk-desc">10Y收益率4.459%仍处高位，ECB首次加息释放紧缩信号。热通胀数据可能推迟Fed降息时间点。</div>
+  </div>
+  <div class="risk-item medium">
+    <div class="risk-name">财报风险</div>
+    <span class="risk-level">中等</span>
+    <div class="risk-desc">Oracle融资$20B、Adobe利润率miss+CFO离任，市场对高估值科技股的容忍度在降低。</div>
+  </div>
+  <div class="risk-item low">
+    <div class="risk-name">地缘政治</div>
+    <span class="risk-level">低（短期改善）</span>
+    <div class="risk-desc">美伊和平协议进展顺利，但需关注实际签署进程。若协议落空，油价和避险情绪将急剧逆转。</div>
+  </div>
+  <div class="risk-item low">
+    <div class="risk-name">行业监管</div>
+    <span class="risk-level">低</span>
+    <div class="risk-desc">暂无重大监管动态。</div>
+  </div>
+  <div class="risk-item low">
+    <div class="risk-name">流动性风险</div>
+    <span class="risk-level">低</span>
+    <div class="risk-desc">SpaceX IPO将从市场吸纳$75B流动性，Wells Fargo已发出"消化不良"警告。但市场整体流动性充裕。</div>
+  </div>
+  <div class="risk-item medium">
+    <div class="risk-name">估值风险</div>
+    <span class="risk-level">中等</span>
+    <div class="risk-desc">S&P 500 PE仍处历史高位，半导体板块单日暴涨8%+后短期存在回调压力。AI主题估值已充分反映乐观预期。</div>
+  </div>
+  <div class="risk-item low">
+    <div class="risk-name">市场情绪</div>
+    <span class="risk-level">低（改善中）</span>
+    <div class="risk-desc">VIX从高位回落至19.44，恐慌情绪显著消退。但需警惕单日暴涨后的情绪透支。</div>
+  </div>
+  <div class="risk-item low">
+    <div class="risk-name">黑天鹅风险</div>
+    <span class="risk-level">低</span>
+    <div class="risk-desc">暂无明显的黑天鹅触发因素。关注伊朗和平协议的突然逆转和SpaceX IPO可能出现的技术故障。</div>
+  </div>
+</div>
+<p style="margin-top:14px;font-size:14px;"><strong>综合风险等级：</strong><span class="badge badge-yellow" style="font-size:14px;padding:4px 12px;">中等偏低</span></p>
+
+<!-- Section 15: 最终结论 -->
+<div class="conclusion-box">
+  <h3>十五、最终结论</h3>
+  <div class="conclusion-item"><strong>📊 市场阶段：</strong>看涨（Bullish）— 伊朗和平协议+半导体反弹双重催化，三大指数强势收涨</div>
+  <div class="conclusion-item"><strong>🎯 操作倾向：</strong>谨慎做多 — 短期利好已释放充分，但半导体板块过热（SOXX +8.39%）和明日SpaceX IPO可能带来波动，建议等待回调后加仓</div>
+  <div class="conclusion-item" style="margin-top:16px;"><strong>🔍 5个关键观察信号：</strong></div>
+  <div class="conclusion-item">1️⃣ <strong>技术面：</strong>S&P 500站稳7,394点，突破50日均线，下一目标7,450前高 → 若突破则确认上升趋势加速</div>
+  <div class="conclusion-item">2️⃣ <strong>基本面：</strong>半导体板块爆发（SMH +6.75%），AI硬件需求验证 → 关注后续是否有持续性</div>
+  <div class="conclusion-item">3️⃣ <strong>情绪面：</strong>VIX骤降至19.44（-12.5%），恐慌消退 → 但单日跌幅过大可能引发技术性反弹</div>
+  <div class="conclusion-item">4️⃣ <strong>宏观面：</strong>CPI 4.2%（3年高位）+ PPI +1.1%，通胀未退 → Fed降息路径不确定性加大</div>
+  <div class="conclusion-item">5️⃣ <strong>事件面：</strong>SpaceX IPO（$75B史上最大）明日登场 → 关注首日表现和资金分流效应</div>
+</div>
+
+<hr style="border:none;border-top:1px solid var(--border);margin:40px 0 20px;">
+<p style="text-align:center;color:var(--muted);font-size:12px;">
+  📈 美股收盘日报 | 数据来源：腾讯财经 + CNBC | 生成时间：2026-06-12 07:00 CST<br>
+  <a href="https://zhangjingtao.github.io/us-stock-report/202606/2026-06-11.html" style="color:var(--blue);">查看在线版本</a>
+</p>
+
+</body>
+</html>
