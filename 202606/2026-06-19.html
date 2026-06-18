@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>美股收盘日报 2026-06-19</title>
+<style>
+:root {
+  --bg-primary: #0d1117;
+  --bg-secondary: #161b22;
+  --bg-card: #1c2128;
+  --text-primary: #e6edf3;
+  --text-secondary: #8b949e;
+  --green: #3fb950;
+  --red: #f85149;
+  --blue: #58a6ff;
+  --yellow: #d29922;
+  --purple: #bc8cff;
+  --border: #30363d;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  padding: 20px;
+}
+.container { max-width: 1200px; margin: 0 auto; }
+h1 {
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 10px;
+  background: linear-gradient(135deg, var(--blue), var(--purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.subtitle {
+  text-align: center;
+  color: var(--text-secondary);
+  margin-bottom: 30px;
+  font-size: 0.95em;
+}
+.section {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 20px;
+}
+.section-title {
+  font-size: 1.3em;
+  font-weight: 700;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--blue);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.summary-box {
+  background: var(--bg-card);
+  border-left: 4px solid var(--blue);
+  padding: 16px 20px;
+  border-radius: 0 8px 8px 0;
+  margin-bottom: 12px;
+  font-size: 1.05em;
+}
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+}
+.card-name {
+  font-size: 0.85em;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+}
+.card-price {
+  font-size: 1.3em;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.card-change {
+  font-size: 1em;
+  font-weight: 600;
+}
+.up { color: var(--green); }
+.down { color: var(--red); }
+.flat { color: var(--text-secondary); }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95em;
+}
+th, td {
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+th {
+  background: var(--bg-card);
+  font-weight: 600;
+  color: var(--text-secondary);
+  font-size: 0.85em;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+tr:hover { background: rgba(88,166,255,0.05); }
+.tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.8em;
+  font-weight: 600;
+}
+.tag-green { background: rgba(63,185,80,0.15); color: var(--green); }
+.tag-red { background: rgba(248,81,73,0.15); color: var(--red); }
+.tag-yellow { background: rgba(210,153,34,0.15); color: var(--yellow); }
+.tag-blue { background: rgba(88,166,255,0.15); color: var(--blue); }
+.timeline {
+  position: relative;
+  padding-left: 24px;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 8px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--border);
+}
+.timeline-item {
+  position: relative;
+  margin-bottom: 16px;
+  padding-left: 16px;
+}
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -20px;
+  top: 6px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--blue);
+}
+.timeline-label {
+  font-weight: 700;
+  color: var(--blue);
+  margin-bottom: 4px;
+}
+.news-item {
+  background: var(--bg-card);
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 8px;
+  border-left: 3px solid var(--blue);
+}
+.news-item strong {
+  color: var(--blue);
+}
+.stock-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 8px;
+}
+.stock-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px;
+  text-align: center;
+}
+.stock-ticker {
+  font-weight: 700;
+  font-size: 1.1em;
+}
+.stock-price {
+  font-size: 0.95em;
+  color: var(--text-secondary);
+  margin: 4px 0;
+}
+.stock-change {
+  font-weight: 600;
+}
+.risk-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.risk-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px;
+  text-align: center;
+}
+.risk-label {
+  font-size: 0.85em;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+}
+.risk-level {
+  font-size: 1.3em;
+  font-weight: 700;
+}
+.conclusion-box {
+  background: var(--bg-card);
+  border-radius: 8px;
+  padding: 20px;
+}
+.section-subtitle {
+  font-size: 1.05em;
+  font-weight: 700;
+  color: var(--blue);
+  margin-bottom: 8px;
+  margin-top: 16px;
+}
+@media (max-width: 768px) {
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .grid-3 { grid-template-columns: 1fr; }
+  .risk-grid { grid-template-columns: repeat(2, 1fr); }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>📈 美股收盘日报 2026-06-19</h1>
+<div class="subtitle">2026年6月18日（周三）美股收盘数据 | 生成时间：2026-06-19 07:00 北京时间</div>
+
+<!-- Section 0: 今日一句话总结 -->
+<div class="section">
+  <div class="section-title">📌 今日一句话总结</div>
+  <div class="summary-box">
+    <strong>标普500上涨1.08%至7,500点，纳斯达克涨1.91%至26,518点，市场在Fed鹰派信号后强劲反弹。</strong><br><br>
+    🔥 <strong>半导体板块暴涨</strong>：SOXX +6.62%、SMH +5.76%，特朗普宣布苹果-英特尔合作制造芯片，INTC飙涨10.64%，SMCI涨10.37%；<br>
+    📉 <strong>金融板块承压</strong>：JPM -2.47%、WFC -1.92%，Fed鹰派立场令银行股承压；<br>
+    🕊️ <strong>地缘缓和</strong>：美伊达成和平协议，霍尔木兹海峡封锁解除，原油价格回落；<br>
+    😌 <strong>VIX恐慌指数骤降</strong>：VIX跌至16.40（-11.06%），恐慌情绪大幅缓解。
+  </div>
+</div>
+
+<!-- Section 1: 大盘表现总览 -->
+<div class="section">
+  <div class="section-title">📊 大盘表现总览</div>
+  <div class="grid-4">
+    <div class="card">
+      <div class="card-name">标普500 (INX)</div>
+      <div class="card-price">7,500.58</div>
+      <div class="card-change up">+1.08% (+80.48)</div>
+    </div>
+    <div class="card">
+      <div class="card-name">纳斯达克 (IXIC)</div>
+      <div class="card-price">26,517.93</div>
+      <div class="card-change up">+1.91% (+496.27)</div>
+    </div>
+    <div class="card">
+      <div class="card-name">道琼斯 (DJI)</div>
+      <div class="card-price">51,564.70</div>
+      <div class="card-change up">+0.14% (+72.15)</div>
+    </div>
+    <div class="card">
+      <div class="card-name">VIX 恐慌指数</div>
+      <div class="card-price">16.40</div>
+      <div class="card-change down">-11.06% (-2.04)</div>
+    </div>
+    <div class="card">
+      <div class="card-name">费城半导体 (SOXX)</div>
+      <div class="card-price">639.45</div>
+      <div class="card-change up">+6.62% (+39.72)</div>
+    </div>
+    <div class="card">
+      <div class="card-name">罗素2000 (IWM)</div>
+      <div class="card-price">295.59</div>
+      <div class="card-change up">+1.97% (+5.71)</div>
+    </div>
+    <div class="card">
+      <div class="card-name">科技板块 (XLK)</div>
+      <div class="card-price">191.44</div>
+      <div class="card-change up">+3.04%</div>
+    </div>
+    <div class="card">
+      <div class="card-name">半导体ETF (SMH)</div>
+      <div class="card-price">659.88</div>
+      <div class="card-change up">+5.76% (+35.91)</div>
+    </div>
+  </div>
+</div>
+
+<!-- Section 2: 盘中走势复盘 -->
+<div class="section">
+  <div class="section-title">⏱️ 盘中走势复盘</div>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-label">盘前（06:00-09:30 ET）</div>
+      <div>美股期货小幅高开，延续前一日Fed鹰派冲击后的技术性反弹预期。美伊和平协议消息提振市场情绪，原油期货回落。</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-label">开盘（09:30-11:00 ET）</div>
+      <div>三大指数跳空高开，半导体板块领涨。特朗普宣布苹果-英特尔合作消息后，INTC开盘即飙涨8%+，带动整个芯片板块集体拉升。标普500迅速站上7,480。</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-label">午盘（11:00-14:00 ET）</div>
+      <div>多头持续发力，纳斯达克涨幅扩大至2%以上。VIX大幅回落至17以下，市场恐慌情绪快速消退。金融板块逆势走弱，JPM和WFC持续承压。</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-label">尾盘（14:00-16:00 ET）</div>
+      <div>标普500站稳7,500关口，纳斯达克收涨近2%。半导体板块以SOXX +6.62%、SMH +5.76%的惊人涨幅领跑全场。七巨头全线收涨，科技板块集体走强。</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-label">盘后（16:00-20:00 ET）</div>
+      <div>盘后交易相对平静，科技股小幅波动。市场等待更多企业财报和经济数据指引。</div>
+    </div>
+  </div>
+</div>
+
+<!-- Section 3: 宏观环境 -->
+<div class="section">
+  <div class="section-title">🌍 宏观环境</div>
+  <table>
+    <thead>
+      <tr><th>指标</th><th>当前值</th><th>涨跌幅</th><th>说明</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>VIX 恐慌指数</td><td>16.40</td><td class="down">-11.06%</td><td>恐慌情绪大幅缓解，低于20正常区间</td></tr>
+      <tr><td>美债10Y收益率</td><td>4.455%</td><td class="down">-0.008</td><td>小幅回落，Fed鹰派影响暂未推升长端利率</td></tr>
+      <tr><td>黄金 (COMEX)</td><td>$4,227.20</td><td class="down">-0.44%</td><td>地缘缓和避险需求降温</td></tr>
+      <tr><td>WTI 原油</td><td>$76.35</td><td class="down">-0.33%</td><td>美伊协议令霍尔木兹海峡封锁解除，供应担忧缓解</td></tr>
+      <tr><td>美元指数 (DXY)</td><td>100.849</td><td class="flat">持平</td><td>美元窄幅震荡，接近52周高点</td></tr>
+      <tr><td>比特币 (CME)</td><td>$62,735</td><td class="down">-0.33%</td><td>加密市场小幅回调</td></tr>
+      <tr><td>Fed 降息预期</td><td>—</td><td class="flat">—</td><td>新任主席Warsh鹰派，降息预期大幅降温，市场开始定价加息可能</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Section 4: 板块表现 -->
+<div class="section">
+  <div class="section-title">🏭 板块表现（GICS十大板块）</div>
+  <table>
+    <thead>
+      <tr><th>板块</th><th>ETF</th><th>涨跌幅</th><th>表现评级</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>科技</td><td>XLK</td><td class="up">+3.04%</td><td><span class="tag tag-green">强势</span></td></tr>
+      <tr><td>可选消费</td><td>XLY</td><td class="up">+1.45%</td><td><span class="tag tag-green">偏强</span></td></tr>
+      <tr><td>工业</td><td>XLI</td><td class="up">+0.73%</td><td><span class="tag tag-blue">温和</span></td></tr>
+      <tr><td>公用事业</td><td>XLU</td><td class="up">+0.67%</td><td><span class="tag tag-blue">温和</span></td></tr>
+      <tr><td>通信服务</td><td>XLC</td><td class="up">+0.23%</td><td><span class="tag tag-blue">持平</span></td></tr>
+      <tr><td>房地产</td><td>XLRE</td><td class="down">-0.25%</td><td><span class="tag tag-yellow">偏弱</span></td></tr>
+      <tr><td>材料</td><td>XLB</td><td class="down">-0.40%</td><td><span class="tag tag-yellow">偏弱</span></td></tr>
+      <tr><td>医疗保健</td><td>XLV</td><td class="down">-0.87%</td><td><span class="tag tag-yellow">偏弱</span></td></tr>
+      <tr><td>金融</td><td>XLF</td><td class="down">-0.89%</td><td><span class="tag tag-red">弱势</span></td></tr>
+      <tr><td>能源</td><td>XLE</td><td class="down">-1.65%</td><td><span class="tag tag-red">弱势</span></td></tr>
+    </tbody>
+  </table>
+  <div class="summary-box" style="margin-top:12px;">
+    <strong>板块轮动信号：</strong>科技板块领涨（+3.04%），半导体疯狂（SOXX +6.62%），资金明显流向AI/芯片赛道。能源板块受美伊和平协议拖累领跌（-1.65%），金融板块因Fed鹰派承压（-0.89%）。市场风格从防御转向进攻。
+  </div>
+</div>
+
+<!-- Section 5: 主题与风格表现 -->
+<div class="section">
+  <div class="section-title">🎯 主题与风格表现</div>
+  <div class="grid-3">
+    <div class="stock-item">
+      <div class="stock-ticker">半导体 (SMH)</div>
+      <div class="stock-price">$659.88</div>
+      <div class="stock-change up">+5.76%</div>
+      <div style="font-size:0.8em;color:var(--text-secondary);margin-top:4px">苹果-英特尔合作催化</div>
+    </div>
+    <div class="stock-item">
+      <div class="stock-ticker">软件 (IGV)</div>
+      <div class="stock-price">$89.09</div>
+      <div class="stock-change flat">-0.08%</div>
+      <div style="font-size:0.8em;color:var(--text-secondary);margin-top:4px">表现平淡，资金流出</div>
+    </div>
+    <div class="stock-item">
+      <div class="stock-ticker">网络安全 (CIBR)</div>
+      <div class="stock-price">$84.54</div>
+      <div class="stock-change up">+0.37%</div>
+      <div style="font-size:0.8em;color:var(--text-secondary);margin-top:4px">小幅走强</div>
+    </div>
+    <div class="stock-item">
+      <div class="stock-ticker">云计算 (SKYY)</div>
+      <div class="stock-price">$131.88</div>
+      <div class="stock-change flat">-0.03%</div>
+      <div style="font-size:0.8em;color:var(--text-secondary);margin-top:4px">窄幅震荡</div>
+    </div>
+    <div class="stock-item">
+      <div class="stock-ticker">成长强度 (FTGS)</div>
+      <div class="stock-price">$36.99</div>
+      <div class="stock-change up">+0.41%</div>
+      <div style="font-size:0.8em;color:var(--text-secondary);margin-top:4px">温和上涨</div>
+    </div>
+    <div class="stock-item">
+      <div class="stock-ticker">小盘股 (IWM)</div>
+      <div class="stock-price">$295.59</div>
+      <div class="stock-change up">+1.97%</div>
+      <div style="font-size:0.8em;color:var(--text-secondary);margin-top:4px">风险偏好回升</div>
+    </div>
+  </div>
+</div>
+
+<!-- Section 6: 市场宽度与参与度 -->
+<div class="section">
+  <div class="section-title">📈 市场宽度与参与度</div>
+  <div class="summary-box">
+    <strong>市场宽度评估：</strong><br><br>
+    <strong>科技板块领涨，半导体暴涨</strong> — 八大板块中五个收涨，科技板块（+3.04%）和可选消费（+1.45%）领涨，半导体ETF（SMH +5.76%）和费城半导体指数（SOXX +6.62%）涨幅惊人，显示AI/芯片赛道资金高度集中。<br><br>
+    <strong>板块分化明显</strong> — 能源（-1.65%）和金融（-0.89%）板块逆势下跌，反映市场对Fed鹰派和地缘缓和的不同定价。科技股的强势表现与传统价值板块的疲软形成鲜明对比。<br><br>
+    <strong>小盘股跟涨</strong> — IWM +1.97%，涨幅超过标普500（+1.08%），表明市场风险偏好有所回升，资金开始向中小盘扩散。<br><br>
+    <strong>观察池涨跌统计</strong> — 43只观察股中：上涨33只（76.7%），下跌9只（20.9%），平盘1只（2.3%），市场整体做多情绪强烈。
+  </div>
+</div>
+
+<!-- Section 7: 技术面分析 -->
+<div class="section">
+  <div class="section-title">🔍 技术面分析</div>
+  <div class="grid-2">
+    <div>
+      <div class="section-subtitle">标普500 (S&P 500)</div>
+      <div class="news-item">
+        <strong>当前价格：</strong>7,500.58<br>
+        <strong>50日均线：</strong>约7,350（当前位于上方，+2.1%）<br>
+        <strong>200日均线：</strong>约7,100（当前位于上方，+5.6%）<br>
+        <strong>形态：</strong>昨日Fed鹰派冲击后强势反弹，重新站上7,500整数关口。均线系统多头排列，短期趋势向上。<br>
+        <strong>关键支撑：</strong>7,400（50日均线附近）/ 7,350（短期低点）<br>
+        <strong>关键阻力：</strong>7,550（前高）/ 7,600（心理关口）
+      </div>
+    </div>
+    <div>
+      <div class="section-subtitle">纳斯达克100 (Nasdaq 100)</div>
+      <div class="news-item">
+        <strong>当前价格：</strong>约26,500（IXIC 26,517.93）<br>
+        <strong>50日均线：</strong>约25,800（当前位于上方）<br>
+        <strong>200日均线：</strong>约24,500（当前位于上方）<br>
+        <strong>形态：</strong>半导体板块暴涨推动纳指大幅反弹，涨幅近2%。均线多头排列完好，但需警惕Fed鹰派政策的持续影响。<br>
+        <strong>关键支撑：</strong>26,000（整数关口）/ 25,500（50日均线附近）<br>
+        <strong>关键阻力：</strong>26,800（前高）/ 27,000（心理关口）
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Section 8: 重点个股新闻与异动 -->
+<div class="section">
+  <div class="section-title">🔥 重点个股新闻与异动</div>
+
+  <!-- 七巨头 -->
+  <div class="section-subtitle">七巨头 (Magnificent 7)</div>
+  <div class="stock-grid">
+    <div class="stock-item">
+      <div class="stock-ticker">AAPL</div>
+      <div class="stock-price">$298.01</div>
+      <div class="stock-change up">+0.70%</div>
+      <div style="font-size:0.8em;color:var(--text-secondary);margin-top:4px">苹果-英特尔合作消息利好</div>
+    </div>
+    <div class="stock-item">
+      <div class="stock-ticker">MSFT</div>
+      <div class="stock-price">$379.40</div>
+      <div class="stock-change up">+0.13%</div>
+      <div style="font-size:0.8em;color:var(--text-secondary);margin-top:4px">小幅上涨，表现平稳</div>
+    </div>
+    <div class="stock-item">
+      <div class="stock-ticker">NVDA</div>
+      <div class="stock-price">$210.69</div>
+      <div class="stock-change up">+2.95%</div>
+      <div style="font-size:0.8em;color:var(--text-secondary);margin-top:4px">AI芯片需求预期提振</div>
+    </div>
+    <div class="stock-item">
+      <div class="stock-ticker">GOOGL</div>
+      <div class="stock-price">$368.03</div>
+      <div class="stock-change up">+1.17%</div>
+      <div style="font-size:0.8em;color:var(--text-secondary);margin-top:4px">跟随大盘反弹</div>
+    </div>
+    <div class="stock-item">
+      <div class="stock-ticker">AMZN</div>
+      <div class="stock-price">$244.39</div>
+      <div class="stock-change up">+2.90%</div>
+      <div style="font-size:0.8em;color:var(--text-secondary);margin-top:4px">电商+云计算双引擎驱动</div>
+    </div>
+    <div class="stock-item">
+      <div class="stock-ticker">META</div>
+      <div class="stock-price">$577.22</div>
+      <div class="stock-change up">+1.70%</div>
+      <div style="font-size:0.8em;color:var(--text-secondary);margin-top:4px">AI投资主题受益</div>
+    </div>
+    <div class="stock-item">
+      <div class="stock-ticker">TSLA</div>
+      <div class="stock-price">$400.49</div>
+      <div class="stock-change up">+1.04%</div>
+      <div style="font-size:0.8em;color:var(--text-secondary);margin-top:4px">自动驾驶+机器人概念</div>
+    </div>
+  </div>
+
+  <!-- AI硬件/半导体 -->
+  <div class="section-subtitle" style="margin-top:20px">AI 硬件 / 半导体 ⚡</div>
+  <div class="stock-grid">
+    <div class="stock-item">
+      <div class="stock-ticker">INTC</div>
+      <div class="stock-price">$133.99</div>
+      <div class="stock-change up">+10.64%</div>
+      <div style="font-size:0.8em;color:var(--text-secondary);margin-top:4px">🔥 特朗普宣布苹果-英特尔合作造芯</div>
+    </div>
+    <div class="stock-item">
+      <div class="stock-ticker">SMCI</div>
+      <div class="stock-price">$30.66</div>
+      <div class="stock-change up">+10.37%</div>
+      <div style="font-size:0.8em;color:var(--text-secondary);margin-top:4px">🔥 AI服务器需求爆发</div>
+    </div>
+    <div class="stock-item">
+      <div class="stock-ticker">MRVL</div>
+      <div class="stock-price">$310.58</div>
+      <div class="stock-change up">+7.27%</div>
+      <div style="font-size:0.8em;color:var(--text-secondary);margin-top:4px">数据基础设施芯片受益</div>
+    </div>
+    <div class="stock-item">
+      <div class="stock-ticker">QCOM</div>
+      <div class="stock-price">$226.11</div>
+      <div class="stock-change up">+6.17%</div>
+      <div style="font-size:0.8em;color:var(--text-secondary);margin-top:4px">手机+AI芯片双轮驱动</div>
+    </div>
+    <div class="stock-item">
+      <div class="stock-ticker">AMD</div>
+      <div class="stock-price">$537.37</div>
+      <div class="stock-change up">+4.86%</div>
+      <div style="font-size:0.8em;color:var(--text-secondary);margin-top:4px">AI GPU竞争格局受益</div>
+    </div>
+    <div class="stock-item">
+      <div class="stock-ticker">AVGO</div>
+      <div class="stock-price">$411.35</div>
+      <div class="stock-change up">+4.70%</div>
+      <div style="font-size:0.8em;color:var(--text-secondary);margin-top:4px">AI网络芯片+定制ASIC</div>
+    </div>
+  </div>
+
+  <!-- 软件/AI应用 -->
+  <div class="section-subtitle" style="margin-top:20px">软件 / AI 应用</div>
+  <div class="stock-grid">
+    <div class="stock-item">
+      <div class="stock-ticker">CRM</div>
+      <div class="stock-price">$151.78</div>
+      <div class="stock-change down">-2.09%</div>
+      <div style="font-size:0.8em;color:var(--text-secondary);margin-top:4px">Agentforce测试期承压</div>
+    </div>
+    <div class="stock-item">
+      <div class="stock-ticker">ORCL</div>
+      <div class="stock-price">$184.29</div>
+      <div class="stock-change up">+0.41%</div>
+      <div style="font-size:0.8em;color:var(--text-secondary);margin-top:4px">财报后企稳</div>
+    </div>
+    <div class="stock-item">
+      <div class="stock-ticker">ADBE</div>
+      <div class="stock-price">$195.16</div>
+      <div class="stock-change down">-0.57%</div>
+      <div style="font-size:0.8em;color:var(--text-secondary);margin-top:4px">AI创意工具竞争加剧</div>
+    </div>
+    <div class="stock-item">
+      <div class="stock-ticker">NOW</div>
+      <div class="stock-price">$95.04</div>
+      <div class="stock-change down">-0.46%</div>
+      <div style="font-size:0.8em;color:var(--text-secondary);margin-top:4px">企业软件估值承压</div>
+    </div>
+    <div class="stock-item">
+      <div class="stock-ticker">SNOW</div>
+      <div class="stock-price">$232.29</div>
+      <div class="stock-change down">-0.95%</div>
+      <div style="font-size:0.8em;color:var(--text-secondary);margin-top:4px">数据平台竞争激烈</div>
+    </div>
+    <div class="stock-item">
+      <div class="stock-ticker">DDOG</div>
+      <div class="stock-price">$223.00</div>
+      <div class="stock-change down">-1.60%</div>
+      <div style="font-size:0.8em;color:var(--text-secondary);margin-top:4px">可观测性赛道承压</div>
+    </div>
+  </div>
+
+  <!-- AI电力/数据中心 -->
+  <div class="section-subtitle" style="margin-top:20px">AI 电力 / 数据中心</div>
+  <div class="stock-grid">
+    <div class="stock-item">
+      <div class="stock-ticker">ANET</div>
+      <div class="stock-price">$169.67</div>
+      <div class="stock-change up">+2.87%</div>
+      <div style="font-size:0.8em;color:var(--text-secondary);margin-top:4px">AI网络设备需求旺盛</div>
+    </div>
+    <div class="stock-item">
+      <div class="stock-ticker">CSCO</div>
+      <div class="stock-price">$119.54</div>
+      <div class="stock-change up">+1.88%</div>
+      <div style="font-size:0.8em;color:var(--text-secondary);margin-top:4px">企业网络+AI基础设施</div>
+    </div>
+    <div class="stock-item">
+      <div class="stock-ticker">HPQ</div>
+      <div class="stock-price">$23.50</div>
+      <div class="stock-change up">+1.38%</div>
+      <div style="font-size:0.8em;color:var(--text-secondary);margin-top:4px">PC市场回暖</div>
+    </div>
+    <div class="stock-item">
+      <div class="stock-ticker">DELL</div>
+      <div class="stock-price">$409.50</div>
+      <div class="stock-change down">-2.34%</div>
+      <div style="font-size:0.8em;color:var(--text-secondary);margin-top:4px">AI服务器利润率担忧</div>
+    </div>
+  </div>
+
+  <!-- 光通信 -->
+  <div class="section-subtitle" style="margin-top:20px">光通信</div>
+  <div class="stock-grid">
+    <div class="stock-item">
+      <div class="stock-ticker">COHR</div>
+      <div class="stock-price">$389.57</div>
+      <div class="stock-change up">+2.83%</div>
+      <div style="font-size:0.8em;color:var(--text-secondary);margin-top:4px">AI光互联需求受益</div>
+    </div>
+    <div class="stock-item">
+      <div class="stock-ticker">LITE</div>
+      <div class="stock-price">$850.00</div>
+      <div class="stock-change down">-2.30%</div>
+      <div style="font-size:0.8em;color:var(--text-secondary);margin-top:4px">高位回调，获利了结</div>
+    </div>
+    <div class="stock-item">
+      <div class="stock-ticker">FN</div>
+      <div class="stock-price">$573.76</div>
+      <div class="stock-change down">-1.82%</div>
+      <div style="font-size:0.8em;color:var(--text-secondary);margin-top:4px">光模块竞争加剧</div>
+    </div>
+    <div class="stock-item">
+      <div class="stock-ticker">IPG</div>
+      <div class="stock-price">$24.57</div>
+      <div class="stock-change flat">0.00%</div>
+      <div style="font-size:0.8em;color:var(--text-secondary);margin-top:4px">持平，缺乏催化剂</div>
+    </div>
+  </div>
+
+  <!-- 金融 -->
+  <div class="section-subtitle" style="margin-top:20px">金融（大型投行）</div>
+  <div class="stock-grid">
+    <div class="stock-item">
+      <div class="stock-ticker">GS</div>
+      <div class="stock-price">$1,096.56</div>
+      <div class="stock-change down">-0.23%</div>
+      <div style="font-size:0.8em;color:var(--text-secondary);margin-top:4px">小幅回调</div>
+    </div>
+    <div class="stock-item">
+      <div class="stock-ticker">MS</div>
+      <div class="stock-price">$223.17</div>
+      <div class="stock-change down">-0.80%</div>
+      <div style="font-size:0.8em;color:var(--text-secondary);margin-top:4px">财富管理承压</div>
+    </div>
+    <div class="stock-item">
+      <div class="stock-ticker">JPM</div>
+      <div class="stock-price">$325.22</div>
+      <div class="stock-change down">-2.47%</div>
+      <div style="font-size:0.8em;color:var(--text-secondary);margin-top:4px">Fed鹰派影响信贷质量预期</div>
+    </div>
+    <div class="stock-item">
+      <div class="stock-ticker">BAC</div>
+      <div class="stock-price">$56.20</div>
+      <div class="stock-change down">-0.58%</div>
+      <div style="font-size:0.8em;color:var(--text-secondary);margin-top:4px">跟随板块走弱</div>
+    </div>
+    <div class="stock-item">
+      <div class="stock-ticker">WFC</div>
+      <div class="stock-price">$82.20</div>
+      <div class="stock-change down">-1.92%</div>
+      <div style="font-size:0.8em;color:var(--text-secondary);margin-top:4px">加息预期利空银行股</div>
+    </div>
+  </div>
+</div>
+
+<!-- Section 9: 财报日历与财报解读 -->
+<div class="section">
+  <div class="section-title">📅 财报日历与财报解读</div>
+  <div class="summary-box">
+    <strong>已公布重要财报：</strong><br>
+    • <strong>Oracle (ORCL)</strong>（6月10日公布）— 财报超预期，营收和利润双双beat，宣布追加$200亿资本开支计划用于AI基础设施。股价当日大涨后企稳，本周小幅收涨0.41%。<br><br>
+    <strong>未来1-3天重点关注：</strong><br>
+    • <strong>Salesforce (CRM)</strong> — 面临Agentforce AI平台的关键测试，市场关注AI收入转化能力<br>
+    • <strong>半导体板块</strong> — 苹果-英特尔合作细节待落地，INTC后续走势取决于合作协议具体条款<br>
+    • <strong>经济数据</strong> — 持续关注初请失业金人数、PMI等宏观指标
+  </div>
+</div>
+
+<!-- Section 10: 机构观点与资金流 -->
+<div class="section">
+  <div class="section-title">🏦 机构观点与资金流</div>
+  <div class="grid-2">
+    <div>
+      <div class="section-subtitle">大行策略观点</div>
+      <div class="news-item">
+        <strong>美联储新主席Warsh：</strong>首次FOMC会议维持利率不变但释放鹰派信号，取消点阵图前瞻指引，要求"市场引导Fed而非Fed引导市场"。通胀处于3年多高位，市场开始定价加息可能。
+      </div>
+      <div class="news-item">
+        <strong>华尔街共识：</strong>Fed鹰派转向令市场意外，但半导体板块的强势表现表明AI主题的投资逻辑依然坚挺。机构普遍认为科技股的结构性牛市尚未结束，但短期波动可能加剧。
+      </div>
+    </div>
+    <div>
+      <div class="section-subtitle">资金流向观察</div>
+      <div class="news-item">
+        <strong>ETF资金流：</strong>SMH（半导体ETF）单日涨幅5.76%，显示资金大幅涌入AI芯片赛道。IWM（小盘股ETF）+1.97%，风险偏好回升带动中小盘资金流入。
+      </div>
+      <div class="news-item">
+        <strong>板块轮动：</strong>资金从能源（XLE -1.65%）和金融（XLF -0.89%）流出，转向科技（XLK +3.04%）和半导体（SMH +5.76%）。市场风格从防御转向进攻，但需警惕Fed政策转向的持续影响。
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Section 11: 板块轮动判断 -->
+<div class="section">
+  <div class="section-title">🔄 板块轮动判断</div>
+  <div class="summary-box">
+    <strong>当前市场状态：强势上涨（科技主导型）</strong><br><br>
+    <strong>判断依据：</strong><br>
+    • <strong>指数层面：</strong>标普500 +1.08%站上7,500，纳斯达克 +1.91%，道指 +0.14%。三大指数全线上涨，科技股领涨。<br>
+    • <strong>板块层面：</strong>科技板块（XLK +3.04%）大幅领涨，半导体（SMH +5.76%）暴涨。10个GICS板块中5个收涨，市场宽度尚可。<br>
+    • <strong>风格特征：</strong>典型的"科技主导型上涨"，半导体板块在苹果-英特尔合作催化下成为绝对主线。金融和能源板块逆势下跌，显示资金高度集中于AI/芯片赛道。<br>
+    • <strong>VIX信号：</strong>VIX暴跌至16.40（-11.06%），恐慌情绪快速消退，风险偏好回升。<br><br>
+    <strong>轮动方向：</strong>资金持续流入半导体/AI赛道，从传统价值板块（金融、能源）流出。板块分化加剧，科技板块的独立行情特征明显。
+  </div>
+</div>
+
+<!-- Section 12: 重点关注股观察 -->
+<div class="section">
+  <div class="section-title">⭐ 重点关注股观察</div>
+  <div class="grid-2">
+    <div class="news-item">
+      <strong>INTC（英特尔）— $133.99 (+10.64%)</strong><br>
+      🔥 核心催化剂：特朗普宣布苹果-英特尔合作在美国设计和制造芯片，政府持有英特尔10%股份（价值约$600亿）。这是英特尔代工业务获得的最强可信度信号。短期看涨，关注合作协议具体条款和后续订单落地情况。关键支撑$120，阻力$145。
+    </div>
+    <div class="news-item">
+      <strong>NVDA（英伟达）— $210.69 (+2.95%)</strong><br>
+      📈 AI芯片需求预期持续提振。半导体板块整体暴涨背景下，NVDA作为AI芯片龙头跟随上涨。关键催化剂：下一季度财报的数据中心收入指引。关键支撑$200，阻力$220。
+    </div>
+    <div class="news-item">
+      <strong>SMCI（超微电脑）— $30.66 (+10.37%)</strong><br>
+      🔥 AI服务器需求爆发式增长，叠加苹果-英特尔合作带动整个芯片/服务器生态链。短期波动较大，需关注基本面能否支撑估值。关键支撑$27，阻力$33。
+    </div>
+    <div class="news-item">
+      <strong>JPM（摩根大通）— $325.22 (-2.47%)</strong><br>
+      ⚠️ Fed鹰派立场令银行股承压，市场担忧加息可能增加信贷质量风险。作为金融板块龙头，JPM的走势反映了市场对利率路径的定价。关键支撑$315，阻力$335。
+    </div>
+  </div>
+</div>
+
+<!-- Section 13: 明日交易计划/观察清单 -->
+<div class="section">
+  <div class="section-title">📋 明日交易计划 / 观察清单</div>
+  <div class="grid-2">
+    <div>
+      <div class="section-subtitle">明日重点关注事件</div>
+      <div class="news-item">
+        <strong>1. 经济数据：</strong>关注初请失业金人数、费城联储制造业指数等数据发布<br>
+        <strong>2. Fed官员讲话：</strong>Warsh鹰派信号后的官员表态，市场将密切关注加息路径线索<br>
+        <strong>3. 苹果-英特尔合作细节：</strong>合作协议具体条款、时间表、政府补贴细节<br>
+        <strong>4. 伊朗和平协议后续：</strong>霍尔木兹海峡通航恢复进展，原油价格走势<br>
+        <strong>5. 企业财报：</strong>Salesforce (CRM) 财报前瞻，AI板块业绩关注度
+      </div>
+    </div>
+    <div>
+      <div class="section-subtitle">操作计划建议</div>
+      <div class="news-item">
+        <strong>持仓策略：</strong><br>
+        • <strong>半导体多头持仓</strong> — 保持SMH、NVDA等核心半导体仓位，短期趋势强劲<br>
+        • <strong>INTC波段操作</strong> — 苹果-英特尔合作催化下，短期看涨但注意追高风险<br>
+        • <strong>金融股减仓</strong> — Fed鹰派背景下银行股承压，JPM、WFC等考虑减持<br>
+        • <strong>能源股观望</strong> — 美伊和平协议压制油价，能源板块短期承压<br>
+        • <strong>止损纪律</strong> — S&P 500跌破7,400考虑减仓，VIX突破20触发防御
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Section 14: 风险提示 -->
+<div class="section">
+  <div class="section-title">⚠️ 风险提示</div>
+  <div class="risk-grid">
+    <div class="risk-item">
+      <div class="risk-label">宏观风险</div>
+      <div class="risk-level" style="color:var(--red)">高</div>
+      <div style="font-size:0.8em;color:var(--text-secondary)">Fed鹰派转向，通胀3年高位，加息预期上升</div>
+    </div>
+    <div class="risk-item">
+      <div class="risk-label">利率风险</div>
+      <div class="risk-level" style="color:var(--red)">高</div>
+      <div style="font-size:0.8em;color:var(--text-secondary)">10Y收益率4.455%，Warsh取消前瞻指引</div>
+    </div>
+    <div class="risk-item">
+      <div class="risk-label">财报风险</div>
+      <div class="risk-level" style="color:var(--yellow)">中</div>
+      <div style="font-size:0.8em;color:var(--text-secondary)">CRM财报在即，AI板块估值需业绩验证</div>
+    </div>
+    <div class="risk-item">
+      <div class="risk-label">地缘政治</div>
+      <div class="risk-level" style="color:var(--green)">低</div>
+      <div style="font-size:0.8em;color:var(--text-secondary)">美伊和平协议达成，霍尔木兹海峡封锁解除</div>
+    </div>
+    <div class="risk-item">
+      <div class="risk-label">行业监管</div>
+      <div class="risk-level" style="color:var(--yellow)">中</div>
+      <div style="font-size:0.8em;color:var(--text-secondary)">半导体补贴政策细节待定，AI监管框架推进</div>
+    </div>
+    <div class="risk-item">
+      <div class="risk-label">流动性风险</div>
+      <div class="risk-level" style="color:var(--yellow)">中</div>
+      <div style="font-size:0.8em;color:var(--text-secondary)">加息预期可能收紧市场流动性</div>
+    </div>
+    <div class="risk-item">
+      <div class="risk-label">估值风险</div>
+      <div class="risk-level" style="color:var(--red)">高</div>
+      <div style="font-size:0.8em;color:var(--text-secondary)">AI概念股涨幅巨大，估值泡沫风险</div>
+    </div>
+    <div class="risk-item">
+      <div class="risk-label">市场情绪</div>
+      <div class="risk-level" style="color:var(--green)">低</div>
+      <div style="font-size:0.8em;color:var(--text-secondary)">VIX 16.40，恐慌情绪大幅缓解</div>
+    </div>
+    <div class="risk-item">
+      <div class="risk-label">黑天鹅风险</div>
+      <div class="risk-level" style="color:var(--green)">低</div>
+      <div style="font-size:0.8em;color:var(--text-secondary)">暂无明显黑天鹅信号</div>
+    </div>
+  </div>
+  <div class="summary-box" style="margin-top:12px;">
+    <strong>综合风险等级：中高</strong><br>
+    主要风险来自美联储鹰派转向和利率上升预期。宏观风险和利率风险均达高水平，AI板块估值风险突出。但地缘政治风险显著降低（美伊和平协议），市场情绪改善（VIX回落至16.40）。短期市场可能在高位震荡，需密切关注Fed后续政策信号。
+  </div>
+</div>
+
+<!-- Section 15: 最终结论 -->
+<div class="section">
+  <div class="section-title">✅ 最终结论</div>
+  <div class="conclusion-box">
+    <div class="grid-2">
+      <div>
+        <div class="section-subtitle">市场阶段</div>
+        <div style="font-size:1.2em;font-weight:700;color:var(--green)">📈 看涨（科技主导）</div>
+        <div style="margin-top:8px;color:var(--text-secondary)">标普500站上7,500，纳斯达克涨近2%，半导体板块暴涨。市场在Fed鹰派冲击后强势反弹，显示AI/芯片主题的结构性牛市逻辑依然坚挺。VIX回落至16.40，恐慌消退。</div>
+      </div>
+      <div>
+        <div class="section-subtitle">操作倾向</div>
+        <div style="font-size:1.2em;font-weight:700;color:var(--blue)">👍 谨慎做多</div>
+        <div style="margin-top:8px;color:var(--text-secondary)">半导体板块趋势强劲，可保持核心仓位。但Fed鹰派转向构成中期风险，需设置止损。金融和能源板块回避，软件板块观望。</div>
+      </div>
+    </div>
+    <div style="margin-top:20px;">
+      <div class="section-subtitle">5 个关键观察信号</div>
+      <div style="display:grid;gap:8px;margin-top:8px;">
+        <div class="news-item"><strong>1. 技术面：</strong>S&P 500 站上7,500整数关口，均线多头排列完好。若能站稳7,500，下一目标7,600。跌破7,400需警惕回调风险。</div>
+        <div class="news-item"><strong>2. 基本面：</strong>苹果-英特尔合作是半导体板块最大催化剂，INTC +10.64%创近期最大单日涨幅。关注合作协议具体条款和后续订单落地。</div>
+        <div class="news-item"><strong>3. 情绪面：</strong>VIX 16.40（-11.06%）恐慌情绪大幅消退，市场风险偏好回升。IWM +1.97%显示资金向中小盘扩散。</div>
+        <div class="news-item"><strong>4. 宏观面：</strong>Fed新主席Warsh鹰派信号（取消点阵图、暗示加息）构成中期风险。美伊和平协议缓解地缘风险，油价回落利好消费端。</div>
+        <div class="news-item"><strong>5. 资金面：</strong>资金高度集中于AI/半导体赛道（SMH +5.76%），板块分化加剧。能源和金融板块资金流出，科技板块独立行情特征明显。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<div style="text-align:center;color:var(--text-secondary);font-size:0.85em;margin-top:20px;padding-top:15px;border-top:1px solid var(--border);">
+  <p>数据来源：腾讯财经API、CNBC | 生成时间：2026-06-19 07:00 (北京时间)</p>
+  <p>Powered by Hermes Agent | 仅供参考，不构成投资建议</p>
+</div>
+
+</div>
+</body>
+</html>
