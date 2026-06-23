@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>美股收盘日报 2026-06-23</title>
+<style>
+:root {
+  --bg-primary: #0d1117;
+  --bg-secondary: #161b22;
+  --bg-card: #1c2128;
+  --text-primary: #e6edf3;
+  --text-secondary: #8b949e;
+  --green: #3fb950;
+  --red: #f85149;
+  --blue: #58a6ff;
+  --yellow: #d29922;
+  --purple: #bc8cff;
+  --border: #30363d;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  padding: 20px;
+}
+.container { max-width: 1200px; margin: 0 auto; }
+h1 {
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 10px;
+  background: linear-gradient(135deg, var(--blue), var(--purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.subtitle {
+  text-align: center;
+  color: var(--text-secondary);
+  margin-bottom: 30px;
+  font-size: 0.95em;
+}
+.section {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 20px;
+}
+.section-title {
+  font-size: 1.3em;
+  font-weight: 700;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--blue);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.summary-box {
+  background: var(--bg-card);
+  border-left: 4px solid var(--blue);
+  padding: 16px 20px;
+  border-radius: 0 8px 8px 0;
+  margin-bottom: 12px;
+  font-size: 1.05em;
+}
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+}
+.card-name {
+  font-size: 0.85em;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+}
+.card-price {
+  font-size: 1.3em;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.card-change {
+  font-size: 1em;
+  font-weight: 600;
+}
+.up { color: var(--green); }
+.down { color: var(--red); }
+.flat { color: var(--text-secondary); }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95em;
+}
+th, td {
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+th {
+  background: var(--bg-card);
+  font-weight: 600;
+  color: var(--text-secondary);
+  font-size: 0.85em;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+tr:hover { background: rgba(88,166,255,0.05); }
+.tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.8em;
+  font-weight: 600;
+}
+.tag-green { background: rgba(63,185,80,0.15); color: var(--green); }
+.tag-red { background: rgba(248,81,73,0.15); color: var(--red); }
+.tag-yellow { background: rgba(210,153,34,0.15); color: var(--yellow); }
+.tag-blue { background: rgba(88,166,255,0.15); color: var(--blue); }
+.timeline {
+  position: relative;
+  padding-left: 24px;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 8px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--border);
+}
+.timeline-item {
+  position: relative;
+  margin-bottom: 16px;
+  padding-left: 16px;
+}
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -20px;
+  top: 6px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--blue);
+}
+.timeline-label {
+  font-weight: 700;
+  color: var(--blue);
+  margin-bottom: 4px;
+}
+.news-item {
+  background: var(--bg-card);
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 8px;
+  border-left: 3px solid var(--blue);
+}
+.news-item strong {
+  color: var(--blue);
+}
+.stock-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 8px;
+}
+.stock-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px;
+  text-align: center;
+}
+.stock-ticker {
+  font-weight: 700;
+  font-size: 1.1em;
+}
+.stock-price {
+  font-size: 0.95em;
+  color: var(--text-secondary);
+  margin: 4px 0;
+}
+.stock-change {
+  font-weight: 600;
+}
+.section-subtitle {
+  font-size: 1.1em;
+  font-weight: 600;
+  color: var(--blue);
+  margin: 16px 0 10px 0;
+}
+.risk-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.risk-item {
+  background: var(--bg-card);
+  border-radius: 8px;
+  padding: 12px;
+  text-align: center;
+}
+.risk-label {
+  font-size: 0.85em;
+  color: var(--text-secondary);
+  margin-bottom: 6px;
+}
+.risk-level {
+  font-weight: 700;
+  font-size: 1em;
+}
+.conclusion-box {
+  background: var(--bg-card);
+  border: 2px solid var(--blue);
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 16px;
+}
+@media (max-width: 768px) {
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .grid-3 { grid-template-columns: repeat(2, 1fr); }
+  .risk-grid { grid-template-columns: repeat(2, 1fr); }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>美股收盘日报 2026-06-23</h1>
+<div class="subtitle">半导体板块血洗 - SMH暴跌7% | 美光财报不及预期引发恐慌 | VIX飙升至19.49 | 资金轮动至防御板块</div>
+
+<!-- Section 0: 今日一句话总结 -->
+<div class="section">
+  <div class="section-title">📌 今日一句话总结</div>
+  <div class="summary-box">
+    半导体板块遭遇年内最惨烈抛售，SMH暴跌7.01%，SOXX跌7.88%，美光(MU)盘后财报指引不及预期重挫13%，Cerebras上市首份财报预警利润率下滑。标普500下跌1.44%至7,365点，纳斯达克100跌3.29%，VIX恐慌指数飙升12.79%至19.49。道指几乎持平(-0.09%)，显示资金从科技股大幅轮动至防御和价值板块。霍尔木兹海峡地缘紧张局势加剧市场避险情绪，10年期美债收益率微升至4.499%。
+  </div>
+</div>
+
+<!-- Section 1: 大盘表现总览 -->
+<div class="section">
+  <div class="section-title">📊 大盘表现总览</div>
+  <div class="grid-4">
+    <div class="card">
+      <div class="card-name">S&P 500</div>
+      <div class="card-price">7,365.46</div>
+      <div class="card-change down">-107.33 (-1.44%)</div>
+    </div>
+    <div class="card">
+      <div class="card-name">Nasdaq Composite</div>
+      <div class="card-price">25,587.04</div>
+      <div class="card-change down">-579.56 (-2.21%)</div>
+    </div>
+    <div class="card">
+      <div class="card-name">Nasdaq 100</div>
+      <div class="card-price">29,347.27</div>
+      <div class="card-change down">-3.29%</div>
+    </div>
+    <div class="card">
+      <div class="card-name">Dow Jones</div>
+      <div class="card-price">51,666.84</div>
+      <div class="card-change down">-45.87 (-0.09%)</div>
+    </div>
+    <div class="card">
+      <div class="card-name">Russell 2000</div>
+      <div class="card-price">$295.32 (IWM)</div>
+      <div class="card-change down">-0.96%</div>
+    </div>
+    <div class="card">
+      <div class="card-name">Philadelphia SOX</div>
+      <div class="card-price">$603.39 (SOXX)</div>
+      <div class="card-change down">-7.88%</div>
+    </div>
+    <div class="card">
+      <div class="card-name">VIX 恐慌指数</div>
+      <div class="card-price">19.49</div>
+      <div class="card-change up">+2.21 (+12.79%)</div>
+    </div>
+    <div class="card">
+      <div class="card-name">NYSE Composite</div>
+      <div class="card-price">—</div>
+      <div class="card-change down">约 -1.0%</div>
+    </div>
+  </div>
+</div>
+
+<!-- Section 2: 盘中走势复盘 -->
+<div class="section">
+  <div class="section-title">📈 盘中走势复盘</div>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-label">盘前</div>
+      <div>期货低开，美光(MU)盘后财报指引不及预期引发半导体板块恐慌。Cerebras上市首份财报预警利润率下滑，市场对AI芯片盈利能力产生疑虑。霍尔木兹海峡地缘紧张局势进一步压制风险偏好。</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-label">开盘</div>
+      <div>市场大幅低开，半导体板块首当其冲。SOXX开盘即跌超6%，SMH跌超5%。NVDA跌4%，AMD跌5%。道指在价值股支撑下跌幅有限，开盘仅跌约0.1%。</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-label">午盘</div>
+      <div>抛售加速扩散，半导体板块跌幅扩大至8%以上。MRVL暴跌9.36%，QCOM跌8%，LITE跌7.38%。VIX突破19，恐慌情绪蔓延。但防御板块逆势走强，XLV+1.41%，XLU+0.78%。</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-label">尾盘</div>
+      <div>尾盘抛压不减，纳斯达克100收跌3.29%。道指在银行股(JPM+0.8%, BAC+0.94%)和工业股支撑下几乎持平收场，显示显著的资金轮动。VIX收于19.49，日内涨幅达12.79%。</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-label">盘后</div>
+      <div>盘后期货小幅企稳，市场消化半导体抛售后情绪略有缓和。关注次日亚洲市场对地缘风险的反应以及美联储官员讲话。</div>
+    </div>
+  </div>
+</div>
+
+<!-- Section 3: 宏观环境 -->
+<div class="section">
+  <div class="section-title">🌍 宏观环境</div>
+  <table>
+    <thead>
+      <tr><th>指标</th><th>当前值</th><th>涨跌幅</th><th>说明</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>VIX 恐慌指数</td><td>19.49</td><td class="up">+12.79%</td><td>恐慌情绪大幅飙升，从17.28跳升至19.49</td></tr>
+      <tr><td>美债 10Y 收益率</td><td>4.499%</td><td class="up">+0.13%</td><td>小幅上升，前值4.493%，债市相对平静</td></tr>
+      <tr><td>黄金 (GC)</td><td>$4,124.30</td><td class="down">-0.60%</td><td>避险需求未能推升金价，加息预期压制</td></tr>
+      <tr><td>WTI 原油</td><td>$72.96</td><td class="down">-0.34%</td><td>霍尔木兹海峡紧张但油价微跌，需求担忧主导</td></tr>
+      <tr><td>美元指数 (DXY)</td><td>101.408</td><td class="flat">0.00%</td><td>窄幅震荡，接近52周高点101.41</td></tr>
+      <tr><td>比特币</td><td>$62,470</td><td class="up">+0.17%</td><td>CME期货小幅上涨，避险资金微幅流入</td></tr>
+    </tbody>
+  </table>
+  <div class="summary-box" style="margin-top:12px;">
+    <strong>核心宏观叙事：</strong>市场风险偏好急剧下降，VIX飙升12.79%至19.49，但尚未达到极端恐慌水平(>25)。半导体板块的盈利担忧叠加霍尔木兹海峡地缘紧张，构成双重利空。然而道指几乎持平(-0.09%)，显示资金并非全面撤离，而是从科技/成长板块轮动至价值/防御板块。10年期美债收益率仅微升至4.499%，债市反应温和，暗示市场并未定价系统性风险。
+  </div>
+</div>
+
+<!-- Section 4: 板块表现 -->
+<div class="section">
+  <div class="section-title">🏷️ 板块表现（GICS 十大板块 ETF）</div>
+  <table>
+    <thead>
+      <tr><th>板块</th><th>ETF</th><th>收盘价</th><th>涨跌幅</th><th>强弱</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>医疗保健</td><td>XLV</td><td>$152.18</td><td class="up">+1.41%</td><td><span class="tag tag-green">强势</span></td></tr>
+      <tr><td>房地产</td><td>XLRE</td><td>$44.64</td><td class="up">+1.41%</td><td><span class="tag tag-green">强势</span></td></tr>
+      <tr><td>公用事业</td><td>XLU</td><td>$45.07</td><td class="up">+0.78%</td><td><span class="tag tag-green">偏强</span></td></tr>
+      <tr><td>能源</td><td>XLE</td><td>$54.46</td><td class="up">+0.74%</td><td><span class="tag tag-green">偏强</span></td></tr>
+      <tr><td>通信服务</td><td>XLC</td><td>$107.27</td><td class="up">+0.38%</td><td><span class="tag tag-yellow">中性偏强</span></td></tr>
+      <tr><td>金融</td><td>XLF</td><td>$53.88</td><td class="up">+0.34%</td><td><span class="tag tag-yellow">中性偏强</span></td></tr>
+      <tr><td>可选消费</td><td>XLY</td><td>$113.76</td><td class="down">-1.03%</td><td><span class="tag tag-yellow">中性偏弱</span></td></tr>
+      <tr><td>材料</td><td>XLB</td><td>$50.87</td><td class="down">-1.45%</td><td><span class="tag tag-red">弱势</span></td></tr>
+      <tr><td>工业</td><td>XLI</td><td>$178.15</td><td class="down">-2.01%</td><td><span class="tag tag-red">弱势</span></td></tr>
+      <tr><td>科技</td><td>XLK</td><td>$184.19</td><td class="down">-4.14%</td><td><span class="tag tag-red">领跌</span></td></tr>
+    </tbody>
+  </table>
+  <div class="summary-box" style="margin-top:12px;">
+    <strong>板块解读：</strong>典型的防御性轮动行情。医疗保健(+1.41%)、房地产(+1.41%)、公用事业(+0.78%)领涨，显示资金涌入利率敏感型防御板块。科技(-4.14%)领跌，工业(-2.01%)和材料(-1.45%)紧随其后。金融(+0.34%)和通信(+0.38%)微涨，在科技抛售中展现韧性。10大板块中4涨6跌，分化明显。
+  </div>
+</div>
+
+<!-- Section 5: 主题与风格表现 -->
+<div class="section">
+  <div class="section-title">🎯 主题与风格表现</div>
+  <div class="grid-4">
+    <div class="card">
+      <div class="card-name">半导体 (SMH)</div>
+      <div class="card-price">$622.05</div>
+      <div class="card-change down">-7.01%</div>
+    </div>
+    <div class="card">
+      <div class="card-name">AI/数据中心 (AI)</div>
+      <div class="card-price">$9.68</div>
+      <div class="card-change down">-0.21%</div>
+    </div>
+    <div class="card">
+      <div class="card-name">软件 (IGV)</div>
+      <div class="card-price">$87.32</div>
+      <div class="card-change flat">+0.01%</div>
+    </div>
+    <div class="card">
+      <div class="card-name">网络安全 (CIBR)</div>
+      <div class="card-price">$84.21</div>
+      <div class="card-change up">+0.75%</div>
+    </div>
+    <div class="card">
+      <div class="card-name">云服务 (SKYY)</div>
+      <div class="card-price">$129.36</div>
+      <div class="card-change down">-0.14%</div>
+    </div>
+    <div class="card">
+      <div class="card-name">光通信 (FTGS)</div>
+      <div class="card-price">$36.49</div>
+      <div class="card-change down">-0.71%</div>
+    </div>
+    <div class="card">
+      <div class="card-name">小盘价值 (IWM)</div>
+      <div class="card-price">$295.32</div>
+      <div class="card-change down">-0.96%</div>
+    </div>
+  </div>
+  <div class="summary-box" style="margin-top:12px;">
+    <strong>风格解读：</strong>半导体板块遭遇血洗，SMH暴跌7.01%，为全市场最惨烈板块。美光财报不及预期和Cerebras利润率预警引发整个芯片链抛售。网络安全(CIBR+0.75%)逆势上涨，成为唯一正收益主题ETF。软件(IGV+0.01%)和云服务(SKYY-0.14%)基本持平，跌幅远小于半导体。小盘(IWM-0.96%)相对抗跌，大盘科技股承受更大抛压。
+  </div>
+</div>
+
+<!-- Section 6: 市场宽度与参与度 -->
+<div class="section">
+  <div class="section-title">📉 市场宽度与参与度</div>
+  <div class="grid-3">
+    <div class="card">
+      <div class="card-name">涨跌家数</div>
+      <div class="card-price"><span class="down">跌多涨少</span></div>
+      <div class="card-change">科技/半导体领跌，防御板块逆势</div>
+    </div>
+    <div class="card">
+      <div class="card-name">S&P 500 涨跌</div>
+      <div class="card-price"><span class="down">约 70% 下跌</span></div>
+      <div class="card-change">TOP涨: AXON+5.6%, CDW+5.3%, GEHC+5.1%</div>
+    </div>
+    <div class="card">
+      <div class="card-name">VIX 恐慌度</div>
+      <div class="card-price">19.49</div>
+      <div class="card-change"><span class="tag tag-yellow">中等恐慌</span></div>
+    </div>
+  </div>
+  <div class="summary-box" style="margin-top:12px;">
+    <strong>市场宽度：</strong>市场分化严重，约70%个股下跌。半导体板块几乎全线崩溃，S&P 500中MU-13.18%、SNDK-13.64%、VRT-11.07%领跌。但防御性个股逆势走强：AXON+5.61%、GE Healthcare+5.08%、IBM+5.04%。VIX从17.28跳升至19.49(+12.79%)，反映恐慌情绪急剧上升但尚未达到极端恐慌水平(>25)。
+  </div>
+</div>
+
+<!-- Section 7: 技术面分析 -->
+<div class="section">
+  <div class="section-title">🔍 技术面分析</div>
+  <div class="section-subtitle">S&P 500</div>
+  <div class="summary-box">
+    <strong>当前点位：</strong>7,365.46<br>
+    <strong>形态：</strong>跌破短期均线支撑，从前期高点约7,620回落至7,365，回调幅度约3.3%。形成高位回落形态，短期均线开始向下拐头。<br>
+    <strong>关键支撑位：</strong>7,350（20日均线附近）、7,300（整数关口+前期低点）、7,200（前期重要支撑）<br>
+    <strong>关键阻力位：</strong>7,400（短期均线压制）、7,500（50日均线附近）、7,620（年内高点）<br>
+    <strong>判断：</strong>短期偏空，7,350为关键支撑。若跌破7,300可能加速下行至7,200。半导体板块何时企稳是关键观察点。
+  </div>
+  <div class="section-subtitle">Nasdaq 100</div>
+  <div class="summary-box">
+    <strong>当前点位：</strong>29,347.27<br>
+    <strong>形态：</strong>科技股领跌，Nasdaq 100跌幅(-3.29%)远大于S&P(-1.44%)，显示成长股承受巨大抛压。半导体权重股(NVDA, AVGO)和软件股(ORCL)大幅下跌。<br>
+    <strong>关键支撑位：</strong>29,000（整数关口）、28,500（前期低点）、28,000（200日均线附近）<br>
+    <strong>关键阻力位：</strong>29,800（短期均线压制）、30,500（前期高点）<br>
+    <strong>判断：</strong>短期承压严重，半导体板块何时止跌是关键。若SMH跌破$600整数关口，可能触发更多技术性卖盘。
+  </div>
+</div>
+
+<!-- Section 8: 重点个股新闻与异动 -->
+<div class="section">
+  <div class="section-title">📰 重点个股新闻与异动</div>
+
+  <div class="section-subtitle">七巨头（Magnificent 7）</div>
+  <div class="stock-grid">
+    <div class="stock-item">
+      <div class="stock-ticker">AAPL</div>
+      <div class="stock-price">$294.30</div>
+      <div class="stock-change down">-0.91%</div>
+    </div>
+    <div class="stock-item">
+      <div class="stock-ticker">MSFT</div>
+      <div class="stock-price">$373.94</div>
+      <div class="stock-change up">+1.80%</div>
+    </div>
+    <div class="stock-item">
+      <div class="stock-ticker">NVDA</div>
+      <div class="stock-price">$200.04</div>
+      <div class="stock-change down">-4.13%</div>
+    </div>
+    <div class="stock-item">
+      <div class="stock-ticker">GOOGL</div>
+      <div class="stock-price">$346.13</div>
+      <div class="stock-change down">-1.02%</div>
+    </div>
+    <div class="stock-item">
+      <div class="stock-ticker">AMZN</div>
+      <div class="stock-price">$234.11</div>
+      <div class="stock-change up">+0.57%</div>
+    </div>
+    <div class="stock-item">
+      <div class="stock-ticker">META</div>
+      <div class="stock-price">$562.20</div>
+      <div class="stock-change down">-0.29%</div>
+    </div>
+    <div class="stock-item">
+      <div class="stock-ticker">TSLA</div>
+      <div class="stock-price">$381.61</div>
+      <div class="stock-change down">-5.79%</div>
+    </div>
+  </div>
+  <div class="news-item" style="margin-top:12px;">
+    <strong>TSLA -5.79%：</strong>七巨头中跌幅最大，市场担忧高利率环境下电动车需求承压。Alphabet被纳入道指替换Verizon，TSLA作为高beta成长股首当其冲。
+  </div>
+  <div class="news-item">
+    <strong>NVDA -4.13%：</strong>半导体板块血洗拖累英伟达。美光财报不及预期引发市场对整个AI芯片链盈利能力的担忧。
+  </div>
+  <div class="news-item">
+    <strong>MSFT +1.80%：</strong>七巨头中唯一显著上涨，微软在软件板块中展现防御性。市场看好其企业AI订阅收入的稳定性。
+  </div>
+
+  <div class="section-subtitle">AI 硬件/半导体</div>
+  <div class="stock-grid">
+    <div class="stock-item">
+      <div class="stock-ticker">AMD</div>
+      <div class="stock-price">$519.85</div>
+      <div class="stock-change down">-5.76%</div>
+    </div>
+    <div class="stock-item">
+      <div class="stock-ticker">INTC</div>
+      <div class="stock-price">$132.28</div>
+      <div class="stock-change down">-6.14%</div>
+    </div>
+    <div class="stock-item">
+      <div class="stock-ticker">QCOM</div>
+      <div class="stock-price">$204.13</div>
+      <div class="stock-change down">-8.01%</div>
+    </div>
+    <div class="stock-item">
+      <div class="stock-ticker">AVGO</div>
+      <div class="stock-price">$380.15</div>
+      <div class="stock-change down">-3.06%</div>
+    </div>
+    <div class="stock-item">
+      <div class="stock-ticker">MRVL</div>
+      <div class="stock-price">$279.04</div>
+      <div class="stock-change down">-9.36%</div>
+    </div>
+    <div class="stock-item">
+      <div class="stock-ticker">SMCI</div>
+      <div class="stock-price">$33.32</div>
+      <div class="stock-change down">-6.03%</div>
+    </div>
+  </div>
+  <div class="news-item" style="margin-top:12px;">
+    <strong>MRVL -9.36%：</strong>迈威尔科技领跌半导体板块，市场担忧存储芯片和网络芯片需求放缓。美光财报不及预期的冲击波扩散至整个芯片产业链。
+  </div>
+  <div class="news-item">
+    <strong>QCOM -8.01%：</strong>高通重挫，手机芯片市场疲软叠加半导体板块系统性抛售。
+  </div>
+  <div class="news-item">
+    <strong>INTC -6.14%：</strong>英特尔回吐近期涨幅，半导体板块整体崩盘拖累。此前连续反弹的势头被打断。
+  </div>
+
+  <div class="section-subtitle">软件/AI 应用</div>
+  <div class="stock-grid">
+    <div class="stock-item">
+      <div class="stock-ticker">CRM</div>
+      <div class="stock-price">$153.42</div>
+      <div class="stock-change up">+2.20%</div>
+    </div>
+    <div class="stock-item">
+      <div class="stock-ticker">ORCL</div>
+      <div class="stock-price">$165.16</div>
+      <div class="stock-change down">-5.66%</div>
+    </div>
+    <div class="stock-item">
+      <div class="stock-ticker">ADBE</div>
+      <div class="stock-price">$197.43</div>
+      <div class="stock-change up">+1.30%</div>
+    </div>
+    <div class="stock-item">
+      <div class="stock-ticker">NOW</div>
+      <div class="stock-price">$95.94</div>
+      <div class="stock-change up">+3.15%</div>
+    </div>
+    <div class="stock-item">
+      <div class="stock-ticker">SNOW</div>
+      <div class="stock-price">$230.41</div>
+      <div class="stock-change up">+1.69%</div>
+    </div>
+    <div class="stock-item">
+      <div class="stock-ticker">DDOG</div>
+      <div class="stock-price">$220.57</div>
+      <div class="stock-change down">-0.36%</div>
+    </div>
+  </div>
+  <div class="news-item" style="margin-top:12px;">
+    <strong>NOW +3.15%：</strong>ServiceNow逆势领涨软件板块，企业SaaS订阅模式在动荡市况中展现防御性。CRM+2.2%同步走强。
+  </div>
+  <div class="news-item">
+    <strong>ORCL -5.66%：</strong>甲骨文逆势大跌，市场担忧其云基础设施投资回报周期在高利率环境下延长。
+  </div>
+
+  <div class="section-subtitle">AI 电力/数据中心</div>
+  <div class="stock-grid">
+    <div class="stock-item">
+      <div class="stock-ticker">DELL</div>
+      <div class="stock-price">$427.78</div>
+      <div class="stock-change up">+2.17%</div>
+    </div>
+    <div class="stock-item">
+      <div class="stock-ticker">HPQ</div>
+      <div class="stock-price">$23.67</div>
+      <div class="stock-change up">+0.55%</div>
+    </div>
+    <div class="stock-item">
+      <div class="stock-ticker">ANET</div>
+      <div class="stock-price">$162.20</div>
+      <div class="stock-change down">-7.08%</div>
+    </div>
+    <div class="stock-item">
+      <div class="stock-ticker">VMW</div>
+      <div class="stock-price">$142.48</div>
+      <div class="stock-change flat">0.00%</div>
+    </div>
+    <div class="stock-item">
+      <div class="stock-ticker">CSCO</div>
+      <div class="stock-price">$121.15</div>
+      <div class="stock-change down">-0.31%</div>
+    </div>
+  </div>
+  <div class="news-item" style="margin-top:12px;">
+    <strong>DELL +2.17%：</strong>戴尔逆势上涨，AI服务器需求持续强劲，企业IT支出预期稳健。
+  </div>
+  <div class="news-item">
+    <strong>ANET -7.08%：</strong>Arista Networks暴跌，网络设备板块随半导体整体抛售承压。
+  </div>
+
+  <div class="section-subtitle">光通信</div>
+  <div class="stock-grid">
+    <div class="stock-item">
+      <div class="stock-ticker">LITE</div>
+      <div class="stock-price">$827.92</div>
+      <div class="stock-change down">-7.38%</div>
+    </div>
+    <div class="stock-item">
+      <div class="stock-ticker">FN</div>
+      <div class="stock-price">$583.55</div>
+      <div class="stock-change down">-5.44%</div>
+    </div>
+    <div class="stock-item">
+      <div class="stock-ticker">IPG</div>
+      <div class="stock-price">$24.58</div>
+      <div class="stock-change flat">0.00%</div>
+    </div>
+    <div class="stock-item">
+      <div class="stock-ticker">COHR</div>
+      <div class="stock-price">$381.22</div>
+      <div class="stock-change down">-10.40%</div>
+    </div>
+  </div>
+  <div class="news-item" style="margin-top:12px;">
+    <strong>COHR -10.40%：</strong>Coherent暴跌超10%，光通信板块遭重创。市场担忧AI数据中心光模块需求增速放缓，高估值光通信股首当其冲。
+  </div>
+  <div class="news-item">
+    <strong>LITE -7.38%：</strong>Lumentum跟随板块下跌，光通信产业链承受系统性抛压。
+  </div>
+
+  <div class="section-subtitle">金融（大型投行）</div>
+  <div class="stock-grid">
+    <div class="stock-item">
+      <div class="stock-ticker">GS</div>
+      <div class="stock-price">$1,094.44</div>
+      <div class="stock-change down">-1.08%</div>
+    </div>
+    <div class="stock-item">
+      <div class="stock-ticker">MS</div>
+      <div class="stock-price">$226.03</div>
+      <div class="stock-change down">-0.47%</div>
+    </div>
+    <div class="stock-item">
+      <div class="stock-ticker">JPM</div>
+      <div class="stock-price">$334.14</div>
+      <div class="stock-change up">+0.80%</div>
+    </div>
+    <div class="stock-item">
+      <div class="stock-ticker">BAC</div>
+      <div class="stock-price">$57.91</div>
+      <div class="stock-change up">+0.94%</div>
+    </div>
+    <div class="stock-item">
+      <div class="stock-ticker">WFC</div>
+      <div class="stock-price">$84.13</div>
+      <div class="stock-change up">+0.35%</div>
+    </div>
+  </div>
+  <div class="news-item" style="margin-top:12px;">
+    <strong>银行股逆势走强：</strong>JPM+0.80%、BAC+0.94%、WFC+0.35%均收涨，金融板块在科技抛售中展现防御性。10年期美债收益率微升有利于银行净息差。
+  </div>
+</div>
+
+<!-- Section 9: 财报日历与财报解读 -->
+<div class="section">
+  <div class="section-title">📋 财报日历与财报解读</div>
+  <div class="section-subtitle">今日已公布重要财报</div>
+  <div class="news-item">
+    <strong>美光科技 (MU) -13.18%：</strong>盘后公布财报，营收和利润率指引不及预期。存储芯片市场放缓信号引发整个半导体板块恐慌性抛售。这是今日半导体血洗的直接导火索。
+  </div>
+  <div class="news-item">
+    <strong>Cerebras (CRBR) -10%：</strong>上市后首份财报，预警利润率将下滑。AI芯片公司的盈利能力疑虑进一步加剧市场恐慌。
+  </div>
+  <div class="news-item">
+    <strong>FedEx (FDX)：</strong>公布强劲季报，货运业务表现超预期，但股价反应平淡。
+  </div>
+  <div class="section-subtitle">未来 1-3 天重要财报</div>
+  <div class="summary-box">
+    <strong>重点关注：</strong>市场将密切关注更多半导体和科技公司财报，以判断美光的疲软是否为行业趋势。关注耐用品订单、消费者信心指数等经济数据发布。
+  </div>
+</div>
+
+<!-- Section 10: 机构观点与资金流 -->
+<div class="section">
+  <div class="section-title">🏦 机构观点与资金流</div>
+  <div class="summary-box">
+    <strong>市场动态：</strong>今日大跌后，市场关注焦点转向：(1) 美光财报是否预示半导体周期拐点；(2) 霍尔木兹海峡地缘风险是否会升级；(3) 美联储官员本周讲话是否释放更多政策信号。资金从科技/成长板块大幅轮动至防御/价值板块，VIX飙升显示对冲需求急增。
+  </div>
+  <div class="news-item">
+    <strong>ETF资金流向：</strong>科技板块ETF(XLK)承受巨大抛压(-4.14%)，防御板块ETF(XLV+1.41%, XLU+0.78%)获资金流入。半导体ETF(SMH)遭遇年内最大单日跌幅(-7.01%)。
+  </div>
+</div>
+
+<!-- Section 11: 板块轮动判断 -->
+<div class="section">
+  <div class="section-title">🔄 板块轮动判断</div>
+  <div class="summary-box">
+    <strong>当前市场状态：强势下跌 + 防御轮动</strong><br><br>
+    <strong>判断依据：</strong><br>
+    - SOX/SOXX暴跌7.88%，SMH跌7.01% → 半导体板块进入强势下跌<br>
+    - 科技板块(-4.14%)领跌，防御板块(医疗+1.41%, 公用+0.78%)逆势上涨 → 明确的防御轮动<br>
+    - VIX飙升12.79%至19.49 → 恐慌情绪急剧上升<br>
+    - 道指几乎持平(-0.09%) → 价值股抗跌，资金轮动明显<br>
+    - 10大板块4涨6跌 → 分化严重，非系统性全面下跌<br><br>
+    <strong>轮动方向：</strong>从科技/成长 → 防御/价值/医疗保健。这是典型的利率担忧+盈利恐慌驱动的轮动模式。银行股(JPM+0.8%, BAC+0.94%)受益于利率微升，防御板块(XLV, XLU)获避险资金青睐。
+  </div>
+</div>
+
+<!-- Section 12: 我的重点关注股观察 -->
+<div class="section">
+  <div class="section-title">🔭 我的重点关注股观察</div>
+  <table>
+    <thead>
+      <tr><th>股票</th><th>收盘价</th><th>涨跌幅</th><th>关注理由</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>NVDA</strong></td><td>$200.04</td><td class="down">-4.13%</td><td>AI芯片龙头，半导体板块风向标，关注$200整数关口支撑</td></tr>
+      <tr><td><strong>TSLA</strong></td><td>$381.61</td><td class="down">-5.79%</td><td>七巨头中跌幅最大，高beta成长股代表，关注$380支撑</td></tr>
+      <tr><td><strong>SMH</strong></td><td>$622.05</td><td class="down">-7.01%</td><td>半导体ETF，年内最大单日跌幅，关注$600整数关口</td></tr>
+      <tr><td><strong>MSFT</strong></td><td>$373.94</td><td class="up">+1.80%</td><td>七巨头中唯一上涨，企业AI防御性标的</td></tr>
+      <tr><td><strong>MRVL</strong></td><td>$279.04</td><td class="down">-9.36%</td><td>存储/网络芯片，美光财报冲击波核心受害者</td></tr>
+      <tr><td><strong>COHR</strong></td><td>$381.22</td><td class="down">-10.40%</td><td>光通信龙头暴跌，AI数据中心需求疑虑</td></tr>
+      <tr><td><strong>JPM</strong></td><td>$334.14</td><td class="up">+0.80%</td><td>银行龙头逆势上涨，利率受益者</td></tr>
+      <tr><td><strong>DELL</strong></td><td>$427.78</td><td class="up">+2.17%</td><td>AI服务器需求强劲，逆势走强</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Section 13: 明日交易计划/观察清单 -->
+<div class="section">
+  <div class="section-title">📝 明日交易计划/观察清单</div>
+  <div class="summary-box">
+    <strong>重点关注事件：</strong><br>
+    - 美联储官员讲话（判断政策方向是否进一步鹰派）<br>
+    - 霍尔木兹海峡地缘局势发展<br>
+    - 半导体板块是否企稳（SMH能否守住$600）<br>
+    - 更多科技公司财报反应<br>
+    - VIX能否回落至18以下<br><br>
+    <strong>操作计划：</strong><br>
+    - <strong>观察为主：</strong>半导体暴跌后不宜急于抄底，等待SMH在$600-620区间企稳信号<br>
+    - <strong>防御配置：</strong>若持仓中科技比重过高，可适当减仓科技ETF，增配医疗/公用事业<br>
+    - <strong>关注银行股：</strong>JPM、BAC在利率微升环境下表现韧性，可作为防御性配置<br>
+    - <strong>止损关注：</strong>NVDA跌破$200、TSLA跌破$380需考虑减仓
+  </div>
+</div>
+
+<!-- Section 14: 风险提示 -->
+<div class="section">
+  <div class="section-title">⚠️ 风险提示</div>
+  <div class="risk-grid">
+    <div class="risk-item">
+      <div class="risk-label">宏观风险</div>
+      <div class="risk-level" style="color: var(--yellow);">中等</div>
+    </div>
+    <div class="risk-item">
+      <div class="risk-label">利率风险</div>
+      <div class="risk-level" style="color: var(--yellow);">中等</div>
+    </div>
+    <div class="risk-item">
+      <div class="risk-label">财报风险</div>
+      <div class="risk-level" style="color: var(--red);">高</div>
+    </div>
+    <div class="risk-item">
+      <div class="risk-label">地缘政治</div>
+      <div class="risk-level" style="color: var(--red);">高</div>
+    </div>
+    <div class="risk-item">
+      <div class="risk-label">行业监管</div>
+      <div class="risk-level" style="color: var(--green);">低</div>
+    </div>
+    <div class="risk-item">
+      <div class="risk-label">流动性风险</div>
+      <div class="risk-level" style="color: var(--green);">低</div>
+    </div>
+    <div class="risk-item">
+      <div class="risk-label">估值风险</div>
+      <div class="risk-level" style="color: var(--red);">高</div>
+    </div>
+    <div class="risk-item">
+      <div class="risk-label">市场情绪</div>
+      <div class="risk-level" style="color: var(--yellow);">中等偏高</div>
+    </div>
+    <div class="risk-item">
+      <div class="risk-label">黑天鹅风险</div>
+      <div class="risk-level" style="color: var(--yellow);">中等</div>
+    </div>
+  </div>
+  <div class="summary-box" style="margin-top:12px;">
+    <strong>综合风险等级：中高</strong><br><br>
+    <strong>核心风险因素：</strong><br>
+    1. <strong>财报风险(高)：</strong>美光财报不及预期引发半导体板块恐慌，后续更多科技财报若继续低于预期，抛售可能扩散<br>
+    2. <strong>地缘政治(高)：</strong>霍尔木兹海峡紧张局势若升级，可能引发油价飙升和全面避险<br>
+    3. <strong>估值风险(高)：</strong>半导体和AI概念股估值在利率上升环境下面临重估压力<br>
+    4. <strong>利率风险(中)：</strong>10年期收益率4.499%处于高位，若进一步上升将加大成长股压力
+  </div>
+</div>
+
+<!-- Section 15: 最终结论 -->
+<div class="section">
+  <div class="section-title">✅ 最终结论</div>
+  <div class="conclusion-box">
+    <strong>市场阶段：</strong><span class="tag tag-red">看跌（短期）</span><br><br>
+    <strong>操作倾向：</strong><span class="tag tag-yellow">观望 / 谨慎减仓</span><br><br>
+    <strong>5 个关键观察信号：</strong><br><br>
+    <strong>【技术面】</strong><br>
+    1. SMH能否守住$600整数关口 — 若跌破将触发更多技术性卖盘<br>
+    2. S&P 500 7,350支撑位 — 若跌破可能加速下行至7,200<br><br>
+    <strong>【基本面】</strong><br>
+    3. 美光财报后续影响 — 存储芯片市场是否真正进入下行周期<br>
+    4. 更多科技公司财报指引 — 判断AI投资回报周期是否因利率上升而延长<br><br>
+    <strong>【情绪面】</strong><br>
+    5. VIX能否回落至18以下 — 若持续在20以上运行，市场调整可能延续
+  </div>
+</div>
+
+<!-- Footer -->
+<div style="text-align: center; color: var(--text-secondary); padding: 20px 0; font-size: 0.85em;">
+  数据来源：腾讯财经API、CNBC | 报告生成时间：2026-06-24 07:00 CST<br>
+  本报告仅供参考，不构成投资建议
+</div>
+
+</div>
+</body>
+</html>
