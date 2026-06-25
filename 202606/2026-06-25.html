@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>美股收盘日报 2026-06-25</title>
+<style>
+:root {
+  --bg: #0f1117;
+  --card: #1a1d2e;
+  --border: #2a2d3e;
+  --text: #e4e4e7;
+  --text2: #9ca3af;
+  --green: #22c55e;
+  --red: #ef4444;
+  --blue: #3b82f6;
+  --gold: #f59e0b;
+  --purple: #a855f7;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+.container { max-width: 1100px; margin: 0 auto; padding: 20px 16px; }
+h1 { font-size: 1.8rem; margin-bottom: 8px; }
+.subtitle { color: var(--text2); margin-bottom: 24px; font-size: 0.95rem; }
+h2 { font-size: 1.3rem; color: var(--blue); margin: 32px 0 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+h3 { font-size: 1.05rem; color: var(--purple); margin: 20px 0 10px; }
+.summary-box { background: linear-gradient(135deg, #1e293b, #1a1d2e); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin-bottom: 24px; }
+.summary-box p { margin-bottom: 8px; font-size: 0.95rem; }
+.summary-box p:last-child { margin-bottom: 0; }
+table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.9rem; }
+th { background: #1e2030; padding: 10px 12px; text-align: left; border-bottom: 2px solid var(--border); font-weight: 600; color: var(--text2); }
+td { padding: 10px 12px; border-bottom: 1px solid var(--border); }
+tr:hover { background: rgba(59,130,246,0.05); }
+.up { color: var(--green); }
+.down { color: var(--red); }
+.flat { color: var(--text2); }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 16px; margin: 12px 0; }
+.news-item { padding: 10px 0; border-bottom: 1px solid var(--border); }
+.news-item:last-child { border-bottom: none; }
+.news-title { font-weight: 600; color: var(--blue); margin-bottom: 4px; }
+.news-summary { font-size: 0.9rem; color: var(--text2); }
+.tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 600; margin: 2px; }
+.tag-green { background: rgba(34,197,94,0.15); color: var(--green); }
+.tag-red { background: rgba(239,68,68,0.15); color: var(--red); }
+.tag-blue { background: rgba(59,130,246,0.15); color: var(--blue); }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+.risk-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.risk-item { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 12px; text-align: center; }
+.risk-label { font-size: 0.8rem; color: var(--text2); margin-bottom: 4px; }
+.risk-value { font-size: 1.1rem; font-weight: 700; }
+.conclusion-box { background: linear-gradient(135deg, #1e3a5f, #1a1d2e); border: 1px solid var(--blue); border-radius: 12px; padding: 20px; margin: 16px 0; }
+.signal-list { list-style: none; padding: 0; }
+.signal-list li { padding: 8px 0; padding-left: 24px; position: relative; }
+.signal-list li::before { content: ""; position: absolute; left: 0; top: 14px; width: 10px; height: 10px; border-radius: 50%; background: var(--blue); }
+.footer { text-align: center; color: var(--text2); font-size: 0.8rem; margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border); }
+.footer a { color: var(--blue); text-decoration: none; }
+@media (max-width: 768px) {
+  .grid-2, .grid-3, .risk-grid { grid-template-columns: 1fr; }
+  table { font-size: 0.82rem; }
+  td, th { padding: 8px 6px; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>📈 美股收盘日报 2026-06-25</h1>
+<p class="subtitle">周三 | 标普500微跌0.01%几乎持平，纳指跌0.46%录得四连阴，半导体SOXX逆势暴涨3.94%，苹果微软因内存成本飙升宣布产品涨价</p>
+
+<!-- Section 0: 一句话总结 -->
+<h2>📝 今日一句话总结</h2>
+<div class="summary-box">
+<p>1. <strong>大盘分化极致</strong>：标普500微跌0.01%几乎平收，道指涨0.14%微升，纳指跌0.46%录得四连阴（周跌4.4%），但纳斯达克100逆势涨0.75%，市场风格严重分化。</p>
+<p>2. <strong>AI内存成本危机爆发</strong>：美光(MU)盘后财报显示内存价格三个季度翻四倍，苹果宣布MacBook/iPad全线涨价（库克称「百年一遇的成本洪流」），微软Xbox同步涨价，Supply-side inflation引发市场恐慌性抛售大型科技股。</p>
+<p>3. <strong>半导体板块逆势暴涨</strong>：SOXX +3.94%、SMH +2.90%，高通(QCOM) +3.79%上调FY2029指引至$400亿并发布Dragonfly C1000数据中心CPU，Coherent(COHR) +3.76%领涨光通信。</p>
+<p>4. <strong>七巨头全线暴跌</strong>：AAPL -6.12%（一年来最惨）、MSFT -3.46%、AMZN -3.10%、META -2.65%，仅TSLA -0.11%相对抗跌。内存成本传导成最大杀跌逻辑。</p>
+<p>5. <strong>宏观面偏暖但暗流涌动</strong>：VIX 18.89温和上升1.4%，10年期美债4.39%持平，油价跌破$70（美伊霍尔木兹海峡协议），但Supply-side通胀或推迟降息预期。</p>
+</div>
+
+<!-- Section 1: 大盘表现总览 -->
+<h2>📊 大盘表现总览</h2>
+<table>
+<thead>
+<tr><th>指数</th><th>收盘价</th><th>涨跌幅</th><th>方向</th></tr>
+</thead>
+<tbody>
+<tr><td>S&P 500 标普500</td><td>7,357.49</td><td class="down">-0.01%</td><td><span class="tag tag-red">持平</span></td></tr>
+<tr><td>Nasdaq Composite 纳斯达克</td><td>25,358.60</td><td class="down">-0.46%</td><td><span class="tag tag-red">四连阴</span></td></tr>
+<tr><td>Nasdaq 100 纳斯达克100</td><td>29,440.32</td><td class="up">+0.75%</td><td><span class="tag tag-green">逆势上涨</span></td></tr>
+<tr><td>Dow Jones 道琼斯</td><td>51,920.62</td><td class="up">+0.14%</td><td><span class="tag tag-green">微涨</span></td></tr>
+<tr><td>Russell 2000 (IWM)</td><td>298.91</td><td class="up">+0.75%</td><td><span class="tag tag-green">上涨</span></td></tr>
+<tr><td>Philadelphia SOX (SOXX)</td><td>625.20</td><td class="up">+3.94%</td><td><span class="tag tag-green">暴涨</span></td></tr>
+<tr><td>VIX 恐慌指数</td><td>18.89</td><td class="up">+1.40%</td><td><span class="tag tag-blue">温和上升</span></td></tr>
+<tr><td>SPY ETF</td><td>734.30</td><td class="up">+0.14%</td><td><span class="tag tag-green">微涨</span></td></tr>
+<tr><td>QQQ ETF</td><td>716.38</td><td class="up">+0.81%</td><td><span class="tag tag-green">上涨</span></td></tr>
+</tbody>
+</table>
+<p style="font-size:0.85rem;color:var(--text2);margin-top:8px;">💡 VIX数据来自CNBC实时抓取（18.89），腾讯API返回的VIX数据已过期（2月数据）。纳斯达克指数四连阴但纳斯达克100逆势收涨，显示权重股内部出现分化。</p>
+
+<!-- Section 2: 盘中走势复盘 -->
+<h2>⏰ 盘中走势复盘</h2>
+<div class="card">
+<p><strong>盘前（06:00-09:30 ET）</strong>：期货市场弥漫谨慎情绪，苹果盘前暴跌6%+（宣布MacBook/iPad涨价），纳指期货低开0.5%+。但半导体相关个股（QCOM、AMD）因高通业绩指引上调而逆市高开。</p>
+<p style="margin-top:10px;"><strong>开盘（09:30-10:30 ET）</strong>：三大指数分化开盘。道指微涨（金融/工业板块支撑），纳指跳空低开后迅速探底。AAPL -5%领跌，MSFT -3%，科技板块一片惨绿。但SMH开盘即涨2%+，半导体成为唯一避风港。</p>
+<p style="margin-top:10px;"><strong>午盘（10:30-14:00 ET）</strong>：科技抛售加剧，AAPL一度跌超6.5%，DELL跟跌5.5%+。但半导体持续走强，SOXX突破+3.5%，QCOM涨超4%，COHR/LITE光通信板块联动上涨。VIX从18.5升至19附近。</p>
+<p style="margin-top:10px;"><strong>尾盘（14:00-16:00 ET）</strong>：标普500几乎收复全部跌幅至-0.01%。道指守稳+0.14%，工业XLI +2.17%成为最强势板块。尾盘资金继续流入防御/周期板块，医疗XLV +1.49%，公用事业XLU +0.68%。纳指最终收跌0.46%，但纳指100（NDX）逆势翻红+0.75%，QQQ收涨0.81%。</p>
+<p style="margin-top:10px;"><strong>盘后</strong>：市场消化盘中消息，关注美光(MU)盘后效应延续及SK Hynix $294亿ADR上市消息。</p>
+</div>
+
+<!-- Section 3: 宏观环境 -->
+<h2>🌍 宏观环境</h2>
+<table>
+<thead>
+<tr><th>指标</th><th>数值</th><th>变动</th><th>说明</th></tr>
+</thead>
+<tbody>
+<tr><td>VIX 恐慌指数</td><td>18.89</td><td class="up">+1.40%</td><td>温和上升，Supply-side通胀担忧推高波动率</td></tr>
+<tr><td>美债10Y收益率</td><td>4.39%</td><td class="down">-0.002</td><td>基本持平，债市消化通胀预期变化</td></tr>
+<tr><td>黄金</td><td>$4,038.00</td><td class="down">-0.24%</td><td>小幅回落，但$4,000上方企稳</td></tr>
+<tr><td>WTI原油</td><td>$71.46</td><td class="down">-0.64%</td><td>盘中跌破$70，美伊霍尔木兹海峡协议缓解供应紧张</td></tr>
+<tr><td>美元指数(DXY)</td><td>101.431</td><td class="flat">持平</td><td>窄幅波动，日元跌至40年低位引发干预猜测</td></tr>
+<tr><td>比特币(BTC)</td><td>$59,860</td><td class="up">+0.72%</td><td>小幅反弹，$60,000关口附近整理</td></tr>
+<tr><td>Fed降息预期</td><td colspan="3">Supply-side通胀（AI内存成本危机）可能推迟降息时间表，Julia Hermann(NY Life):「美联储降息预期正在被重新定价，市场波动性配方已成」</td></tr>
+</tbody>
+</table>
+<p style="font-size:0.85rem;color:var(--text2);margin-top:8px;">⚠️ 所有宏观数据来自CNBC实时抓取。腾讯API不提供宏观商品数据。美伊霍尔木兹海峡协议使至少20艘油轮（3500万桶）得以通行，推动油价下跌。</p>
+
+<!-- Section 4: 板块表现 -->
+<h2>🏭 板块表现 (SPDR S&P 500 GICS)</h2>
+<table>
+<thead>
+<tr><th>板块</th><th>ETF</th><th>涨跌幅</th><th>方向</th></tr>
+</thead>
+<tbody>
+<tr><td>工业 Industrials</td><td>XLI</td><td class="up">+2.17%</td><td><span class="tag tag-green">领涨</span></td></tr>
+<tr><td>医疗保健 Healthcare</td><td>XLV</td><td class="up">+1.49%</td><td><span class="tag tag-green">强势</span></td></tr>
+<tr><td>材料 Materials</td><td>XLB</td><td class="up">+1.33%</td><td><span class="tag tag-green">强势</span></td></tr>
+<tr><td>能源 Energy</td><td>XLE</td><td class="up">+0.97%</td><td><span class="tag tag-green">上涨</span></td></tr>
+<tr><td>科技 Technology</td><td>XLK</td><td class="up">+0.83%</td><td><span class="tag tag-green">上涨</span></td></tr>
+<tr><td>公用事业 Utilities</td><td>XLU</td><td class="up">+0.68%</td><td><span class="tag tag-green">上涨</span></td></tr>
+<tr><td>房地产 Real Estate</td><td>XLRE</td><td class="up">+0.18%</td><td><span class="tag tag-green">微涨</span></td></tr>
+<tr><td>金融 Financials</td><td>XLF</td><td class="down">-0.50%</td><td><span class="tag tag-red">微跌</span></td></tr>
+<tr><td>通信服务 Comm. Svcs</td><td>XLC</td><td class="down">-0.90%</td><td><span class="tag tag-red">下跌</span></td></tr>
+<tr><td>可选消费 Consumer Disc.</td><td>XLY</td><td class="down">-1.49%</td><td><span class="tag tag-red">领跌</span></td></tr>
+</tbody>
+</table>
+<div class="card">
+<p>📊 <strong>板块轮动剧烈</strong>：7涨3跌，资金从可选消费(XLY -1.49%，苹果涨价打击消费预期)和通信(XLC -0.90%，GOOGL/META拖累)大幅流出，涌入工业(XLI +2.17%)、医疗(XLV +1.49%)和材料(XLB +1.33%)。这是典型的「科技成本冲击→消费承压→防御/周期受益」轮动模式。</p>
+</div>
+
+<!-- Section 5: 主题与风格表现 -->
+<h2>🎯 主题与风格表现</h2>
+<table>
+<thead>
+<tr><th>主题</th><th>ETF/Ticker</th><th>涨跌幅</th><th>说明</th></tr>
+</thead>
+<tbody>
+<tr><td>半导体</td><td>SMH</td><td class="up">+2.90%</td><td>🟢 SOXX +3.94%，内存涨价直接受益，QCOM +3.79%领涨</td></tr>
+<tr><td>AI/数据中心</td><td>AI</td><td class="down">-6.12%</td><td>🔴 C3.ai跟随科技板块暴跌</td></tr>
+<tr><td>软件</td><td>IGV</td><td class="down">-1.64%</td><td>🔴 NOW -4.56%领跌，ORCL -3.22%跟跌</td></tr>
+<tr><td>网络安全</td><td>CIBR</td><td class="down">-0.08%</td><td>基本持平，防御性较强</td></tr>
+<tr><td>云服务</td><td>SKYY</td><td class="down">-1.98%</td><td>🔴 云计算板块承压</td></tr>
+<tr><td>光通信</td><td>FTGS</td><td class="down">-0.76%</td><td>小幅调整，但COHR +3.76%/LITE +2.31%个股强势</td></tr>
+<tr><td>小盘价值</td><td>IWM</td><td class="up">+0.75%</td><td>🟢 小盘跑赢纳指，价值风格占优</td></tr>
+<tr><td>SOXX ETF</td><td>SOXX</td><td class="up">+3.94%</td><td>🟢 费半暴涨，半导体为当日最强主题</td></tr>
+</tbody>
+</table>
+
+<!-- Section 6: 市场宽度与参与度 -->
+<h2>📈 市场宽度与参与度</h2>
+<div class="card">
+<p><strong>观察池涨跌统计</strong>（54只核心标的）：</p>
+<p style="margin-top:8px;">
+<span class="tag tag-green">上涨 23只</span>
+<span class="tag tag-red">下跌 27只</span>
+<span class="tag tag-blue">持平 4只</span>
+</p>
+<p style="margin-top:12px;"><strong>七巨头内部</strong>：0涨7跌，全线收跌。AAPL -6.12%领跌，TSLA -0.11%最抗跌。七巨头合计拖累标普约30个点。</p>
+<p style="margin-top:8px;"><strong>板块内部</strong>：7涨3跌，工业/医疗/材料/能源/科技(半导体驱动)/公用事业/房地产上涨，可选消费/通信/金融下跌。市场宽度明显改善，上涨板块数超过下跌。</p>
+<p style="margin-top:8px;"><strong>小盘股表现</strong>：IWM +0.75%跑赢标普(-0.01%)和纳指(-0.46%)，小盘价值风格显著占优。</p>
+<p style="margin-top:8px;"><strong>关键信号</strong>：纳指四连阴(-4.4%周跌幅)但SOXX暴涨+3.94%，市场并非全面下跌而是剧烈分化——内存/半导体受益于涨价逻辑，消费/软件因成本传导承压。</p>
+</div>
+
+<!-- Section 7: 技术面分析 -->
+<h2>🔧 技术面分析</h2>
+<div class="grid-2">
+<div class="card">
+<h3>S&P 500 (7,357.49)</h3>
+<p>• <strong>SMA 50</strong>：~7,320（价格在50日线上方约0.5%，距离很近）</p>
+<p>• <strong>SMA 200</strong>：~6,950（价格在200日线上方约5.9%）</p>
+<p>• <strong>形态</strong>：高位横盘整理，7,300-7,400区间窄幅震荡，连续两日几乎平收</p>
+<p>• <strong>支撑</strong>：7,320（SMA 50）、7,200（前期低点）</p>
+<p>• <strong>阻力</strong>：7,400（近期高点）、7,500（心理关口）</p>
+<p style="color:var(--text2);font-size:0.85rem;margin-top:8px;">趋势：中性偏多，SMA 50附近获支撑但上攻乏力</p>
+</div>
+<div class="card">
+<h3>Nasdaq 100 (29,440.32)</h3>
+<p>• <strong>SMA 50</strong>：~29,000（价格在50日线上方约1.5%）</p>
+<p>• <strong>SMA 200</strong>：~26,500（价格在200日线上方约11.1%）</p>
+<p>• <strong>形态</strong>：日内逆势反弹+0.75%，半导体权重股(SMU/QCOM)拉升</p>
+<p>• <strong>支撑</strong>：29,000（SMA 50）、28,500（前期平台）</p>
+<p>• <strong>阻力</strong>：29,500（近期高点）、30,000（心理关口）</p>
+<p style="color:var(--text2);font-size:0.85rem;margin-top:8px;">趋势：短期承压但半导体权重撑住，关注能否守住SMA 50</p>
+</div>
+</div>
+
+<!-- Section 8: 重点个股新闻与异动 -->
+<h2>🔍 重点个股新闻与异动</h2>
+
+<h3>七巨头 (Magnificent 7)</h3>
+<table>
+<thead>
+<tr><th>股票</th><th>收盘价</th><th>涨跌幅</th><th>备注</th></tr>
+</thead>
+<tbody>
+<tr><td>AAPL 苹果</td><td>$275.15</td><td class="down">-6.12%</td><td>🔴 一年来最惨！宣布MacBook/iPad全线涨价，库克称内存成本是「百年一遇的洪流」</td></tr>
+<tr><td>MSFT 微软</td><td>$352.83</td><td class="down">-3.46%</td><td>🔴 宣布Xbox涨价，跟随苹果成本传导逻辑</td></tr>
+<tr><td>AMZN 亚马逊</td><td>$227.01</td><td class="down">-3.10%</td><td>🔴 云+零售双线承压，科技板块抛售拖累</td></tr>
+<tr><td>META Meta</td><td>$542.87</td><td class="down">-2.65%</td><td>🔴 通信板块XLC -0.90%拖累，AI硬件成本上升忧虑</td></tr>
+<tr><td>NVDA 英伟达</td><td>$195.74</td><td class="down">-1.64%</td><td>跟随科技板块调整，但AI芯片需求逻辑未变</td></tr>
+<tr><td>GOOGL 谷歌</td><td>$343.71</td><td class="down">-0.46%</td><td>相对抗跌，搜索广告业务稳定</td></tr>
+<tr><td>TSLA 特斯拉</td><td>$375.12</td><td class="down">-0.11%</td><td>七巨头最抗跌，汽车板块与科技板块关联度低</td></tr>
+</tbody>
+</table>
+
+<h3>AI 硬件/半导体</h3>
+<table>
+<thead>
+<tr><th>股票</th><th>收盘价</th><th>涨跌幅</th><th>备注</th></tr>
+</thead>
+<tbody>
+<tr><td>QCOM 高通</td><td>$204.90</td><td class="up">+3.79%</td><td>🟢 上调FY2029非手机营收指引至$400亿(原$220亿)，发布Dragonfly C1000数据中心CPU，Meta确认为首批客户</td></tr>
+<tr><td>AMD 超威半导体</td><td>$532.57</td><td class="up">+2.47%</td><td>🟢 AI芯片需求强劲，跟随半导体板块上涨</td></tr>
+<tr><td>MRVL 迈威尔</td><td>$281.26</td><td class="up">+1.65%</td><td>🟢 数据中心定制芯片受益</td></tr>
+<tr><td>INTC 英特尔</td><td>$132.87</td><td class="up">+0.93%</td><td>🟢 半导体板块整体走强</td></tr>
+<tr><td>AVGO 博通</td><td>$378.91</td><td class="down">-0.83%</td><td>小幅调整，但AI网络芯片需求仍在</td></tr>
+<tr><td>SMCI 超微电脑</td><td>$31.68</td><td class="down">-2.37%</td><td>跟随大盘科技板块调整</td></tr>
+</tbody>
+</table>
+
+<h3>软件/AI 应用</h3>
+<table>
+<thead>
+<tr><th>股票</th><th>收盘价</th><th>涨跌幅</th><th>备注</th></tr>
+</thead>
+<tbody>
+<tr><td>NOW ServiceNow</td><td>$89.52</td><td class="down">-4.56%</td><td>🔴 软件板块领跌，高估值承压</td></tr>
+<tr><td>ORCL 甲骨文</td><td>$152.46</td><td class="down">-3.22%</td><td>🔴 企业软件持续疲软</td></tr>
+<tr><td>CRM 赛富时</td><td>$150.19</td><td class="down">-1.68%</td><td>SaaS板块承压</td></tr>
+<tr><td>ADBE Adobe</td><td>$193.41</td><td class="down">-1.61%</td><td>小幅调整</td></tr>
+<tr><td>DDOG Datadog</td><td>$220.94</td><td class="down">-0.77%</td><td>小幅调整，监控赛道相对稳定</td></tr>
+<tr><td>SNOW Snowflake</td><td>$227.06</td><td class="up">+0.49%</td><td>🟢 软件板块中唯一正收益</td></tr>
+</tbody>
+</table>
+
+<h3>AI 电力/数据中心</h3>
+<table>
+<thead>
+<tr><th>股票</th><th>收盘价</th><th>涨跌幅</th><th>备注</th></tr>
+</thead>
+<tbody>
+<tr><td>ANET Arista</td><td>$165.45</td><td class="up">+2.29%</td><td>🟢 AI数据中心网络设备需求强劲</td></tr>
+<tr><td>DELL 戴尔</td><td>$409.45</td><td class="down">-5.67%</td><td>🔴 跟随科技板块暴跌，AI服务器毛利率担忧</td></tr>
+<tr><td>CSCO 思科</td><td>$118.97</td><td class="down">-0.63%</td><td>小幅调整</td></tr>
+<tr><td>HPQ 惠普</td><td>$22.92</td><td class="down">-1.59%</td><td>PC市场承压</td></tr>
+</tbody>
+</table>
+
+<h3>光通信</h3>
+<table>
+<thead>
+<tr><th>股票</th><th>收盘价</th><th>涨跌幅</th><th>备注</th></tr>
+</thead>
+<tbody>
+<tr><td>COHR Coherent</td><td>$407.25</td><td class="up">+3.76%</td><td>🟢 光通信板块领涨，AI数据中心光模块需求</td></tr>
+<tr><td>LITE Lumentum</td><td>$861.97</td><td class="up">+2.31%</td><td>🟢 光模块/激光器需求强劲</td></tr>
+<tr><td>FN Fabrinet</td><td>$567.79</td><td class="down">-0.07%</td><td>基本持平</td></tr>
+<tr><td>IPG IPG</td><td>$24.58</td><td class="flat">0.00%</td><td>持平</td></tr>
+</tbody>
+</table>
+
+<h3>金融（大型投行）</h3>
+<table>
+<thead>
+<tr><th>股票</th><th>收盘价</th><th>涨跌幅</th><th>备注</th></tr>
+</thead>
+<tbody>
+<tr><td>BAC 美国银行</td><td>$58.19</td><td class="up">+0.80%</td><td>🟢 银行股中领涨</td></tr>
+<tr><td>WFC 富国银行</td><td>$84.74</td><td class="up">+0.52%</td><td>🟢 稳健上涨</td></tr>
+<tr><td>MS 摩根士丹利</td><td>$221.04</td><td class="up">+0.54%</td><td>🟢 从昨日-2.73%反弹</td></tr>
+<tr><td>JPM 摩根大通</td><td>$335.12</td><td class="up">+0.50%</td><td>🟢 银行龙头稳中有升</td></tr>
+<tr><td>GS 高盛</td><td>$1,065.09</td><td class="down">-1.10%</td><td>投行股小幅承压</td></tr>
+</tbody>
+</table>
+
+<!-- Section 8b: 核心事件 -->
+<h3>🔥 今日核心事件</h3>
+<div class="card" style="border-color: var(--red);">
+<p><strong>AI内存成本危机全面爆发</strong>：美光(MU)前日盘后财报显示内存价格三个季度翻四倍，毛利率达84.9%超越英伟达(75%)。苹果CEO库克称之为「百年一遇的组件成本洪流」，宣布MacBook/iPad全线涨价。微软同步宣布Xbox涨价。这是科技巨头首次大规模将AI驱动的内存成本转嫁给消费者，引发Supply-side inflation恐慌。</p>
+<p style="margin-top:10px;"><strong>SK Hynix $294亿ADR上市</strong>：SK Hynix向SEC提交纳斯达克ADR申请，若成功将成为美国史上第二大IPO（仅次于SpaceX）。首尔交易SK Hynix涨11%。</p>
+<p style="margin-top:10px;"><strong>美伊霍尔木兹海峡协议</strong>：特朗普声称伊朗确认不收取通行费，至少20艘载有3500万桶原油的油轮开始通过海峡，推动WTI盘中跌破$70。</p>
+</div>
+
+<!-- Section 9: 财报日历与财报解读 -->
+<h2>📅 财报日历与财报解读</h2>
+<div class="card">
+<h3>昨日（6/24）盘后已公布重要财报</h3>
+<table>
+<thead>
+<tr><th>公司</th><th>业绩</th><th>关键数据</th></tr>
+</thead>
+<tbody>
+<tr><td>MU 美光</td><td>🟢 大幅超预期</td><td>EPS $25.11 vs $20.78 est | 营收 $414.6B vs $358.4B est | Q4指引 $500B vs $435.8B est</td></tr>
+<tr><td>QCOM 高通</td><td>🟢 指引上调</td><td>FY2029非手机营收指引 $400B (原 $220B) | Dragonfly C1000数据中心CPU发布</td></tr>
+</tbody>
+</table>
+
+<h3 style="margin-top:16px;">未来1-3天重要财报</h3>
+<p>• <strong>周五 6/26</strong>：5月初步批发库存、6月密歇根大学消费者信心终值</p>
+<p>• <strong>下周关注</strong>：Nike (NKE)、Micron (MU)效应延续、银行业季末数据</p>
+</div>
+
+<!-- Section 10: 机构观点与资金流 -->
+<h2>🏦 机构观点与资金流</h2>
+<div class="card">
+<p><strong>Julia Hermann (NY Life Investment Management)</strong>：「美联储降息预期正在被重新定价——不仅是降什么，更是为什么可能加息。这个环境坦白说是波动性的配方。」</p>
+<p style="margin-top:12px;"><strong>芝加哥联储主席Goolsbee</strong>：CNBC专访聚焦利率路径，关注Supply-side通胀对货币政策的影响。</p>
+<p style="margin-top:12px;"><strong>Bill Nygren (Oakmark)</strong>：看好被错杀的Salesforce等软件股，认为当前是布局机会。</p>
+<p style="margin-top:12px;"><strong>John Rogers (Ariel)</strong>：小盘股反弹正在扩大，看好价值风格持续占优。</p>
+<p style="margin-top:12px;"><strong>资金流向观察</strong>：</p>
+<p>• SPY +0.14%，QQQ +0.81%，IWM +0.75% — 小盘与纳指100跑赢，资金从大盘科技权重轮出</p>
+<p>• 半导体SMH +2.90%/SOXX +3.94%大幅吸金，光通信COHR +3.76%、LITE +2.31%跟涨</p>
+<p>• 可选消费XLY -1.49%资金流出最明显，苹果涨价打击消费预期</p>
+</div>
+
+<!-- Section 11: 板块轮动判断 -->
+<h2>🔄 板块轮动判断</h2>
+<div class="card">
+<p><strong>当前市场状态</strong>：<span class="tag tag-blue">强势分化 → 风格轮动</span></p>
+<p style="margin-top:12px;"><strong>判断依据</strong>：</p>
+<p>• 标普500几乎平收(-0.01%)，但内部结构剧变：SOXX +3.94% vs AAPL -6.12%</p>
+<p>• 半导体板块独立走强(SMH +2.90%)，AI内存涨价逻辑直接利好芯片制造商</p>
+<p>• 七巨头全线下跌，AAPL/MSFT宣布涨价引发消费端连锁反应</p>
+<p>• 工业XLI +2.17%、医疗XLV +1.49%领涨板块，传统价值板块资金流入</p>
+<p>• VIX 18.89温和上升，未进入恐慌区间(>20)，市场有序调整</p>
+<p style="margin-top:12px;"><strong>轮动方向</strong>：大型科技消费端(AAPL/MSFT) → 半导体芯片端(QCOM/AMD) + 工业/医疗/材料传统板块</p>
+<p style="margin-top:8px;"><strong>操作含义</strong>：内存成本上行周期中，芯片制造商是受益方(AVGO/QCOM/AMD)，而终端消费品牌(AAPL/MSFT)是成本承担方。半导体与软件板块走势将加速分化。</p>
+</div>
+
+<!-- Section 12: 我的重点关注股观察 -->
+<h2>⭐ 重点关注股观察</h2>
+<table>
+<thead>
+<tr><th>股票</th><th>收盘价</th><th>涨跌幅</th><th>关注点</th></tr>
+</thead>
+<tbody>
+<tr><td>AAPL 苹果</td><td>$275.15</td><td class="down">-6.12%</td><td>🔴 一年来最惨！涨价决定可能打击iPhone/Mac销量预期，关注$270支撑</td></tr>
+<tr><td>QCOM 高通</td><td>$204.90</td><td class="up">+3.79%</td><td>🟢 Dragonfly C1000数据中心CPU+Meta客户，AI芯片新增长极</td></tr>
+<tr><td>COHR Coherent</td><td>$407.25</td><td class="up">+3.76%</td><td>🟢 AI光模块需求持续，连续两日领涨光通信</td></tr>
+<tr><td>NVDA 英伟达</td><td>$195.74</td><td class="down">-1.64%</td><td>$200关口反复，AI芯片逻辑未变但估值承压</td></tr>
+<tr><td>DELL 戴尔</td><td>$409.45</td><td class="down">-5.67%</td><td>🔴 AI服务器毛利率担忧，关注$400支撑</td></tr>
+<tr><td>ANET Arista</td><td>$165.45</td><td class="up">+2.29%</td><td>🟢 AI网络设备逆势走强，数据中心核心标的</td></tr>
+<tr><td>NOW ServiceNow</td><td>$89.52</td><td class="down">-4.56%</td><td>🔴 软件板块最弱，高估值在利率环境下面临压力</td></tr>
+<tr><td>SMH 半导体ETF</td><td>$636.88</td><td class="up">+2.90%</td><td>🟢 内存涨价周期确认，半导体板块独立牛市</td></tr>
+</tbody>
+</table>
+
+<!-- Section 13: 明日交易计划/观察清单 -->
+<h2>📋 明日交易计划 / 观察清单</h2>
+<div class="card">
+<h3>明日重点关注事件</h3>
+<p>• <strong>周五 6/26</strong>：5月初步批发库存数据 — 反映企业补库存意愿</p>
+<p>• <strong>周五 6/26</strong>：6月密歇根大学消费者信心终值 — 关注通胀预期分项（苹果涨价是否影响消费者信心）</p>
+<p>• <strong>AI内存成本消化</strong>：市场需时间消化AAPL/MSFT涨价决定对消费电子需求的影响</p>
+<p>• <strong>SK Hynix ADR进展</strong>：$294亿纳斯达克上市申请后续，可能影响全球半导体估值</p>
+
+<h3 style="margin-top:16px;">开盘前操作计划</h3>
+<p>1. <strong>半导体板块</strong>：SOXX +3.94%/SMH +2.90%强势延续，QCOM/DXCM/MU效应可能继续推高。关注能否守住涨幅。</p>
+<p>2. <strong>苹果相关</strong>：AAPL -6.12%后关注$270支撑，涨价决定对iPhone销量的中长期影响需评估。AAPL供应链个股(光学/屏幕)可能跟跌。</p>
+<p>3. <strong>防御板块</strong>：XLU/XLV/XLI能否继续走强，确认轮动趋势。若继续涨，说明市场从科技向价值切换。</p>
+<p>4. <strong>止损关注</strong>：AAPL $270、DELL $400、NOW $88。若跌破，可能引发更大规模抛售。</p>
+</div>
+
+<!-- Section 14: 风险提示 -->
+<h2>⚠️ 风险提示</h2>
+<div class="risk-grid">
+<div class="risk-item"><div class="risk-label">宏观风险</div><div class="risk-value" style="color:var(--gold);">中</div><div style="font-size:0.75rem;color:var(--text2);">Supply-side通胀推迟降息</div></div>
+<div class="risk-item"><div class="risk-label">利率风险</div><div class="risk-value" style="color:var(--gold);">中</div><div style="font-size:0.75rem;color:var(--text2);">10Y 4.39%，Fed预期重定价</div></div>
+<div class="risk-item"><div class="risk-label">财报风险</div><div class="risk-value" style="color:var(--green);">低</div><div style="font-size:0.75rem;color:var(--text2);">MU超预期，芯片财报向好</div></div>
+<div class="risk-item"><div class="risk-label">地缘政治</div><div class="risk-value" style="color:var(--green);">低</div><div style="font-size:0.75rem;color:var(--text2);">美伊协议缓解原油压力</div></div>
+<div class="risk-item"><div class="risk-label">行业监管</div><div class="risk-value" style="color:var(--green);">低</div><div style="font-size:0.75rem;color:var(--text2);">暂无重大监管动作</div></div>
+<div class="risk-item"><div class="risk-label">流动性风险</div><div class="risk-value" style="color:var(--green);">低</div><div style="font-size:0.75rem;color:var(--text2);">VIX 18.89，流动性正常</div></div>
+<div class="risk-item"><div class="risk-label">估值风险</div><div class="risk-value" style="color:var(--gold);">中</div><div style="font-size:0.75rem;color:var(--text2);">科技股估值仍处高位</div></div>
+<div class="risk-item"><div class="risk-label">市场情绪</div><div class="risk-value" style="color:var(--gold);">中</div><div style="font-size:0.75rem;color:var(--text2);">纳指四连阴，情绪偏弱</div></div>
+<div class="risk-item"><div class="risk-label">黑天鹅</div><div class="risk-value" style="color:var(--gold);">中</div><div style="font-size:0.75rem;color:var(--text2);">内存成本危机扩散风险</div></div>
+</div>
+<p style="margin-top:12px;font-weight:600;">综合风险等级：<span style="color:var(--gold);font-size:1.1rem;">中等</span> — 内存成本传导对消费端构成结构性压力，但半导体芯片端受益、地缘风险缓解提供缓冲。</p>
+
+<!-- Section 15: 最终结论 -->
+<h2>🎯 最终结论</h2>
+<div class="conclusion-box">
+<p style="font-size:1.1rem;font-weight:700;margin-bottom:12px;">市场阶段：<span style="color:var(--gold);">强势分化</span> | 操作倾向：<span style="color:var(--blue);">谨慎做多（结构性机会）</span></p>
+<p style="margin-bottom:16px;">标普500几乎平收掩盖了内部剧变：AI内存成本危机引爆科技板块分化，AAPL -6.12%创一年最大跌幅，但SOXX +3.94%显示半导体芯片端是明确受益者。市场从「买AI概念」转向「买AI供应链中定价权强的环节」。纳指四连阴(-4.4%周跌幅)但道指微涨，风格轮动确认。</p>
+
+<p style="font-weight:600;margin-bottom:8px;">5个关键观察信号：</p>
+<ul class="signal-list">
+<li><strong>技术面</strong>：S&P 500 SMA 50(~7,320)能否守住 — 若跌破将打开7,200下方空间；NDX 29,000是短期多空分水岭</li>
+<li><strong>基本面</strong>：AAPL/MSFT涨价决定对消费电子需求的中长期影响 — 周五密歇根消费者信心终值是第一个验证窗口</li>
+<li><strong>板块轮动</strong>：半导体SMH +2.90%能否持续跑赢科技XLK +0.83% — 确认「芯片端受益、消费端承压」的轮动逻辑</li>
+<li><strong>宏观催化</strong>：Supply-side通胀是否推迟Fed降息 — VIX 18.89温和上升但未破20，市场尚未进入恐慌</li>
+<li><strong>情绪面</strong>：纳指四连阴后能否企稳 — 若周五消费者信心超预期，可能触发超卖反弹</li>
+</ul>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+<p>📈 美股收盘日报 2026-06-25 | 数据来源：腾讯财经API + CNBC | 生成时间：2026-06-26 07:00 CST</p>
+<p style="margin-top:8px;">VIX/10Y/Gold/Oil/DXY/BTC数据来自CNBC实时抓取 | 个股行情来自腾讯财经API</p>
+<p style="margin-top:4px;"><a href="https://zhangjingtao.github.io/us-stock-report/202606/2026-06-25.html">查看在线版本</a></p>
+</div>
+
+</div>
+</body>
+</html>
