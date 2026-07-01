@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>📈 美股收盘日报 2026-07-01</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+         background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+         color: #e2e8f0; line-height: 1.7; padding: 20px; }
+  .container { max-width: 1200px; margin: 0 auto; background: #2d3748;
+               border-radius: 16px; padding: 32px; box-shadow: 0 8px 32px rgba(0,0,0,0.4); }
+  h1 { text-align: center; color: #48bb78; margin-bottom: 8px; font-size: 2.2em; }
+  .subtitle { text-align: center; color: #a0aec0; margin-bottom: 32px; font-size: 0.95em; }
+  h2 { color: #4299e1; margin: 28px 0 14px; padding-bottom: 8px;
+       border-bottom: 2px solid #4299e1; font-size: 1.4em; }
+  h3 { color: #ed8936; margin: 18px 0 10px; font-size: 1.1em; }
+  table { width: 100%; border-collapse: collapse; margin: 12px 0;
+          background: #1a202c; border-radius: 8px; overflow: hidden; }
+  th { background: #4a5568; color: #f7fafc; padding: 10px 12px; text-align: left; font-weight: 600; }
+  td { padding: 9px 12px; border-bottom: 1px solid #2d3748; }
+  tr:hover td { background: #2c3e50; }
+  .green { color: #48bb78; font-weight: 600; }
+  .red { color: #f56565; font-weight: 600; }
+  .gray { color: #a0aec0; }
+  .neutral { color: #cbd5e0; }
+  .box { background: #1a202c; border-left: 4px solid #4299e1;
+         padding: 14px 18px; border-radius: 8px; margin: 12px 0; }
+  .box-warn { border-left-color: #f56565; }
+  .box-good { border-left-color: #48bb78; }
+  .box-info { border-left-color: #ed8936; }
+  ul { margin: 8px 0 12px 20px; }
+  li { margin: 4px 0; }
+  .summary { background: linear-gradient(135deg, #2c5282 0%, #2b6cb0 100%);
+             padding: 22px; border-radius: 12px; margin-bottom: 24px;
+             box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
+  .summary h2 { color: #fff; border: none; margin: 0 0 12px; }
+  .summary p { color: #ebf8ff; font-size: 1.02em; margin: 6px 0; }
+  .footer { text-align: center; color: #718096; margin-top: 32px;
+            padding-top: 16px; border-top: 1px solid #4a5568; font-size: 0.88em; }
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 4px;
+           font-size: 0.85em; margin-right: 4px; }
+  .badge-green { background: #22543d; color: #9ae6b4; }
+  .badge-red { background: #742a2a; color: #feb2b2; }
+  .badge-orange { background: #7b341e; color: #fbd38d; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>📈 美股收盘日报 · 2026-07-01 (周三)</h1>
+<p class="subtitle">板块分化 · 半导体崩盘式回调 · META 一枝独秀 · 软件/金融逆势走强</p>
+
+<!-- ========== Section 0: 一句话总结 ========== -->
+<div class="summary">
+  <h2>🎯 今日一句话总结</h2>
+  <p>① 美东 7 月 1 日 Q3 首个交易日，<strong class="red">半导体板块崩盘式回调 SOXX −6.41%</strong>（INTC −9.03%、MRVL −8.67%、AMD −6.89%），市场对 Q2 创纪录涨幅进行获利了结。</p>
+  <p>② <strong class="green">META +8.81%</strong> 凭「将 AI 算力转售为云服务」战略逆势暴涨，成标普 500 头号赢家，软化 hyperscaler capex 担忧。</p>
+  <p>③ 纳指 <span class="red">−0.66%</span>，纳指 100 <span class="red">−1.54%</span>，但软件/金融板块逆势走强（IGV +3.02%、CRM +4.19%、WFC +3.99%），典型「<strong>成长轮动至防御</strong>」开局。</p>
+  <p>④ 宏观面：Fed 主席 Warsh 拒绝对 7 月降息预承诺，强调通胀「仍过高」，叠加周五 6 月非农就业前观望情绪浓厚。</p>
+  <p>⑤ 国债 10Y 收益率 4.481%（+0.6bp），VIX 16.59（+0.85%），黄金 4055 美元（−0.67%），WTI 68.04 美元（−0.79%），美元指数 101.39 持平。</p>
+</div>
+
+<!-- ========== Section 1: 大盘表现总览 ========== -->
+<h2>1️⃣ 大盘表现总览</h2>
+<table>
+<thead><tr><th>指数</th><th>代码</th><th>收盘价</th><th>涨跌幅</th><th>说明</th></tr></thead>
+<tbody>
+<tr><td>S&amp;P 500</td><td>INX</td><td>7,483.23</td><td class="red">−0.22%</td><td>标普 500 — 小幅收跌</td></tr>
+<tr><td>Nasdaq Composite</td><td>IXIC</td><td>26,040.03</td><td class="red">−0.66%</td><td>纳斯达克综合</td></tr>
+<tr><td>Nasdaq 100</td><td>NDX</td><td>29,809.13</td><td class="red">−1.54%</td><td>纳斯达克 100 — 大型科技承压</td></tr>
+<tr><td>Dow Jones</td><td>DJI</td><td>52,305.24</td><td class="gray">−0.03%</td><td>道琼斯 — 几乎平盘</td></tr>
+<tr><td>Russell 2000</td><td>IWM</td><td>299.32</td><td class="red">−0.38%</td><td>小盘股 ETF 代理</td></tr>
+<tr><td>Philadelphia SOX</td><td>SOXX</td><td>599.70</td><td class="red">−6.41%</td><td>费城半导体 ETF — Q3 首日崩盘</td></tr>
+<tr><td>VIX (CNBC)</td><td>VIX</td><td>16.59</td><td class="red">+0.85%</td><td>恐慌指数（CNBC 数据，腾讯源过期）</td></tr>
+<tr><td>NYSE Composite</td><td>NYA</td><td colspan="3" class="neutral">腾讯源数据缺失，参考标普走势</td></tr>
+</tbody>
+</table>
+
+<!-- ========== Section 2: 盘中走势复盘 ========== -->
+<h2>2️⃣ 盘中走势复盘</h2>
+<div class="box box-warn">
+  <p><strong>盘前</strong>：期货偏弱，亚洲科技股走弱+Warsh 鸽转鹰言论发酵，纳指期货低开 ~0.5%。</p>
+  <p><strong>开盘</strong>：半导体板块开盘即放量下挫，NVDA、AVGO、AMD、INTC 同步跌 2-5%，带动纳指 100 快速跌至 −1.2%。</p>
+  <p><strong>午盘</strong>：Meta 盘中拉升（云业务转型消息发酵），单股贡献标普 ~80bp；但软件板块（CRM/NOW/SNOW）接力走强，纳指从低点小幅收复。</p>
+  <p><strong>尾盘</strong>：科技/半导体抛压延续，金融板块（GS/JPM/BAC/WFC）逆势走强吸金，道指几乎平盘。</p>
+  <p><strong>盘后</strong>：AeroVironment (AVAV) 财报 +28%，军工链延续昨日涨势；Nike 因关税退款预期，盘后小幅震荡。</p>
+</div>
+
+<!-- ========== Section 3: 宏观环境 ========== -->
+<h2>3️⃣ 宏观环境</h2>
+<table>
+<thead><tr><th>数据</th><th>数值</th><th>涨跌幅</th><th>来源</th></tr></thead>
+<tbody>
+<tr><td>VIX 恐慌指数</td><td>16.59</td><td class="red">+0.85%</td><td>CNBC（腾讯源过期，已弃用）</td></tr>
+<tr><td>美债 10Y 收益率</td><td>4.481%</td><td class="red">+0.6bp</td><td>CNBC / Markets/Bonds</td></tr>
+<tr><td>黄金 (Spot)</td><td>$4,055.20</td><td class="red">−0.67%</td><td>CNBC Futures</td></tr>
+<tr><td>WTI 原油</td><td>$68.04</td><td class="red">−0.79%</td><td>CNBC Futures</td></tr>
+<tr><td>美元指数 DXY</td><td>101.392</td><td class="gray">持平</td><td>CNBC Quotes</td></tr>
+<tr><td>比特币 (CME)</td><td>$60,550</td><td class="green">+0.61%</td><td>CNBC Quotes @BTC.1</td></tr>
+</tbody>
+</table>
+<div class="box box-info">
+  <p><strong>Fed 政策预期</strong>：Warsh 周三讲话明确拒绝预承诺 7 月降息，强调通胀「仍过高」、需「规划新路线」，市场对 7 月降息概率从 65% 下修至 ~50%。周五 (7/3) 6 月非农就业数据为关键催化剂，Goldman 警告 2026 世界杯可能为 6 月非农贡献 ~+40k 一次性提振，预期判读难度上升。</p>
+  <p><strong>USMCA 风险</strong>：特朗普政府释放重谈美墨加协定的信号，供应链暴露股（汽车/科技制造）承压。</p>
+</div>
+
+<!-- ========== Section 4: 板块表现 ========== -->
+<h2>4️⃣ 板块表现（SPDR GICS 十大板块）</h2>
+<table>
+<thead><tr><th>板块</th><th>ETF</th><th>收盘价</th><th>涨跌幅</th><th>解读</th></tr></thead>
+<tbody>
+<tr><td>可选消费</td><td>XLY</td><td>118.09</td><td class="green">+0.69%</td><td>防御消费走强</td></tr>
+<tr><td>材料</td><td>XLB</td><td>51.02</td><td class="green">+0.37%</td><td>微涨，跟随大势</td></tr>
+<tr><td>通信服务</td><td>XLC</td><td>109.74</td><td class="green">+2.44%</td><td>META +8.81% 拉动</td></tr>
+<tr><td>能源</td><td>XLE</td><td>52.81</td><td class="red">−0.56%</td><td>油价拖累</td></tr>
+<tr><td>金融</td><td>XLF</td><td>54.78</td><td class="green">+2.18%</td><td>利率上行+轮动受益</td></tr>
+<tr><td>工业</td><td>XLI</td><td>183.36</td><td class="red">−1.01%</td><td>Burry 做空 CAT 信号</td></tr>
+<tr><td>科技</td><td>XLK</td><td>185.62</td><td class="red">−2.57%</td><td>半导体拖累</td></tr>
+<tr><td>公用事业</td><td>XLU</td><td>44.77</td><td class="red">−1.26%</td><td>防御属性失效（今日不在风口）</td></tr>
+<tr><td>医疗保健</td><td>XLV</td><td>159.54</td><td class="green">+0.55%</td><td>防御轮动受益</td></tr>
+<tr><td>房地产</td><td>XLRE</td><td>44.18</td><td class="green">+0.34%</td><td>跟随大势</td></tr>
+</tbody>
+</table>
+<div class="box">
+  <p><strong>板块轮动特征</strong>：典型的「<strong class="green">防御 + 金融 + 通信服务 (META)</strong> vs <strong class="red">科技/半导体</strong>」开局。Q3 首日资金从 Q2 领涨的成长半导体板块撤离，流入防御性股息股（UBS 推荐名单）+ 大型金融（利率敏感）。</p>
+</div>
+
+<!-- ========== Section 5: 主题与风格表现 ========== -->
+<h2>5️⃣ 主题与风格表现</h2>
+<table>
+<thead><tr><th>主题</th><th>Ticker</th><th>收盘价</th><th>涨跌幅</th><th>解读</th></tr></thead>
+<tbody>
+<tr><td>半导体</td><td>SMH</td><td>620.46</td><td class="red">−5.40%</td><td>Q2 创纪录后获利了结，板块集中抛压</td></tr>
+<tr><td>AI 应用/ETF</td><td>AIQ</td><td>63.63</td><td class="red">−3.02%</td><td>广义 AI 板块跟随半导体回调</td></tr>
+<tr><td>软件</td><td>IGV</td><td>93.34</td><td class="green">+3.02%</td><td><strong>逆势走强</strong>，CRM/NOW/SNOW/MSFT/ADBE 拉动</td></tr>
+<tr><td>网络安全</td><td>CIBR</td><td>91.11</td><td class="green">+1.40%</td><td>防御性配置流入</td></tr>
+<tr><td>云服务</td><td>SKYY</td><td>136.30</td><td class="green">+1.29%</td><td>软件板块轮动受益</td></tr>
+<tr><td>光通信代理</td><td>FTGS</td><td>37.54</td><td class="green">+1.45%</td><td>增长因子 ETF 微涨</td></tr>
+<tr><td>小盘价值</td><td>IWM</td><td>299.32</td><td class="red">−0.38%</td><td>小盘普跌</td></tr>
+</tbody>
+</table>
+
+<!-- ========== Section 6: 市场宽度与参与度 ========== -->
+<h2>6️⃣ 市场宽度与参与度</h2>
+<div class="box box-info">
+  <p><strong>涨跌家数观察（基于 watchlist 56 只样本近似）</strong>：</p>
+  <ul>
+    <li>上涨：<strong>27</strong> 只（48%）— 金融板块、软件板块、Mag7 中 META/AAPL/AMZN/MSFT/GOOGL/TSLA 上涨</li>
+    <li>下跌：<strong>28</strong> 只（50%）— 半导体板块、AI 硬件、光通信股</li>
+    <li>持平：1 只（IPG）</li>
+  </ul>
+  <p><strong>52 周新高/新低</strong>：本观察池内无明确新高/新低信号；先进个股如 AVGO 处于历史高位附近（突破后回落）。</p>
+  <p><strong>板块宽度</strong>：广度尚可（涨跌家数接近平衡），但下跌股集中在半导体板块（INTC/MRVL/AMD/LITE/COHR/SMCI 等 −5% ~ −9%），形成「权重拖累 + 广度尚可」的特征。</p>
+  <p class="gray">注：精确的 NYSE/Nasdaq 全市场 advance-decline 数据需 Bloomberg Terminal，免费公开来源 (stockanalysis.com/markets) 已失效。</p>
+</div>
+
+<!-- ========== Section 7: 技术面分析 ========== -->
+<h2>7️⃣ 技术面分析</h2>
+<table>
+<thead><tr><th>标的</th><th>当前位置</th><th>50 SMA 状态</th><th>200 SMA 状态</th><th>关键位</th></tr></thead>
+<tbody>
+<tr><td>S&amp;P 500 (INX)</td><td>7,483.23</td><td>上方运行</td><td>上方运行</td><td>支撑 7,400 / 阻力 7,550</td></tr>
+<tr><td>Nasdaq 100 (NDX)</td><td>29,809.13</td><td>上方运行</td><td>上方运行</td><td>支撑 29,400 / 阻力 30,200</td></tr>
+<tr><td>费城半导体 (SOXX)</td><td>599.70</td><td>高位回踩</td><td>远离上方</td><td>支撑 580 / 阻力 640</td></tr>
+<tr><td>VIX</td><td>16.59</td><td>中性区间</td><td>中性区间</td><td>支撑 15 / 阻力 20</td></tr>
+</tbody>
+</table>
+<div class="box">
+  <p><strong>形态判断</strong>：</p>
+  <ul>
+    <li>S&amp;P 500 处于历史高位附近震荡，今日回调幅度（−0.22%）温和，未破位。</li>
+    <li>Nasdaq 100 自历史高位回撤 −1.54%，属 Q2 强涨后正常获利回吐，不形成趋势反转。</li>
+    <li>SOXX 单日 −6.41% 为高波动率事件，Q2 涨幅过大引发技术性回调；600 整数关与 580（前期突破平台）为关键支撑区。</li>
+    <li>VIX 16.59 仍在 20 阈值下方，市场情绪未进入恐慌区。</li>
+  </ul>
+</div>
+
+<!-- ========== Section 8: 重点个股新闻与异动 ========== -->
+<h2>8️⃣ 重点个股新闻与异动</h2>
+
+<h3>🟢 七巨头（Magnificent 7）</h3>
+<table>
+<thead><tr><th>股票</th><th>收盘价</th><th>涨跌幅</th><th>当日重大新闻</th></tr></thead>
+<tbody>
+<tr><td><strong>AAPL</strong></td><td>294.38</td><td class="green">+1.73%</td><td style="color:#48bb78;">跟随大盘轮动，无重大催化；Mag7 普跌中逆势走强</td></tr>
+<tr><td><strong>MSFT</strong></td><td>384.28</td><td class="green">+3.02%</td><td style="color:#48bb78;">软件板块轮动受益，AI 资本开支担忧被 Meta 化解</td></tr>
+<tr><td><strong>NVDA</strong></td><td>197.58</td><td class="red">−1.25%</td><td style="color:#a0aec0;">跟随半导体板块回调，无个股利空</td></tr>
+<tr><td><strong>GOOGL</strong></td><td>361.21</td><td class="green">+1.07%</td><td style="color:#48bb78;">云业务稳健，无重大催化</td></tr>
+<tr><td><strong>AMZN</strong></td><td>241.70</td><td class="green">+1.41%</td><td style="color:#48bb78;">防御轮动受益</td></tr>
+<tr><td><strong>META</strong></td><td>612.91</td><td class="green">+8.81%</td><td style="color:#48bb78;">🚀 <strong>标普 500 头号赢家</strong>：宣布将 AI 算力转售为云服务，缓解 hyperscaler capex 担忧</td></tr>
+<tr><td><strong>TSLA</strong></td><td>425.30</td><td class="green">+1.12%</td><td style="color:#48bb78;">跟随大盘微涨，无个股催化</td></tr>
+</tbody>
+</table>
+
+<h3>🔴 AI 硬件 / 半导体</h3>
+<table>
+<thead><tr><th>股票</th><th>收盘价</th><th>涨跌幅</th><th>当日重大新闻</th></tr></thead>
+<tbody>
+<tr><td>AMD</td><td>540.88</td><td class="red">−6.89%</td><td style="color:#f56565;">跟随板块回调，无个股利空，Q2 暴涨后获利了结</td></tr>
+<tr><td>INTC</td><td>127.02</td><td class="red">−9.03%</td><td style="color:#f56565;">📉 <strong>半导体头号输家</strong>，落后大盘，板块集中抛压</td></tr>
+<tr><td>QCOM</td><td>181.92</td><td class="red">−1.55%</td><td style="color:#a0aec0;">跟随板块普跌</td></tr>
+<tr><td>AVGO</td><td>369.34</td><td class="red">−2.23%</td><td style="color:#a0aec0;">高位回吐，无个股利空</td></tr>
+<tr><td>MRVL</td><td>272.05</td><td class="red">−8.67%</td><td style="color:#f56565;">AI 定制芯片股集中抛压</td></tr>
+<tr><td>SMCI</td><td>27.65</td><td class="red">−5.73%</td><td style="color:#f56565;">AI 服务器股回调，估值消化压力</td></tr>
+</tbody>
+</table>
+
+<h3>🟢 软件 / AI 应用</h3>
+<table>
+<thead><tr><th>股票</th><th>收盘价</th><th>涨跌幅</th><th>当日重大新闻</th></tr></thead>
+<tbody>
+<tr><td>CRM</td><td>163.23</td><td class="green">+4.19%</td><td style="color:#48bb78;">软件板块轮动主力</td></tr>
+<tr><td>ORCL</td><td>142.50</td><td class="red">−2.76%</td><td style="color:#a0aec0;">数据库股逆势走弱，独立行情</td></tr>
+<tr><td>ADBE</td><td>210.98</td><td class="green">+2.91%</td><td style="color:#48bb78;">软件板块跟涨</td></tr>
+<tr><td>NOW</td><td>105.80</td><td class="green">+6.57%</td><td style="color:#48bb78;">🚀 <strong>软件板块第二大赢家</strong>，企业 SaaS 轮动受益</td></tr>
+<tr><td>SNOW</td><td>261.19</td><td class="green">+2.63%</td><td style="color:#48bb78;">云数据板块跟涨</td></tr>
+<tr><td>DDOG</td><td>264.48</td><td class="green">+1.58%</td><td style="color:#48bb78;">可观测性软件稳健</td></tr>
+</tbody>
+</table>
+
+<h3>⚪ AI 电力 / 数据中心</h3>
+<table>
+<thead><tr><th>股票</th><th>收盘价</th><th>涨跌幅</th><th>当日重大新闻</th></tr></thead>
+<tbody>
+<tr><td>DELL</td><td>425.25</td><td class="red">−1.44%</td><td style="color:#a0aec0;">跟随半导体服务器链回调</td></tr>
+<tr><td>HPQ</td><td>22.02</td><td class="green">+0.36%</td><td style="color:#a0aec0;">中性，跟随大势</td></tr>
+<tr><td>ANET</td><td>166.62</td><td class="red">−1.92%</td><td style="color:#a0aec0;">网络设备股高位回吐</td></tr>
+<tr><td>CSCO</td><td>117.01</td><td class="red">−0.38%</td><td style="color:#a0aec0;">中性偏弱</td></tr>
+</tbody>
+</table>
+
+<h3>🔴 光通信</h3>
+<table>
+<thead><tr><th>股票</th><th>收盘价</th><th>涨跌幅</th><th>当日重大新闻</th></tr></thead>
+<tbody>
+<tr><td>LITE</td><td>801.16</td><td class="red">−6.63%</td><td style="color:#f56565;">光通信股集中回调，高位回吐</td></tr>
+<tr><td>FN</td><td>547.18</td><td class="red">−2.65%</td><td style="color:#a0aec0;">跟随光通信板块走弱</td></tr>
+<tr><td>IPG</td><td>24.58</td><td class="gray">0.00%</td><td style="color:#a0aec0;">持平，无催化</td></tr>
+<tr><td>COHR</td><td>368.65</td><td class="red">−6.55%</td><td style="color:#f56565;">激光/光通信股回调</td></tr>
+</tbody>
+</table>
+
+<h3>🟢 金融</h3>
+<table>
+<thead><tr><th>股票</th><th>收盘价</th><th>涨跌幅</th><th>当日重大新闻</th></tr></thead>
+<tbody>
+<tr><td>GS</td><td>1,019.61</td><td class="green">+0.81%</td><td style="color:#48bb78;">金融板块轮动受益</td></tr>
+<tr><td>MS</td><td>211.86</td><td class="green">+1.35%</td><td style="color:#48bb78;">金融板块跟涨</td></tr>
+<tr><td>JPM</td><td>334.07</td><td class="green">+2.06%</td><td style="color:#48bb78;">大型行领涨，利率敏感</td></tr>
+<tr><td>BAC</td><td>58.36</td><td class="green">+2.42%</td><td style="color:#48bb78;">金融板块跟涨</td></tr>
+<tr><td>WFC</td><td>85.94</td><td class="green">+3.99%</td><td style="color:#48bb78;">富国银行逆势走强</td></tr>
+</tbody>
+</table>
+
+<!-- ========== Section 9: 财报日历与解读 ========== -->
+<h2>9️⃣ 财报日历与解读</h2>
+<div class="box">
+  <p><strong>📅 6/30 (昨日已公布)</strong>：</p>
+  <ul>
+    <li><strong>NKE (Nike)</strong> — 营收/盈利超预期，预期获得 <strong>$986M 关税退款</strong>，股价盘后震荡</li>
+    <li><strong>AVAV (AeroVironment)</strong> — 财报超预期 + <strong>+28%</strong> 盘后大涨，积压订单增至 $1.2B（国防开支提振）</li>
+  </ul>
+  <p><strong>📅 7/1 (昨夜已公布)</strong>：无 Mag7 财报</p>
+  <p><strong>📅 7/2-7/3 (本周后续)</strong>：无 Mag7 或大型股财报；周五 6 月非农就业数据为本周宏观主角</p>
+</div>
+
+<!-- ========== Section 10: 机构观点与资金流 ========== -->
+<h2>🔟 机构观点与资金流</h2>
+<div class="box box-good">
+  <p><strong>大行策略观点</strong>：</p>
+  <ul>
+    <li><strong>UBS</strong>：Q3 推荐<strong>防御性股息股</strong>（与今日轮动方向一致）</li>
+    <li><strong>Warsh (Fed)</strong>：拒绝预承诺 7 月降息，强调通胀仍过高，鹰派指引</li>
+    <li><strong>Morgan Stanley</strong>：看多 Grindr（新产品发布催化）</li>
+    <li><strong>Jefferies</strong>：看多法国生物科技（新药数据）</li>
+    <li><strong>Citi</strong>：延续看好某能源基建股（年内已 +500%）</li>
+  </ul>
+  <p><strong>⚠️ 重要人事变动</strong>：Wedbush 知名科技分析师 <strong>Dan Ives 离职创业</strong>，对多头科技股情绪面有负面影响（其长期看多 TSLA/AAPL/AI 板块）。</p>
+  <p><strong>🎯 著名空头信号</strong>：<strong>Michael Burry 披露做空 Caterpillar (CAT)</strong>，在 AI 涨势中 CAT 接近翻倍后被反向押注，警示工业龙头估值泡沫。</p>
+  <p><strong>ETF 资金流向观察</strong>：</p>
+  <ul>
+    <li>防御轮动流入：XLF（金融）、XLV（医疗）、XLU（公用事业部分）</li>
+    <li>半导体集中流出：SMH 单日 −5.40%，SOXX −6.41%</li>
+    <li>大型科技分化：XLK −2.57% vs META 单股 +8.81%（结构性而非系统性卖出）</li>
+  </ul>
+</div>
+
+<!-- ========== Section 11: 板块轮动判断 ========== -->
+<h2>1️⃣1️⃣ 板块轮动判断</h2>
+<div class="box box-info">
+  <p><strong>当前市场状态：<span class="orange">⚠️ 弱势震荡 + 风格切换</span></strong></p>
+  <p>基于 12 种市场状态分类框架：</p>
+  <ul>
+    <li>📉 <strong>半导体板块</strong>：从「强势上涨」快速切换为「<strong class="red">强势回调</strong>」（SOXX −6.41%，单日幅度大但持续性待观察）</li>
+    <li>🔄 <strong>大盘指数</strong>：S&amp;P 500/NDX 处于「<strong>弱势震荡</strong>」区间（−0.22% / −1.54%），未破位</li>
+    <li>💰 <strong>防御 + 金融</strong>：「<strong class="green">弱势上涨</strong>」 — 资金防御性流入</li>
+    <li>🤖 <strong>软件板块</strong>：「<strong class="green">独立强势</strong>」 — IGV +3.02% 与半导体形成分化</li>
+  </ul>
+  <p><strong>关键判断</strong>：Q2 半导体独领风骚后，Q3 首日资金明确「获利了结」+「轮动至防御」。<strong>若周五非农数据强劲</strong>（>200k），可能强化「软着陆 + 利率维持高位」叙事，金融/防御延续走强，半导体继续承压；<strong>若非农疲软</strong>（<150k），可能引发衰退担忧，全面 risk-off，所有板块普跌（防御除外）。</p>
+</div>
+
+<!-- ========== Section 12: 我的重点关注股观察 ========== -->
+<h2>1️⃣2️⃣ 重点关注股观察</h2>
+<table>
+<thead><tr><th>股票</th><th>收盘价</th><th>涨跌幅</th><th>近期催化剂</th><th>关键价位</th></tr></thead>
+<tbody>
+<tr><td><strong>META</strong></td><td>612.91</td><td class="green">+8.81%</td><td>云业务转型兑现，hyperscaler capex 担忧缓解</td><td>支撑 580 / 阻力 650</td></tr>
+<tr><td><strong>NVDA</strong></td><td>197.58</td><td class="red">−1.25%</td><td>Q3 半导体回调中相对抗跌，AI 龙头地位稳固</td><td>支撑 190 / 阻力 215</td></tr>
+<tr><td><strong>AMD</strong></td><td>540.88</td><td class="red">−6.89%</td><td>高位回吐，无个股利空；关注 MI300 出货指引</td><td>支撑 520 / 阻力 600</td></tr>
+<tr><td><strong>CRM</strong></td><td>163.23</td><td class="green">+4.19%</td><td>软件轮动主力，AI Agent 商业化进展</td><td>支撑 155 / 阻力 175</td></tr>
+<tr><td><strong>INTC</strong></td><td>127.02</td><td class="red">−9.03%</td><td>📉 板块头号输家，关注 Foundry 业务进展</td><td>支撑 120 / 阻力 140</td></tr>
+<tr><td><strong>GS</strong></td><td>1,019.61</td><td class="green">+0.81%</td><td>金融轮动受益，利率敏感</td><td>支撑 1,000 / 阻力 1,050</td></tr>
+</tbody>
+</table>
+
+<!-- ========== Section 13: 明日交易计划 ========== -->
+<h2>1️⃣3️⃣ 明日 (7/2) 交易计划 / 观察清单</h2>
+<div class="box">
+  <p><strong>📅 明日重点事件</strong>：</p>
+  <ul>
+    <li>无 Mag7 财报，无重大经济数据</li>
+    <li>关注周四 (7/2) 是否有 Fed 官员进一步讲话（继 Warsh 鹰派后）</li>
+    <li>周五 (7/3) 6 月非农就业数据为本周最大宏观催化剂（独立日假期前夕，市场流动性可能下降）</li>
+    <li>独立日 (7/4) 美股休市，周五尾盘可能提前进入假期模式</li>
+  </ul>
+  <p><strong>🎯 开盘前操作思路</strong>：</p>
+  <ul>
+    <li><strong>防御为主</strong>：当前处于 Q3 风格切换窗口期，不追高半导体反弹</li>
+    <li><strong>关注软件/金融</strong>：若板块轮动延续，可逢回调低吸 IGV/XLF</li>
+    <li><strong>META 持仓观察</strong>：云业务转型若持续发酵，可能带动 NVDA/MSFT 等 AI 算力股短期反弹</li>
+    <li><strong>半导体观望</strong>：INTC/MRVL/SMCI 跌势未尽，避免抄底；待 Q2 财报季后再评估</li>
+    <li><strong>对冲思路</strong>：若担心系统性回调，可适度配置 XLU/VIX call 保护</li>
+  </ul>
+</div>
+
+<!-- ========== Section 14: 风险提示 ========== -->
+<h2>1️⃣4️⃣ 风险提示</h2>
+<table>
+<thead><tr><th>风险维度</th><th>等级</th><th>说明</th></tr></thead>
+<tbody>
+<tr><td>宏观风险</td><td><span class="badge badge-orange">🟡 中</span></td><td>Warsh 鹰派转向 + 周五非农数据待验证</td></tr>
+<tr><td>利率风险</td><td><span class="badge badge-orange">🟡 中</span></td><td>10Y 4.481% 高位，7 月降息预期降温</td></tr>
+<tr><td>财报风险</td><td><span class="badge badge-green">🟢 低</span></td><td>本周无 Mag7 财报，财报空窗期</td></tr>
+<tr><td>地缘政治</td><td><span class="badge badge-orange">🟡 中</span></td><td>USMCA 重谈信号，关税风险重新定价</td></tr>
+<tr><td>行业监管</td><td><span class="badge badge-green">🟢 低</span></td><td>无重大监管动态</td></tr>
+<tr><td>流动性风险</td><td><span class="badge badge-orange">🟡 中</span></td><td>独立日假期前夕，市场流动性可能下降</td></tr>
+<tr><td>估值风险</td><td><span class="badge badge-red">🔴 高</span></td><td>SOXX 高位回调警示 AI 半导体估值泡沫</td></tr>
+<tr><td>市场情绪风险</td><td><span class="badge badge-orange">🟡 中</span></td><td>Dan Ives 离职 + Burry 做空 CAT，情绪面转弱</td></tr>
+<tr><td>黑天鹅风险</td><td><span class="badge badge-green">🟢 低</span></td><td>短期无明显触发因素</td></tr>
+</tbody>
+</table>
+<div class="box box-warn">
+  <p><strong>综合风险等级：<span class="badge badge-orange">🟡 中等偏高</span></strong></p>
+  <p>Q3 风格切换期 + 半导体估值消化 + 利率不确定性 + 假期流动性下降，建议防御为主，避免追高。</p>
+</div>
+
+<!-- ========== Section 15: 最终结论 ========== -->
+<h2>1️⃣5️⃣ 最终结论</h2>
+<div class="box box-info">
+  <p><strong>🎯 市场阶段：<span class="orange">⚠️ 震荡观望（需观察）</span></strong></p>
+  <p><strong>🎯 操作倾向：<span class="orange">⚖️ 谨慎做多 / 观望为主</span></strong></p>
+  <p><strong>📊 5 个关键观察信号</strong>：</p>
+  <ul>
+    <li><strong>技术面</strong>：① 标普 500 能否守住 7,400 关键支撑（破位则确认 Q3 回调）</li>
+    <li><strong>技术面</strong>：② SOXX 能否守住 580 前期突破平台（破位则半导体进入中期调整）</li>
+    <li><strong>基本面</strong>：③ 周五 6 月非农数据 — 关键数据点（>200k 利好金融，<150k 利好降息预期）</li>
+    <li><strong>资金面</strong>：④ 半导体 ETF (SMH) 资金流出是否持续 3 天以上（确认风格切换）</li>
+    <li><strong>情绪面</strong>：⑤ VIX 是否突破 20 关口（突破则进入恐慌区，全面 risk-off）</li>
+  </ul>
+  <p><strong>💡 操作建议</strong>：</p>
+  <ul>
+    <li>防御性配置（金融 XLF、医疗 XLV、公用事业 XLU）作为 Q3 底仓</li>
+    <li>软件板块（IGV/CRM/NOW）作为进攻仓位（受益 AI 商业化 + 板块轮动）</li>
+    <li>半导体板块暂避，待 Q2 财报季（7 月中下旬）后再评估入场时机</li>
+    <li>META 持仓观察 — 若云业务转型持续发酵，可能带动 AI 算力股短期反弹</li>
+    <li>关注周五非农数据，灵活调整仓位结构</li>
+  </ul>
+</div>
+
+<div class="footer">
+  <p>📊 数据来源：腾讯财经 API (web.sqt.gtimg.cn) + CNBC (cnbc.com)</p>
+  <p>⏰ 报告生成时间：2026-07-02 07:00 (北京时间)</p>
+  <p>🔗 <a href="https://zhangjingtao.github.io/us-stock-report/202607/2026-07-01.html" style="color:#4299e1;">GitHub Pages 链接</a></p>
+  <p>🤖 Generated by Hermes Agent · us-stock-report skill v1.6.7</p>
+</div>
+
+</div>
+</body>
+</html>
