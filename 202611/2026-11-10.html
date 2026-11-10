@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>美股收盘日报 2026-11-10</title>
+<style>
+:root { --bg:#0f1117; --card:#1a1d28; --border:#2a2d3a; --text:#e1e4ea; --text2:#9ba1b0; --green:#48bb78; --red:#f56565; --blue:#4f8cff; --yellow:#ecc94b; }
+* { box-sizing:border-box; }
+body { background:var(--bg); color:var(--text); font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue",Arial,sans-serif; max-width:960px; margin:0 auto; padding:30px 20px; line-height:1.65; }
+h1 { font-size:30px; margin:0 0 6px; }
+.subtitle { color:var(--text2); font-size:14px; margin-bottom:24px; }
+.section { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:20px 22px; margin-bottom:18px; }
+.section h2 { font-size:19px; margin:0 0 14px; padding-bottom:9px; border-bottom:1px solid var(--border); color:#fff; }
+table { width:100%; border-collapse:collapse; margin:12px 0; font-size:14px; }
+th, td { padding:8px 10px; text-align:left; border-bottom:1px solid var(--border); }
+th { color:var(--text2); font-weight:600; font-size:13px; }
+td { font-variant-numeric:tabular-nums; }
+ul { margin:10px 0; padding-left:20px; }
+li { margin-bottom:7px; font-size:14px; }
+.idx-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin:14px 0; }
+.idx { background:#12151d; border:1px solid var(--border); border-radius:8px; padding:12px; }
+.idx .lb { color:var(--text2); font-size:12px; margin-bottom:5px; }
+.idx .vl { font-size:19px; font-weight:700; }
+.idx .ch { font-size:13px; margin-top:2px; }
+.callout { background:#12151d; border-left:3px solid var(--blue); border-radius:0 8px 8px 0; padding:13px 16px; margin:13px 0; font-size:14px; }
+.callout.warn { border-left-color:var(--yellow); }
+.callout.danger { border-left-color:var(--red); }
+.timeline { border-left:2px solid var(--border); margin:12px 0 12px 6px; padding-left:16px; }
+.timeline .tl { position:relative; margin-bottom:13px; font-size:14px; }
+.timeline .tl::before { content:''; position:absolute; left:-21px; top:7px; width:9px; height:9px; border-radius:50%; background:var(--blue); }
+.timeline .tt { font-weight:700; color:#fff; font-size:13px; }
+.risk-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:12px 0; }
+.risk-item { background:#12151d; border:1px solid var(--border); border-radius:8px; padding:11px 13px; font-size:13px; }
+.risk-item .rl { font-weight:700; margin-bottom:4px; }
+.state-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:9px; margin:12px 0; }
+.state { background:#12151d; border:1px solid var(--border); border-radius:8px; padding:10px; text-align:center; font-size:13px; color:var(--text2); }
+.state.on { background:rgba(245,101,101,.14); border-color:var(--red); color:#fff; font-weight:700; }
+.footer { margin-top:28px; padding-top:15px; border-top:1px solid var(--border); color:var(--text2); font-size:12px; }
+a { color:var(--blue); text-decoration:none; }
+.num { font-variant-numeric:tabular-nums; }
+@media (max-width:720px){ .idx-grid{grid-template-columns:repeat(2,1fr);} .risk-grid,.state-grid{grid-template-columns:1fr;} }
+</style>
+</head>
+<body>
+<h1>美股收盘日报 2026-11-10</h1>
+<div class="subtitle">2026年11月10日（周二）美东收盘 | 数据源：腾讯财经API + CNBC实时报价 | 生成时间：北京时间 2026-11-11 07:00</div>
+<section class="section" id="s0">
+<h2>0. 今日一句话总结</h2>
+<ul>
+<li>10月CPI全面超预期浇熄了周一的反弹：CPI环比+0.4%（预期+0.3%）、核心CPI环比+0.3%（预期+0.2%），市场从「坏消息就是好消息」直接切回「利率惩罚」模式，三大指数全线收跌。</li>
+<li>10年期美债收益率自10月高点以来首次重回5%上方，盘中最高50.21（5.021%）、收49.83（4.983%），较前一日跳升约14个基点；2年期飙涨18bp至4.736%，30年期升破5.35%——曲线全线上移，短端最凶，定价的是12月加息而非降息。</li>
+<li>美联储理事沃勒明确表态支持12月加息25个基点，并称若通胀数据更差可能推动50个基点；达拉斯联储主席洛根预计还需再加两次。CME FedWatch显示25bp加息已完全定价，50bp概率从数据前的0%跳升至10.5%。</li>
+<li>英伟达连续第二日下挫5.47%，盘中一度跌约7%（最低166.52），市值短暂跌破4万亿美元；黄仁勋情spy调查与对华出口审查叠加，芯片板块呈现「英伟达跌、其余涨」的撕裂——博通+3.91%、AMD+1.30%、高通+1.20%、英特尔-2.09%，费半仅微跌0.36%。</li>
+<li>防御与金融板块逆势走强：金融XLF +0.52%、能源XLE +0.44%、通信XLC +0.37%、医疗XLV +0.29%，科技XLK -1.15%独垫底；前500大市值样本222涨/267跌（A/D 0.83），10只标普板块仅4涨6跌——这是典型的「利率上行驱动的风格切换」，而非全面risk-off。</li>
+<li>好消息在实体经济端：美国普通汽油均价跌至3.9788美元/加仑，为7月以来首次跌破4美元（较一周前跌17美分），能源通胀10月仅涨0.7%（9月为5.2%）；台积电10月营收5868.9亿新台币、同比+59.7%，全球芯片周期仍在扩张。</li>
+<li>市场状态判定为「弱势下跌（利率驱动的结构性调整）」，综合风险等级评为中高。标普500收7520.93（-0.38%）仍站在200日线7331上方，但已跌破50日线7673；纳指100跌破200日线28005，收27740.80（-0.60%），距52周高点-11.16%。</li>
+</ul>
+</section>
+
+<section class="section" id="s1">
+<h2>1. 大盘表现总览</h2>
+<div class="idx-grid">
+<div class="idx"><div class="lb">标普500</div><div class="vl">7,520.93</div><div class="ch" style="color:#f56565">-0.38%</div></div>
+<div class="idx"><div class="lb">纳斯达克综合</div><div class="vl">25,065.87</div><div class="ch" style="color:#f56565">-0.74%</div></div>
+<div class="idx"><div class="lb">纳斯达克100</div><div class="vl">27,740.80</div><div class="ch" style="color:#f56565">-0.60%</div></div>
+<div class="idx"><div class="lb">道琼斯</div><div class="vl">52,231.89</div><div class="ch" style="color:#f56565">-0.30%</div></div>
+<div class="idx"><div class="lb">罗素2000</div><div class="vl">2,821.38</div><div class="ch" style="color:#f56565">-0.68%</div></div>
+<div class="idx"><div class="lb">费城半导体</div><div class="vl">9,998.33</div><div class="ch" style="color:#f56565">-0.36%</div></div>
+<div class="idx"><div class="lb">VIX 恐慌指数</div><div class="vl">19.46</div><div class="ch" style="color:#48bb78">-2.31%</div></div>
+<div class="idx"><div class="lb">标普500 ETF</div><div class="vl">749.92</div><div class="ch" style="color:#f56565">-0.37%</div></div>
+</div>
+<table>
+<thead><tr><th>指数</th><th>代码</th><th>收盘</th><th>涨跌幅</th><th>开盘</th><th>日内高</th><th>日内低</th></tr></thead>
+<tbody>
+<tr><td>标普500</td><td>INX</td><td>7,520.93</td><td style="color:#f56565">-0.38%</td><td>7,513.09</td><td>7,543.92</td><td>7,470.43</td></tr>
+<tr><td>纳斯达克综合</td><td>IXIC</td><td>25,065.87</td><td style="color:#f56565">-0.74%</td><td>25,047.45</td><td>25,286.83</td><td>24,816.10</td></tr>
+<tr><td>纳斯达克100</td><td>NDX</td><td>27,740.80</td><td style="color:#f56565">-0.60%</td><td>27,649.64</td><td>27,990.34</td><td>27,421.18</td></tr>
+<tr><td>道琼斯</td><td>DJI</td><td>52,231.89</td><td style="color:#f56565">-0.30%</td><td>52,163.21</td><td>52,316.89</td><td>51,977.08</td></tr>
+<tr><td>罗素2000</td><td>RUT</td><td>2,821.38</td><td style="color:#f56565">-0.68%</td><td>2,817.17</td><td>2,826.54</td><td>2,799.25</td></tr>
+<tr><td>费城半导体</td><td>SOX</td><td>9,998.33</td><td style="color:#f56565">-0.36%</td><td>9,876.81</td><td>10,197.21</td><td>9,777.17</td></tr>
+<tr><td>道指 ETF</td><td>DIA</td><td>521.73</td><td style="color:#f56565">-0.31%</td><td colspan="3" style="color:#a0aec0">费城半导体与纳斯达克100为主要拖累项</td></tr>
+</tbody>
+</table>
+<div class="callout">道指下跌157.86点（-0.30%）、标普-0.38%、纳指-0.74%——跌幅排序与「成长久期越长跌越多」完全一致。VIX反而从19.92回落2.31%至19.46，说明这不是恐慌抛售，而是估值重定价。NYSE综合指数与罗素2000指数在腾讯接口返回空值，本表改用CNBC实时报价的罗素2000（2,821.38，-0.68%）。</div>
+</section>
+<section class="section" id="s2">
+<h2>2. 盘中走势复盘</h2>
+<div class="timeline">
+<div class="tl"><div class="tt">盘前 · 08:30 ET</div>10月CPI数据于8:30 ET公布：CPI环比+0.4%（预期+0.3%）、核心CPI环比+0.3%（预期+0.2%），双双超预期。9月CPI为环比+0.6%、核心+0.3%。10年期收益率瞬间跳升14bp以上重上5%。CNBC live blog记录开盘初段：标普开盘后跌0.7%、道指跌249点（-0.5%）、纳指跌0.9%——空头在数据落地后立刻用真金白银投票。</div>
+<div class="tl"><div class="tt">开盘 · 09:30 ET</div>标普500开盘7,494.91，较前收7,549.94低开约0.73%。日内振幅显著大于前一交易日（11月9日振幅2.9% vs 当日仅1.0%），开盘后10分钟内探至7,472.66的日内低点——恐慌集中在开盘最初半小时，随后未再破低。</div>
+<div class="tl"><div class="tt">午盘 · 12:00 ET</div>市场在低位横盘消化利率冲击。标普在7,485附近反复、纳指100最低27,432；VIX盘中一度冲高至21.61（较开盘19.76升近10%），但未触及25。英伟达盘中跌约7%至166.52，微软因Anthropic发布Claude Sheets/Whiteboards/Data办公套件而急跌3%，微软市值单日蒸发约290亿美元——AI应用层对软件巨头护城河的直接威胁成为新的定价变量。</div>
+<div class="tl"><div class="tt">尾盘 · 15:30-16:00 ET</div>尾盘出现明显的空头回补买盘。标普从午盘的7,489回升至7,510-7,520区间并以接近日内高点7,543.92附近收盘，纳指100从27,489附近回升至27,742。这是典型的「利率冲击消化后、部分资金抢反弹」结构，收盘跌幅（-0.38%）明显小于早盘一度-1.5%的最大回撤。</div>
+<div class="tl"><div class="tt">盘后 · 16:00 ET 后</div>CoreWeave公布Q3业绩，营收超预期并上调全年指引，盘后股价一度冲高后转跌（neocloud资本开支质疑升温）。NextNav盘后涨超8%（Q3亏损收窄至每股4美分、现金增至2.641亿美元）。Anthropic将IPO定价区间定为70-78美元/股、发行8.25亿股，最高可募资643.5亿美元，对应全面摊薄估值最高1.405万亿美元，预计11月19日开始交易——AI一级市场定价锚正在被重新校准。</div>
+</div>
+</section>
+
+<section class="section" id="s3">
+<h2>3. 宏观环境</h2>
+<table>
+<thead><tr><th>资产</th><th>价格/收益率</th><th>变化</th><th>报价时间</th></tr></thead>
+<tbody>
+<tr><td>VIX 恐慌指数</td><td>19.46</td><td style="color:#48bb78">-2.31%</td><td>2026-11-10T16:15:01.000-0500</td></tr>
+<tr><td>10Y 美债收益率</td><td>4.983%</td><td style="color:#f56565">+11.9bp</td><td>2026-11-10T14:59:54.000-0500</td></tr>
+<tr><td>2Y 美债收益率</td><td>4.748%</td><td style="color:#f56565">+20.1bp</td><td>2026-11-10T17:05:00.000-0500</td></tr>
+<tr><td>COMEX 黄金期货（美元/盎司）</td><td>4,036.00</td><td style="color:#f56565">-1.91%</td><td>2026-11-10 12月合约结算价</td></tr>
+<tr><td>现货黄金（美元/盎司）</td><td>4,021.36</td><td style="color:#f56565">-2.80%</td><td>2026-11-10 盘中报价（CNBC正文）</td></tr>
+<tr><td>WTI 原油期货（美元/桶）</td><td>86.33</td><td style="color:#f56565">-0.60%</td><td>2026-11-10 收盘附近（分时末值）</td></tr>
+<tr><td>Brent 原油期货（美元/桶）</td><td>92.02</td><td style="color:#f56565">-0.59%</td><td>2026-11-10T23:54:11.000+0100</td></tr>
+<tr><td>美元指数（ICE 现货 DXY）</td><td>102.217</td><td style="color:#f56565">+0.55%</td><td>2026-11-10T18:05:00.000-0500</td></tr>
+<tr><td>美元指数期货（12月）</td><td>102.15</td><td style="color:#f56565">+0.61%</td><td>2026-11-10T17:00:00.000-0500</td></tr>
+<tr><td>比特币 / USD</td><td>73,574.55</td><td style="color:#f56565">-1.56%</td><td>2026-11-10T18:00:36.000-0500</td></tr>
+</tbody>
+</table>
+<ul>
+<li>10Y按.TNX数值除以10换算：49.83对应4.983%，前收48.64对应4.864%，升幅11.9bp；CNBC正文口径为「盘中一度突破5%、最高5.004%，收报约4.992%（+13bp）」，两者为不同时点报价。30年期升逾9bp至5.352%，2年期升逾18bp至4.736%。</li>
+<li>黄金采用CNBC正文引用的12月合约结算价4,036.00美元（跌1.9%），现货金报4,021.36美元（跌2.8%），两者口径不同不可混用。Marex分析师Edward Meir称「通胀数据略高于预期，对黄金是短期利空」。CNBC文章明确提示「金价仍站上4,000美元/盎司关键位」（渣打）。注意CNBC的@GC.1实时接口在今日返回change_pct=UNCH、previous_day_closing等于last，属合约切换导致的假平仓，已弃用该字段。</li>
+<li>原油方面，CNBC @GC/@CL 实时接口同样返回UNCH（pitfall #51），故改用分时末值：WTI收于86.33附近、前收86.85（-0.60%）；Brent 1月合约报92.02、前收92.57（-0.59%）。CNBC正文口径为盘中报价（WTI 86.50、Brent 92.33，均为亚洲时段早盘价），非结算价。Brent上一交易日暴跌5.85%创8月31日以来新低，本周累计跌6.9%（前一周跌16.4%）。</li>
+<li>FedWatch概率（CNBC文章转引CME）：12月25bp加息概率已完全定价（100%），50bp加息概率从数据前的0%跳升至10.5%。注意这是加息概率，不是降息概率。</li>
+<li>10月CPI：整体环比+0.4%、核心环比+0.3%，双双高于道琼斯调查预期（+0.3%/+0.2%）；因去年政府停摆导致数据缺失，BLS未估算同比通胀率。同比读数在本报告数据源中不可得，不做推断。</li>
+<li>美国普通汽油均价11月10日跌至3.9788美元/加仑，为7月以来首次跌破4美元，较一周前跌17美分、较一个月前跌39美分（AAA数据）。10月能源分项仅涨0.7%，远低于9月的5.2%。</li>
+</ul>
+</section>
+<section class="section" id="s4">
+<h2>4. 板块表现</h2>
+<table>
+<thead><tr><th>板块</th><th>ETF</th><th>收盘</th><th>涨跌幅</th></tr></thead>
+<tbody>
+<tr><td>金融</td><td>XLF</td><td>58.29</td><td style="color:#48bb78">+0.52%</td></tr>
+<tr><td>能源</td><td>XLE</td><td>62.21</td><td style="color:#48bb78">+0.44%</td></tr>
+<tr><td>通信服务</td><td>XLC</td><td>107.76</td><td style="color:#48bb78">+0.37%</td></tr>
+<tr><td>医疗保健</td><td>XLV</td><td>188.88</td><td style="color:#48bb78">+0.29%</td></tr>
+<tr><td>可选消费</td><td>XLY</td><td>121.05</td><td style="color:#48bb78">+0.03%</td></tr>
+<tr><td>工业</td><td>XLI</td><td>168.73</td><td style="color:#f56565">-0.09%</td></tr>
+<tr><td>房地产</td><td>XLRE</td><td>44.58</td><td style="color:#f56565">-0.13%</td></tr>
+<tr><td>公用事业</td><td>XLU</td><td>43.73</td><td style="color:#f56565">-0.14%</td></tr>
+<tr><td>材料</td><td>XLB</td><td>52.85</td><td style="color:#f56565">-0.17%</td></tr>
+<tr><td>科技</td><td>XLK</td><td>168.91</td><td style="color:#f56565">-1.15%</td></tr>
+</tbody>
+</table>
+<div class="callout warn">10个GICS板块中4涨6跌，振幅极窄（最大+0.52%、最小-1.15%）——这不是恐慌日的板块崩塌，而是「利率上行驱动的温和轮动」：金融（利差受益）、能源（地缘溢价未消）、通信服务（现金流稳定）小幅占优，科技因久期最长而独跌1.15%。工业、公用事业、房地产这类利率敏感板块反而小幅下跌，说明市场定价的不是「衰退担忧」，而是纯粹的「折现率上行」。</div>
+<p>本表未纳入必需消费XLP，因此不是完整11板块口径。</p>
+</section>
+
+<section class="section" id="s5">
+<h2>5. 主题与风格表现</h2>
+<table>
+<thead><tr><th>主题</th><th>代码</th><th>收盘</th><th>涨跌幅</th></tr></thead>
+<tbody>
+<tr><td>费城半导体 ETF</td><td>SOXX</td><td>146.59</td><td style="color:#f56565">-0.12%</td></tr>
+<tr><td>半导体指数 ETF</td><td>SMH</td><td>483.63</td><td style="color:#f56565">-0.78%</td></tr>
+<tr><td>AI 主题</td><td>AIQ</td><td>58.40</td><td style="color:#f56565">-0.63%</td></tr>
+<tr><td>软件</td><td>IGV</td><td>100.33</td><td style="color:#f56565">-1.11%</td></tr>
+<tr><td>网络安全</td><td>CIBR</td><td>94.63</td><td style="color:#f56565">-0.05%</td></tr>
+<tr><td>云服务</td><td>SKYY</td><td>149.95</td><td style="color:#f56565">-0.50%</td></tr>
+<tr><td>成长强度代理</td><td>FTGS</td><td>37.84</td><td style="color:#f56565">-0.81%</td></tr>
+<tr><td>小盘股</td><td>IWM</td><td>280.58</td><td style="color:#f56565">-0.68%</td></tr>
+<tr><td>大盘成长</td><td>XLG</td><td>60.62</td><td style="color:#f56565">-0.56%</td></tr>
+</tbody>
+</table>
+<div class="callout">半导体内部出现罕见撕裂：SOXX仅-0.12%而SMH-0.78%、SOX-0.36%，权重股博通+3.91%、AMD+1.30%、高通+1.20%，但英伟达-5.47%、英特尔-2.09%、Arm-2.58%、美光-1.10%。CNBC的Market Memo明确指出这是「坏消息出尽」后的分化——资金从英伟达（治理风险溢价）向同业（AI需求未受损）扩散。费半指数仍处50日线下方14.1%、距52周高点-31.68%，尚未确认趋势反转。</div>
+</section>
+
+<section class="section" id="s6">
+<h2>6. 市场宽度与参与度</h2>
+<table>
+<thead><tr><th>指标</th><th>数值</th><th>口径说明</th></tr></thead>
+<tbody>
+<tr><td>上涨家数</td><td>222</td><td>Nasdaq screener按市值排序取前500只，腾讯API取当日收盘自算</td></tr>
+<tr><td>下跌家数</td><td>267</td><td>同上</td></tr>
+<tr><td>平盘家数</td><td>8</td><td>同上（有效样本497只，3只无有效报价）</td></tr>
+<tr><td>A/D 比率</td><td>0.83</td><td>上涨/下跌，弱于1.0说明跌股占优</td></tr>
+<tr><td>涨幅超5%个股</td><td>2</td><td>极端上涨稀缺</td></tr>
+<tr><td>跌幅超5%个股</td><td>10</td><td>极端下跌集中，尾部风险偏高</td></tr>
+<tr><td>站上50日均线</td><td>58.5%（124/212）</td><td>220只大市值样本的子集，均线含今日收盘</td></tr>
+<tr><td>站上200日均线</td><td>66.5%（141/212）</td><td>同上</td></tr>
+<tr><td>同时站上50/200日线</td><td>51.4%（109/212）</td><td>中性偏弱的短期动能</td></tr>
+<tr><td>同时跌破50/200日线</td><td>26.4%（56/212）</td><td>趋势破位个股占比超四分之一</td></tr>
+<tr><td>创52周新高</td><td>5.2%（11/212）</td><td>以CNBC 1Y日线区间判定</td></tr>
+<tr><td>创52周新低</td><td>0.0%（0/212）</td><td>无个股处于年内低位，抛压已充分释放</td></tr>
+</tbody>
+</table>
+<div class="callout warn">宽度与指数背离：指数跌幅仅0.38%，但A/D仅0.83、超5%下跌个股（10只）是超5%上涨（2只）的5倍。50日线参与度58.5%已低于60%临界位，而200日线参与度仍有66.5%——这是「短期动能走坏、中期趋势尚未破坏」的典型中继形态，而非顶部。52周新低为0是重要正面信号：洗出已经发生，不存在恐慌性抛售。</div>
+</section>
+<section class="section" id="s7">
+<h2>7. 技术面分析</h2>
+<table>
+<thead><tr><th>指数</th><th>收盘</th><th>50日均线</th><th>200日均线</th><th>相对50日线</th><th>相对200日线</th><th>距52周高点</th></tr></thead>
+<tbody>
+<tr><td>标普500</td><td>7,520.93</td><td>7,672.91</td><td>7,331.08</td><td style="color:#f56565">-1.98% 破位</td><td style="color:#48bb78">+2.59% 站上</td><td style="color:#f56565">-3.81%</td></tr>
+<tr><td>纳斯达克100</td><td>27,740.80</td><td>29,567.86</td><td>28,005.54</td><td style="color:#f56565">-6.18% 深度破位</td><td style="color:#f56565">-0.95% 破位</td><td style="color:#f56565">-11.16%</td></tr>
+<tr><td>纳斯达克综合</td><td>25,065.87</td><td>26,408.74</td><td>25,114.37</td><td style="color:#f56565">-5.08% 破位</td><td style="color:#f56565">-0.19% 临界</td><td style="color:#f56565">-9.18%</td></tr>
+<tr><td>道琼斯</td><td>52,231.89</td><td>52,021.55</td><td>50,706.91</td><td style="color:#48bb78">+0.40% 站上</td><td style="color:#48bb78">+3.01% 站上</td><td style="color:#f56565">-3.90%</td></tr>
+<tr><td>罗素2000</td><td>2,821.38</td><td>2,832.56</td><td>2,809.58</td><td style="color:#f56565">-0.39% 临界</td><td style="color:#48bb78">+0.42% 站上</td><td style="color:#f56565">-8.05%</td></tr>
+<tr><td>费城半导体</td><td>9,998.33</td><td>11,635.21</td><td>10,855.22</td><td style="color:#f56565">-14.07% 深度破位</td><td style="color:#f56565">-7.90% 深度破位</td><td style="color:#f56565">-31.68%</td></tr>
+</tbody>
+</table>
+<ul>
+<li>标普500：收7,520.93，位于50日线7,672.91下方1.98%，但稳在200日线7,331.08上方2.59%。近期形态为「11月2日见顶7,577.39后连续三根阴线回踩」，日内低点7,470.43构成第一支撑；下方关键支撑为200日线7,331（前低7,369.55为次级支撑），上方阻力为50日线7,673与11月2日高点7,577.39。日内振幅仅1.0%，是典型的「数据冲击日缩量收敛」形态。</li>
+<li>纳斯达克100：收27,740.80，50日线与200日线双破，是本轮调整中技术形态最弱的指数——200日线28,005.54已在11月6日被跌穿并持续压制。支撑看11月6日收盘26,989.99（近期低点26,887.69），阻力为200日线28,005与50日线29,568。距52周高点31,224.69已回撤11.16%，处于技术性修正区间（-10%已确认）。</li>
+<li>道琼斯是唯一双线站上的指数（50日线上方0.40%、200日线上方3.01%），印证了「资金从成长向价值迁移」的判断。罗素2000同样守住200日线，但已跌破50日线0.39%，小盘股相对强度在走弱。</li>
+<li>费城半导体是结构最弱的板块：距52周高点-31.68%、跌破200日线7.90%、跌破50日线14.07%，深度偏离所有均线，尚未出现任何企稳信号。11月9日单日+6.86%的反弹在CPI冲击下被完全回吐，SOX从10,197.21的日内高点回落至9,998.33。</li>
+<li>全部均线均以CNBC 1Y日线为基准并把当日收盘价追加至序列末端计算（pitfall #55/#61/#70），确保今日收盘被计入SMA窗口。</li>
+</ul>
+</section>
+
+<section class="section" id="s8">
+<h2>8. 重点个股新闻与异动</h2>
+<h3 style="font-size:15px;margin:16px 0 8px;color:#fff">七巨头</h3>
+<table>
+<thead><tr><th>代码</th><th>收盘</th><th>涨跌幅</th><th>当日新闻</th></tr></thead>
+<tbody>
+<tr><td>NVDA</td><td>168.89</td><td style="color:#f56565">-5.47%</td><td>黄仁勋情spy调查持续发酵，盘中最低166.52（-7%），市值短暂跌破4万亿美元；Silverado分析师称黄仁勋「不可能挺过这起桃色事件与出口丑闻」；纽约时报报道特朗普赴北京前已知晓此事；公司已就此事向董事会发声明。博通+3.91%、AMD+1.30%与英伟达形成撕裂</td></tr>
+<tr><td>MSFT</td><td>533.16</td><td style="color:#f56565">-2.20%</td><td>Anthropic发布Claude Sheets、Claude Whiteboards、Claude Data办公套件，直接对标Office，微软股价在消息公布后急跌3%，市值蒸发约290亿美元——AI应用层对软件护城河的侵蚀成为新的估值变量</td></tr>
+<tr><td>AMZN</td><td>270.87</td><td style="color:#48bb78">+1.48%</td><td>七巨头中唯一明显上涨者；亚马逊Ring发布飞行无人机与机器人用于巡逻住宅与商业场所</td></tr>
+<tr><td>AAPL</td><td>348.51</td><td style="color:#f56565">-0.62%</td><td>随科技板块小幅回落；Trade Tracker显示基金经理Karen Firestone减持苹果</td></tr>
+<tr><td>GOOGL</td><td>287.38</td><td style="color:#f56565">-0.27%</td><td>CNBC技术分析称Alphabet股价已现底部、探讨快速反弹交易；期权交易员讨论谷歌反弹的玩法</td></tr>
+<tr><td>META</td><td>641.39</td><td style="color:#a0aec0">基本持平</td><td>收于前收附近（+0.02%），未参与AI应用层下挫；首席战略官Dave Wehner离职加入AI基础设施初创公司Fireworks任CFO；摩根大通将其加入关注名单</td></tr>
+<tr><td>TSLA</td><td>379.78</td><td style="color:#48bb78">+0.46%</td><td>小幅走强；马斯克表示Cybertruck停产后将退还部分订金</td></tr>
+</tbody>
+</table>
+<h3 style="font-size:15px;margin:16px 0 8px;color:#fff">AI 硬件 / 半导体</h3>
+<table>
+<thead><tr><th>代码</th><th>收盘</th><th>涨跌幅</th><th>当日新闻</th></tr></thead>
+<tbody>
+<tr><td>AVGO</td><td>331.98</td><td style="color:#48bb78">+3.91%</td><td>半导体板块最强标的，资金从英伟达切换至博通；Trade Tracker显示Karen Firestone增持博通</td></tr>
+<tr><td>AMD</td><td>515.21</td><td style="color:#48bb78">+1.30%</td><td>奥本海默上调至跑赢大盘，称在管理层乐观会面后上调预估；Paul Meeks指出AMD与博通的上涨未必是英伟达的损失</td></tr>
+<tr><td>QCOM</td><td>173.53</td><td style="color:#48bb78">+1.20%</td><td>CEO Cristiano Amon接受CNBC专访；OpenAI、Arm、高通高管就中期选举后的AI抛售表态</td></tr>
+<tr><td>MU</td><td>725.11</td><td style="color:#f56565">-1.10%</td><td>存储板块随费半回落；Cramer做空讨论提及美光</td></tr>
+<tr><td>MRVL</td><td>154.39</td><td style="color:#f56565">-0.14%</td><td>基本持平于板块中枢，未参与博通式的大幅切换</td></tr>
+<tr><td>INTC</td><td>58.13</td><td style="color:#f56565">-2.09%</td><td>随费半回落，跌幅大于指数；此前6日反弹中曾单日+7.71%</td></tr>
+<tr><td>SMCI</td><td>27.79</td><td style="color:#f56565">-2.83%</td><td>AI服务器板块跟随软硬件降温；近期在「SpaceX电力需求受益股」名单中反复出现</td></tr>
+<tr><td>ARM</td><td>181.49</td><td style="color:#f56565">-2.58%</td><td>此前因财报后大跌，本日继续承压</td></tr>
+</tbody>
+</table>
+<h3 style="font-size:15px;margin:16px 0 8px;color:#fff">软件 / AI 应用</h3>
+<table>
+<thead><tr><th>代码</th><th>收盘</th><th>涨跌幅</th><th>当日新闻</th></tr></thead>
+<tbody>
+<tr><td>NOW</td><td>99.61</td><td style="color:#f56565">-3.07%</td><td>软件板块领跌之一；网络安全股回调拖累（Cramer讨论网络安全股下跌驱动因素）</td></tr>
+<tr><td>ORCL</td><td>117.98</td><td style="color:#f56565">-1.51%</td><td>瑞穗维持跑赢大盘评级，认为上周AI股普跌中甲骨文的下跌是买入机会；CFO Hilary Maxson接受专访</td></tr>
+<tr><td>CRM</td><td>213.48</td><td style="color:#f56565">-0.68%</td><td>宣布56.6亿美元收购Braze，BRZE股价大涨51%；美银称可在财报前逢低布局部分软件股</td></tr>
+<tr><td>DDOG</td><td>178.40</td><td style="color:#f56565">-0.68%</td><td>Bernstein看多长期空间；本周分析师评级集中</td></tr>
+<tr><td>ADBE</td><td>236.70</td><td style="color:#f56565">-0.26%</td><td>花旗称投资者应卖出该软件股，构成明确看空评级</td></tr>
+<tr><td>SNOW</td><td>295.76</td><td style="color:#48bb78">+1.59%</td><td>逆势上涨；CEO Sridhar Ramaswamy就AI前沿接受专访</td></tr>
+</tbody>
+</table>
+<h3 style="font-size:15px;margin:16px 0 8px;color:#fff">AI 电力 / 数据中心</h3>
+<table>
+<thead><tr><th>代码</th><th>收盘</th><th>涨跌幅</th><th>当日新闻</th></tr></thead>
+<tbody>
+<tr><td>DELL</td><td>334.38</td><td style="color:#f56565">-3.44%</td><td>AI硬件链最弱标的之一；Cramer做空讨论提及戴尔</td></tr>
+<tr><td>HPQ</td><td>28.42</td><td style="color:#48bb78">+0.60%</td><td>逆势小涨；与被列入美国黑名单的中兴达成WiFi技术授权协议；Josh Brown的「最佳个股」名单包含惠普</td></tr>
+<tr><td>ANET</td><td>185.02</td><td style="color:#f56565">-0.62%</td><td>网络设备随科技板块小幅回落；Cramer在Mad Dash环节讨论</td></tr>
+<tr><td>CSCO</td><td>98.15</td><td style="color:#f56565">-0.51%</td><td>11月12日盘后将公布财报，为近期AI网络板块的关键催化</td></tr>
+</tbody>
+</table>
+<h3 style="font-size:15px;margin:16px 0 8px;color:#fff">光通信</h3>
+<table>
+<thead><tr><th>代码</th><th>收盘</th><th>涨跌幅</th><th>当日新闻</th></tr></thead>
+<tbody>
+<tr><td>LITE</td><td>585.57</td><td style="color:#f56565">-1.78%</td><td>CEO Michael Hurlston接受专访，称「需求从未如此强劲，但我们正经历大规模抛售」——需求与股价的背离</td></tr>
+<tr><td>FN</td><td>348.52</td><td style="color:#f56565">-4.76%</td><td>光通信链最弱标的之一；曾出现在盘前异动榜（Fabrinet）</td></tr>
+<tr><td>COHR</td><td>214.66</td><td style="color:#f56565">-4.68%</td><td>与FN同步大跌，光模块环节整体承压</td></tr>
+<tr><td>IPG</td><td>24.58</td><td style="color:#a0aec0">收盘平盘</td><td>CNBC无当日个股新闻；腾讯接口显示收盘价与前收相同（24.58）、时间戳为当日开盘时段，且CNBC无该标的报价记录，按平盘处理</td></tr>
+</tbody>
+</table>
+<h3 style="font-size:15px;margin:16px 0 8px;color:#fff">金融</h3>
+<table>
+<thead><tr><th>代码</th><th>收盘</th><th>涨跌幅</th><th>当日新闻</th></tr></thead>
+<tbody>
+<tr><td>XLF板块领涨</td><td>58.29</td><td style="color:#48bb78">+0.52%</td><td>金融板块当日最强，收益率曲线陡峭化利好净息差</td></tr>
+<tr><td>GS</td><td>910.19</td><td style="color:#48bb78">+0.44%</td><td>CEO Solomon称尽管市场波动，AI融资需求依然强劲；高盛、摩根大通、摩根士丹利正在主导AI股票行情</td></tr>
+<tr><td>WFC</td><td>85.76</td><td style="color:#48bb78">+0.32%</td><td>富国策略师认为更高的收益率提供更多票息收入和更好的长期回报起点</td></tr>
+<tr><td>BAC</td><td>50.68</td><td style="color:#48bb78">+0.26%</td><td>跟随金融板块温和上行，无个股重大新闻</td></tr>
+<tr><td>MS</td><td>187.56</td><td style="color:#48bb78">+0.25%</td><td>Sherry Paul称「目前看应留在大盘股」；Jim Caron认为当前是「重置而非撤退」</td></tr>
+<tr><td>JPM</td><td>342.07</td><td style="color:#a0aec0">基本持平</td><td>收盘与前收持平（342.08）；将Meta加入关注名单；市场关注点包括AI数据中心贷款风险（ING寻求买家出售5亿美元数据中心贷款）</td></tr>
+</tbody>
+</table>
+</section>
+<section class="section" id="s9">
+<h2>9. 财报日历与财报解读</h2>
+<h3 style="font-size:15px;margin:4px 0 8px;color:#fff">昨夜（11月10日）已公布</h3>
+<table>
+<thead><tr><th>公司</th><th>时段</th><th>业绩要点</th></tr></thead>
+<tbody>
+<tr><td>CoreWeave (CRWV)</td><td>盘后</td><td>营收超分析师预期并上调全年指引；股价盘后先涨后转跌，Jefferies的Brent Thill质疑其积压订单质量（AI空头质疑点）</td></tr>
+<tr><td>On Holding (ONON)</td><td>盘前</td><td>股价跌8%，市场关注点越过5,260万瑞郎一次性关税退款，聚焦直营（DTC）销售不及预期；调整后盈利超预期、净利同比增36.9%至1.628亿瑞郎、净销售增17.2%</td></tr>
+<tr><td>Sanmina (SANM)</td><td>盘前</td><td>股价大涨19%，全年EPS指引15.50-17.50美元超FactSet一致预期14.07美元，营收指引175-195亿美元亦高于166.1亿美元一致预期</td></tr>
+<tr><td>Qualys (QLYS)</td><td>盘前</td><td>即使Q3业绩超预期，增长指引未显示足够加速，股价仍跌近7%</td></tr>
+<tr><td>Trump Media</td><td>盘前</td><td>第三季度实现盈利且营收激增，股价涨7%</td></tr>
+<tr><td>NextNav</td><td>盘后</td><td>盘后涨超8%（盘中曾跌6%），Q3营收同比接近翻倍，亏损收窄至每股4美分（上年同期12美分），现金及短期投资增至2.641亿美元</td></tr>
+<tr><td>Casella Waste Systems</td><td>盘前</td><td>季度业绩不及预期，股价跌超5%</td></tr>
+<tr><td>Rocket Lab</td><td>盘前</td><td>尽管营收创纪录，EBITDA指引与Neutron项目不确定性压制股价，盘中跌近6%</td></tr>
+<tr><td>Skydance</td><td>盘前</td><td>由Paramount与华纳兄弟合并而成的娱乐集团，股价跌超2%</td></tr>
+<tr><td>Hims &amp; Hers Health</td><td>盘前</td><td>第四季度指引弱于预期，股价跌2%</td></tr>
+</tbody>
+</table>
+<h3 style="font-size:15px;margin:16px 0 8px;color:#fff">未来 1-3 个交易日重点财报</h3>
+<table>
+<thead><tr><th>日期</th><th>公司</th><th>时段</th><th>备注</th></tr></thead>
+<tbody>
+<tr><td>11月11日</td><td>Transdigm (TDG)</td><td>盘前</td><td>市值674亿美元，航空零部件</td></tr>
+<tr><td>11月11日</td><td>Sea Limited (SE)</td><td>盘前</td><td>市值477亿美元，东南亚电商与游戏</td></tr>
+<tr><td>11月11日</td><td>Alcon (ALC)</td><td>盘后</td><td>市值375亿美元，眼科医疗</td></tr>
+<tr><td>11月11日</td><td>Vodafone (VOD)</td><td>盘前</td><td>市值364亿美元</td></tr>
+<tr><td>11月11日</td><td>CGI Group (GIB)</td><td>盘前</td><td>市值192亿美元</td></tr>
+<tr><td>11月12日</td><td>Cisco (CSCO)</td><td>盘后</td><td>市值3,889亿美元，AI网络设备关键标的</td></tr>
+<tr><td>11月12日</td><td>Applied Materials (AMAT)</td><td>盘后</td><td>市值2,941亿美元，半导体设备</td></tr>
+<tr><td>11月12日</td><td>Brookfield Corp (BN)</td><td>盘前</td><td>市值1,054亿美元</td></tr>
+<tr><td>11月12日</td><td>Nu Holdings (NU)</td><td>盘后</td><td>市值600亿美元</td></tr>
+<tr><td>11月12日</td><td>Nebius (NBIS)</td><td>盘前</td><td>市值385亿美元，AI云</td></tr>
+<tr><td>11月12日</td><td>Cerebras (CBRS)</td><td>盘后</td><td>市值230亿美元，AI芯片；此前已从高位崩至97美元</td></tr>
+<tr><td>11月13日</td><td>MUFG / SMFG / MFG</td><td>盘前/未指定</td><td>三菱日联1,282亿美元、三井住友777亿美元、瑞穗611亿美元，三大日银集中披露</td></tr>
+</tbody>
+</table>
+<div class="callout">财报解读主线是「AI资本开支的验证」而非「科技股本身」。Sanmina（AI服务器EMS代工）指引大幅超预期、CoreWeave营收超预期并上调指引，说明AI基础设施建设需求并未如担忧者所述放缓；但Qualys指引不及预期、On Holding DTC销售miss，说明「AI受益」与「AI叙事」必须区分。下周CSCO+AMAT的组合是关键验证点——若设备端与网络端同时超预期，费半的破位才具备修复基础。</div>
+</section>
+
+<section class="section" id="s10">
+<h2>10. 机构观点与资金流</h2>
+<h3 style="font-size:15px;margin:4px 0 8px;color:#fff">大行策略与分析师评级</h3>
+<table>
+<thead><tr><th>机构</th><th>标的</th><th>评级/目标</th><th>核心观点</th></tr></thead>
+<tbody>
+<tr><td>Oppenheimer</td><td>AMD</td><td>上调至跑赢大盘</td><td>与管理层乐观会面后上调预测与评级，提到与CFO Jean Hu及IR负责人Matt Ramsay的炉边谈话</td></tr>
+<tr><td>JPMorgan</td><td>META</td><td>加入关注名单</td><td>预计营收持续强劲</td></tr>
+<tr><td>Mizuho</td><td>ORCL</td><td>重申跑赢大盘</td><td>视上周AI股普跌（含ORCL）为买入机会，认为投资者忽略了若干积极进展</td></tr>
+<tr><td>Deutsche Bank</td><td>SpaceX</td><td>重申买入</td><td>看到「有利的算力定价」</td></tr>
+<tr><td>Citi</td><td>Securitize (SECR)</td><td>上调并维持14美元目标价</td><td>Q3财报后上调评级，看好其向资产支持金融扩张</td></tr>
+<tr><td>JPMorgan</td><td>Unum (UNM)</td><td>上调至增持</td><td>目标价从98美元下调至90美元同时由中性转增持，认为估值被低估</td></tr>
+<tr><td>StoneX</td><td>Bullish (BLSH)</td><td>首次覆盖买入</td><td>目标价42美元，认为代币类资产总可寻址市场巨大且渗透率不足</td></tr>
+<tr><td>JPMorgan</td><td>Molson Coors (TAP)</td><td>下调至减持</td><td>11月5日财报后由中性下调</td></tr>
+<tr><td>Citi</td><td>Adobe (ADBE)</td><td>建议卖出</td><td>明确看空评级</td></tr>
+<tr><td>Bernstein</td><td>NVDA</td><td>跑赢大盘 / 目标价400美元</td><td>称「至少我们怀疑这层压制会持续一段时间」，关注GPU出口与法律漏洞</td></tr>
+<tr><td>Raymond James</td><td>NVDA</td><td>强力买入 / 目标价515美元</td><td>认为事件可能强化国会支持MATCH法案等立法</td></tr>
+<tr><td>Baird</td><td>NVDA</td><td>跑赢大盘 / 目标价500美元</td><td>目标价隐含较上周五收盘168%的上行空间</td></tr>
+</tbody>
+</table>
+<ul>
+<li>英伟达目标价分歧极大：400/500/515美元三档，对应当前168.89美元的137%-205%空间，说明卖方模型未把治理风险定价进估值，而是当作可修复的折价——这构成一个明显的「预期差风险点」：如果事件恶化而模型不动，估值将失去支撑。</li>
+<li>卖方集体认为「坏消息出尽」可交易：CNBC的Market Memo标题即为「Markets bottom on bad news maxim rings true as chip stocks rally amid Nvidia scandal」。</li>
+</ul>
+<h3 style="font-size:15px;margin:16px 0 8px;color:#fff">ETF 资金流与仓位观察</h3>
+<ul>
+<li>风格轮动证据明确：金融XLF +0.52%、能源XLE +0.44%领涨，科技XLK -1.15%垫底；大盘成长XLG -0.56%、小盘IWM -0.68%，说明增量资金在利率上行环境中流向价值与现金流资产。</li>
+<li>摩根士丹利Sherry Paul明确表态「目前看应留在大盘股」，Jim Caron认为当前是「重置而非撤退」——与本报告的「中继调整」判断一致。</li>
+<li>高盛、摩根大通、摩根士丹利被CNBC指出正在主导AI股票行情，同时高盛CEO Solomon称AI融资需求在市场波动中依然强劲（AI债务融资是本周被低估的风险点：CoreWeave长债收益率与数据中心贷款转让市场均显示信用端压力上升）。</li>
+</ul>
+</section>
+<section class="section" id="s11">
+<h2>11. 板块轮动判断</h2>
+<div class="state-grid">
+<div class="state">强势上涨</div>
+<div class="state">弱势上涨</div>
+<div class="state">强势下跌</div>
+<div class="state on">弱势下跌</div>
+<div class="state">横盘震荡</div>
+<div class="state">高波幅整理</div>
+<div class="state">防御轮动</div>
+<div class="state on">利率驱动调整</div>
+</div>
+<table>
+<thead><tr><th>维度</th><th>观测</th><th>指向</th></tr></thead>
+<tbody>
+<tr><td>指数方向</td><td>三大指数全线收跌，但幅度温和（-0.30% 至 -0.74%）</td><td>弱势下跌</td></tr>
+<tr><td>宽度</td><td>A/D 0.83，超5%下跌个股为超5%上涨的5倍</td><td>内部分化偏空</td></tr>
+<tr><td>均线结构</td><td>标普跌破50日线但守住200日线；纳指100双线破位</td><td>中继调整</td></tr>
+<tr><td>波动率</td><td>VIX 19.46，日内冲高21.61后回落收跌2.31%</td><td>非恐慌</td></tr>
+<tr><td>利率</td><td>10Y 4.983%（+11.9bp）、2Y 4.748%（+20.1bp）、曲线陡峭化</td><td>利率驱动</td></tr>
+<tr><td>板块结构</td><td>金融/能源/通信/医疗涨，科技独跌1.15%；防御与周期同时走强</td><td>防御轮动而非risk-off</td></tr>
+<tr><td>新高新低</td><td>52周新高5.2%、新低0.0%</td><td>无恐慌抛售</td></tr>
+<tr><td>参与度</td><td>50日线上58.5%、200日线上66.5%、双线跌破26.4%</td><td>短期动能走坏</td></tr>
+</tbody>
+</table>
+<div class="callout">综合判定为「弱势下跌（利率驱动的结构性调整）」，而非趋势性熊市。理由有三：其一，跌幅与波动率不匹配（VIX反而收跌），说明是估值重定价而非流动性冲击；其二，防御板块与周期板块同时上涨，典型risk-off应当是防御涨、周期跌，而今日能源与工业都未大跌；其三，52周新低为0、洗出已经完成，且卖方目标价体系未下修英伟达。下行风险主要来自12月9-10日FOMC前后的利率二次冲击，而非基本面。AI主线内部呈现「应用层受威胁（微软）、硬件层分化（英伟达跌、同业涨）、基础设施层承压（DELL/FN/COHR）」三层结构。</div>
+</section>
+<section class="section" id="s12">
+<h2>12. 我的重点关注股观察</h2>
+<table>
+<thead><tr><th>代码</th><th>收盘</th><th>涨跌幅</th><th>近期催化剂</th><th>关键价位</th></tr></thead>
+<tbody>
+<tr><td>NVDA</td><td>168.89</td><td style="color:#f56565">-5.47%</td><td>黄仁勋情spy调查 + 对华GPU出口审查；特朗普已知情报道；盘中市值跌破4万亿美元</td><td>50日线218.00 / 200日线204.54 / 52周高点239.24（-29.41%）</td></tr>
+<tr><td>AVGO</td><td>331.98</td><td style="color:#48bb78">+3.91%</td><td>AI定制芯片受益者，承接英伟达外溢资金；11月12日AMAT财报为同行验证</td><td>需观察能否持续跑赢费半</td></tr>
+<tr><td>AMD</td><td>515.21</td><td style="color:#48bb78">+1.30%</td><td>奥本海默上调至跑赢大盘；Oppenheimer称上调源于另一场乐观的业绩电话会</td><td>50日线548.56（-6.08%）/ 200日线418.54（+23.12%）</td></tr>
+<tr><td>MSFT</td><td>533.16</td><td style="color:#f56565">-2.20%</td><td>Anthropic发布Claude Sheets/Whiteboards/Data，AI应用层直接冲击Office护城河；单日蒸发约290亿美元市值</td><td>需观察是情绪性回落还是估值重定价起点</td></tr>
+<tr><td>PLTR</td><td>168.82</td><td style="color:#f56565">-0.22%</td><td>Josh Brown「最佳个股」名单；AI应用端代表标的</td><td>50日线185.19（-8.84%）/ 200日线153.54（+9.95%）/ 52周高点209.05（-19.24%）</td></tr>
+<tr><td>CRWV</td><td>48.73</td><td style="color:#f56565">-0.51%</td><td>Q3营收超预期并上调全年指引，但Jefferies质疑积压订单质量；盘后先涨后跌</td><td>50日线74.13（-34.26%）/ 200日线89.71（-45.63%）/ 52周高点137.98（-64.68%）</td></tr>
+<tr><td>BE</td><td>185.42</td><td style="color:#f56565">-4.36%</td><td>AI电力主题，深度偏离均线；Cramer做空讨论提及</td><td>50日线245.31（-24.43%）/ 200日线222.88（-16.80%）/ 52周高点345.85（-46.39%）</td></tr>
+<tr><td>COIN</td><td>132.13</td><td style="color:#f56565">-2.92%</td><td>摩根士丹利建议规避；加密行业向2026中期选举投入超2亿美元</td><td>50日线173.38（-23.79%）/ 200日线175.18（-24.58%）/ 52周高点304.00（-56.54%）</td></tr>
+<tr><td>FN</td><td>348.52</td><td style="color:#f56565">-4.76%</td><td>光通信代工，随AI硬件链降温；曾多次出现在盘前异动榜</td><td>光模块链中跌幅居前，需等待板块企稳</td></tr>
+<tr><td>DELL</td><td>334.38</td><td style="color:#f56565">-3.44%</td><td>AI服务器，深度依赖AI资本开支节奏</td><td>与CSCO同属11月12日财报验证链</td></tr>
+<tr><td>TSM</td><td>396.48</td><td style="color:#48bb78">+2.02%</td><td>10月营收5,868.9亿新台币（178.8亿美元），同比+59.7%、环比+14.7%；上个月已创纪录</td><td>全球AI芯片景气度最硬的基本面证据，与英伟达走势背离</td></tr>
+<tr><td>TSLA</td><td>379.78</td><td style="color:#48bb78">+0.46%</td><td>Cybertruck停产后将退还部分订金；股价守住50日线但仍在200日线下方</td><td>50日线372.96（站上）/ 200日线383.23（-1.75%）/ 52周高点489.88（-22.47%）</td></tr>
+</tbody>
+</table>
+<div class="callout warn">观察池中值得警惕的是「深度偏离均线但缺乏基本面新催化」的组合：CRWV距200日线-45.63%、BE-16.80%、COIN-24.58%。这些标的的下跌尚未被「坏消息出尽」逻辑覆盖，属于超跌但缺乏反转触发器的状态——在12月FOMC前，不宜把「跌得多」当作买入理由。反向提示：台积电ADR +2.02%而英伟达 -5.47%，同一AI叙事下基本面证据与股价背离，验证了「英伟达是个案治理问题而非AI需求问题」的判断。</div>
+</section>
+<section class="section" id="s13">
+<h2>13. 明日交易计划 / 观察清单</h2>
+<h3 style="font-size:15px;margin:4px 0 8px;color:#fff">明日（11月11日）重点关注事件</h3>
+<ul>
+<li><strong>10年期美债的5%关口</strong>：今日盘中一度触及5.021%后回落至4.983%。若明日开盘再度站上5.00%并持续，成长股估值压力将二次释放；反之若跌回4.95%下方，是超跌修复的必要条件。</li>
+<li><strong>2年期收益率4.75%</strong>：今日已跳升20.1bp至4.748%，逼近5%上行周期的关键定价位。2Y反映的是12月加息的路径强度，是最需要盯住的短端指标。</li>
+<li><strong>12月FOMC会议倒计时</strong>：2026年12月8-9日（附经济预测摘要SEP）。在会议前，任何通胀或就业数据都可能改变定价。</li>
+<li><strong>财报密集期开启</strong>：11月11日Transdigm、Sea、Vodafone、CGI、Alcon；11月12日Cisco（3,889亿）、Applied Materials（2,941亿）、Brookfield、Nebius、Cerebras；11月13日三菱日联、三井住友、瑞幸三大日银。这是验证AI资本开支是否延续的关键窗口。</li>
+<li><strong>Anthropic IPO 11月19日挂牌</strong>：1.405万亿美元全面摊薄估值将重置AI板块的估值锚，可能带动AI应用层与硬件层同步重估。</li>
+</ul>
+<h3 style="font-size:15px;margin:16px 0 8px;color:#fff">开盘前操作计划</h3>
+<div class="callout">
+<strong>核心策略：不追高、不抄底，等利率给出方向。</strong><br>
+1. <strong>不做多CPI当日的反弹追涨</strong>：今日尾盘的空头回补（标普从7,489回到7,520收盘）已透支了部分修复，明日若高开即是减仓窗口而非加仓窗口。<br>
+2. <strong>利率是唯一的总开关</strong>：开盘前先看10Y是否站稳5.00%、2Y是否突破4.80%。站稳5%→维持谨慎、轻仓甚至空仓等待；跌回4.95%下方→可对超跌的AI硬件（AMD/AVGO等有基本面验证的）做小仓位试探。<br>
+3. <strong>回避深度偏离均线的无催化标的</strong>：CRWV、BE、COIN这类跌超20%但无反转触发器的，不做左侧。<br>
+4. <strong>可关注方向</strong>：金融（XLF +0.52%，受益于收益率曲线陡峭化）、能源（XLE +0.44%，地缘溢价未消且油价周跌6.9%已释放相当部分通胀压力）、必需消费与低估值价值。<br>
+5. <strong>英伟达不接飞刀</strong>：卖方目标价400-515美元完全未反映治理风险定价，事件仍在发酵中（董事会独立调查、出口审查、舆论审视），在调查结论明确前避免左侧抄底。<br>
+6. <strong>软件板块需要新变量</strong>：Anthropic的办公套件对Office的威胁是结构性的，IGV已跌破50日线且仍处-10.95%的52周回撤中，短期以观望为主。
+</div>
+</section>
+
+<section class="section" id="s14">
+<h2>14. 风险提示</h2>
+<div class="risk-grid">
+<div class="risk-item"><div class="rl" style="color:#f56565">1. 宏观风险</div>10月CPI环比+0.4%、核心+0.3%双双超预期，且因去年政府停摆导致同比数据缺失——通胀路径的可见度本身下降了，这比数字本身更麻烦。</div>
+<div class="risk-item"><div class="rl" style="color:#f56565">2. 利率风险</div>10Y重回5%、2Y单日+20.1bp至4.748%、30Y破5.35%。12月50bp加息概率从0%跳到10.5%。FOMC前若通胀再超预期，二次冲击概率不低。</div>
+<div class="risk-item"><div class="rl" style="color:#ecc94b">3. 财报风险</div>下周CSCO、AMAT等AI链核心标的同时披露；Sanmina超预期与Qualys指引不及预期并存，说明业绩分化极大，押注单一方向的赔率不佳。</div>
+<div class="risk-item"><div class="rl" style="color:#ecc94b">4. 地缘政治</div>特朗普称「对伊朗军事行动目前没必要」，Brent因此周跌6.9%至92.02。但中期选举后的政策不确定性仍存，Rapidan的McNally此前提示过重启军事行动的概率风险，油价双向波动剧烈。</div>
+<div class="risk-item"><div class="rl" style="color:#ecc94b">5. 行业监管</div>黄仁勋事件已引发对GPU出口与法律漏洞的国会审视，MATCH法案立法压力上升——这既是英伟达的风险，也是整个AI供应链的政策风险。</div>
+<div class="risk-item"><div class="rl" style="color:#f56565">6. 流动性风险</div>AI数据中心信贷端压力上升（ING寻求买家出售5亿美元数据中心贷款），CoreWeave长债与数据中心ABS的再融资成本是本周被低估的信号；高盛CEO称AI融资仍强劲，但两者并不矛盾。</div>
+<div class="risk-item"><div class="rl" style="color:#f56565">7. 估值风险</div>纳指100距52周高点-11.16%、费半-31.68%，深度偏离均线；英伟达距200日线-17.43%。同时Anthropic以1.405万亿美元估值上市，会抬高整个AI板块的估值中枢并挤压非AI科技股的相对吸引力。</div>
+<div class="risk-item"><div class="rl" style="color:#ecc94b">8. 市场情绪风险</div>A/D 0.83、超5%下跌个股为上涨的5倍，50日线参与度58.5%跌破60%临界；但52周新低为0、VIX收跌2.31%——情绪在恶化却未失控，这种「温水煮青蛙」状态对趋势跟随策略最不友好。</div>
+<div class="risk-item"><div class="rl" style="color:#ecc94b">9. 黑天鹅风险</div>英伟达治理事件若升级为出口管制或司法调查，可能引发AI硬件链的链式重定价；此外11月19日Anthropic IPO若大幅低于定价区间或超预期，将对整个AI叙事定价产生双向冲击。</div>
+</div>
+<div class="callout danger"><strong>综合风险等级：中高。</strong>升级理由：①10Y站上5%且2Y单日+20bp，是明确且可量化的估值压制；②纳指100已跌破200日线（技术面确认转弱）；③12月FOMC前有密集财报与数据；④英伟达事件的不确定性尚未定价进卖方模型（400-515美元目标价 vs 现价168.89美元）。未升至「高风险」的理由：VIX 19.46且日内回落、52周新低为0、A/D仅0.83而非极端值、防御与周期板块未同步崩跌、通胀的同比口径仍有部分实体经济支撑（汽油均价跌破4美元、10月能源分项仅+0.7%）。</div>
+</section>
+
+<section class="section" id="s15">
+<h2>15. 最终结论</h2>
+<div class="idx-grid">
+<div class="idx"><div class="lb">市场阶段</div><div class="vl" style="font-size:17px;color:#ecc94b">震荡偏弱</div><div class="ch" style="color:#9ba1b0">利率驱动的中继调整</div></div>
+<div class="idx"><div class="lb">操作倾向</div><div class="vl" style="font-size:17px;color:#ecc94b">观望</div><div class="ch" style="color:#9ba1b0">等待利率给出方向</div></div>
+<div class="idx"><div class="lb">风险等级</div><div class="vl" style="font-size:17px;color:#f56565">中高</div><div class="ch" style="color:#9ba1b0">FOMC前不宜重仓</div></div>
+<div class="idx"><div class="lb">市场状态</div><div class="vl" style="font-size:17px;color:#ecc94b">弱势下跌</div><div class="ch" style="color:#9ba1b0">结构性调整非崩盘</div></div>
+</div>
+<div class="callout"><strong>一句话操作立场</strong>：CPI把市场的定价逻辑从「坏消息就是好消息」切回「利率惩罚」，在10Y站上5%、纳指100双线破位、12月FOMC临近的组合下，观望是唯一有正期望的动作；真要动手，等10Y跌回4.95%下方，或者等11月12日CSCO+AMAT给出AI资本开支的答案。</div>
+<h3 style="font-size:15px;margin:16px 0 8px;color:#fff">5个关键观察信号</h3>
+<ul>
+<li><strong>技术面：10年期美债收益率的5%关口</strong>——站稳5%则成长股二次杀估值，跌回4.95%下方则是修复前提。同时盯纳指100能否收复200日线28,005（今日收27,740.80，差0.95%）。</li>
+<li><strong>技术面：标普500的200日线7,331与费半的10,855</strong>——标普失守7,331意味着中期趋势破坏；费半收复10,855才谈得上趋势反转（当前9,998.33，差8.6%）。</li>
+<li><strong>基本面：11月12日CSCO + AMAT 财报</strong>——AI网络与设备的双验证，是判断「AI需求是否受损」最硬的证据；Sanmina与CoreWeave的超预期目前只是单一环节证据。</li>
+<li><strong>基本面：英伟达董事会独立调查结论与卖方目标价调整</strong>——若出现首家下调目标价（如从400美元大幅下调），意味着「坏消息出尽」逻辑破位，当前-5.47%可能只是起点。</li>
+<li><strong>情绪面：VIX与A/D的组合</strong>——VIX若突破22-23同时A/D跌破0.7，说明抛压从个股扩散到指数，需减仓；若VIX继续回落且A/D回到1.0以上，则洗出结束。</li>
+</ul>
+</section>
+
+<div class="footer">
+报告生成时间：北京时间 2026-11-11 07:00（美东 2026-11-10 收盘后）<br>
+数据来源：腾讯财经API（个股/ETF收盘行情）、CNBC实时报价（宏观数据、指数、技术指标）、Nasdaq API（财报日历）、CNBC live blog（盘中复盘与异动）<br>
+说明：本报告所有涨跌幅均为当日收盘值或明确标注的盘中报价；商品（黄金/原油）采用CNBC正文结算价与分时末值，未使用合约切换导致的UNCH假平仓字段。<br>
+🔗 <a href="https://zhangjingtao.github.io/us-stock-report/202611/2026-11-10.html">https://zhangjingtao.github.io/us-stock-report/202611/2026-11-10.html</a>
+</div>
+</body>
+</html>
